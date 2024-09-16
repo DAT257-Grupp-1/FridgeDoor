@@ -125,12 +125,12 @@ git push origin myNewBranch
 ```
       .-----A origin/myNewBranch
      / 
------o-----------Z grupp20 upstream/main
+-----o-----------Z ORG upstream/main
 ```
 ```
                  .-----A' origin/myNewBranch
                  /
------o-----------Z grupp20 upstream/main
+-----o-----------Z ORG upstream/main
 ```
 
 When pushing to your forked repo - remember to do a compilation test first
