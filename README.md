@@ -1,6 +1,6 @@
 ## FRIDGEDOOR README
 
-## Git Workflowss
+## Git Workflow
 
 _Workflow_:
 
