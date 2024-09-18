@@ -1,7 +1,7 @@
-let ingredients_list = ["Chicken", "Tomatoes", "Yoghurt"];          // Used by multiple functions to track ingredients
+let ingredients_list = ["Chicken", "Tomatoes", "Yoghurt"];
 
 /* Creates a div container and buttons for each ingredient within the div. */
-function display_ingredients() {      // ingredient should be a string
+function display_ingredients() {
     delete_ingredients();                                       
     const container = document.getElementById("ingredients_buttons");   
     ingredients_list.forEach(ingredient => {                    
