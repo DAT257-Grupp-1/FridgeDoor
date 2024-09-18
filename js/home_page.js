@@ -1,25 +1,17 @@
-/*Test function: can be removed or modified by code reviewer.*/
-document.addEventListener("click", () => {
-    const chickenadd = document.getElementById("add_chicken");
-    chickenadd.addEventListener("click", () => {
-        display_ingredients(ingredients_list);
-    });
-});
-
-let ingredients_list = ["Chicken", "Tomatoes", "Yoghurt"];
+let ingredients_list = ["Chicken", "Tomatoes", "Yoghurt"];          // Used by multiple functions to track ingredients
 
 /* Creates a div container and buttons for each ingredient within the div. */
-function display_ingredients(ingredient_list) {      // ingredient should be a string
+function display_ingredients() {      // ingredient should be a string
     delete_ingredients();                                       
     const container = document.getElementById("ingredients_buttons");   
-    ingredient_list.forEach(ingredient => {                    
+    ingredients_list.forEach(ingredient => {                    
             const button = document.createElement("button");
             button.textContent = ingredient;
             button.id = ingredient;
             button.addEventListener('click', clicked_button => {
                 const clickedIngredient = clicked_button.target.innerText;
                 splice_ingredient(clickedIngredient);
-                display_ingredients(ingredient_list);
+                display_ingredients();
         });
         container.appendChild(button);
     });
@@ -31,7 +23,7 @@ function delete_ingredients(){
 }
 
 /* Helper function to return the index of given ingredient in ingredients_list.*/
-function get_ingredient_index(ingredient){          // R
+function get_ingredient_index(ingredient){
     for (let i = 0; i < ingredients_list.length; i++) {
         if(ingredients_list[i] == ingredient){
             return i;
