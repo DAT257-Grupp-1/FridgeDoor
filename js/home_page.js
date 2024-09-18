@@ -5,6 +5,7 @@ function add_ingredient() {
     let text = document.getElementById("input_field").value;
     document.getElementById("input_field").value = "";
     ingredients_list.push(text);
+    display_ingredients();  
 }
 
 /* Creates a div container and buttons for each ingredient within the div. */
