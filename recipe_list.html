@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="data:,">
-    <title>Second Page</title>
-    <link rel="stylesheet" href="../css/style2.css">
-    <script src="../js/shared.js" defer></script>
-    <script src="../js/script2.js" defer></script>
+    <title>Recept</title>
+    <link rel="stylesheet" href="css/recipe_list.css">
+    <script src="js/shared.js" defer></script>
+    <script src="js/recipe_list.js" defer></script>
 </head>
 
 <body>
-    <h1>Welcome to Page 2</h1>
-    <p>This is the number 2 page.</p>
+    <header>
+        <h1>Recept</h1>
+    </header>
+    <div class="recipe">
+        <h2 class="recipe_name">Korv Stoganoff</h2>
+        <div class="ingredient_list">
+            <h3 id="match_count">Ingredienser:</h3>
+            <ul id="matching_ingredients">
+                <!-- <li>Falukorv</li>
+                <li>Grädde</li>
+                <li>Tomatpuré</li>
+                <li>Gullök</li> -->
+            </ul>
+        </div>
+        <div class="image">
+            <img src="korvstroganoff_med_ris.jpg" alt="Korv Stroganoff">
+        </div>
+        <div class="footprint">
+            <p>Inte bra för miljön</p>
+        </div>
+        <a href="https://www.ica.se/recept/korvstroganoff-med-ris-533512/">
+            <button class="recept_knapp">Gå till recept</button>
+        </a>
+    </div>
 
-    <a href="page1.html">
-        <button>Go to page 1</button>
+    <a href="home_page.html">
+        <button>Tillbaka</button>
     </a>
 </body>
 
