@@ -6,4 +6,3 @@ function add_ingredient() {
     document.getElementById("input_field").value = "";
     ingredient.push(text);
 
-}
