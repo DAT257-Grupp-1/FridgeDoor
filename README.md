@@ -1,5 +1,9 @@
 ## FRIDGEDOOR README
 
+## Technical info
+_Resolution_:
+iPhone 12/13 Pro = 390 x 844
+
 ## Git Workflow
 
 _Workflow_:
