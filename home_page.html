@@ -1,26 +1,28 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="data:,">
     <title>First Page</title>
-    <link rel="stylesheet" href="../css/home_page.css">
-    <script src="../js/shared.js" defer></script>
-    <script src="../js/home_page.js" defer></script>
+    <link rel="stylesheet" href="css/home_page.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <script src="js/shared.js" defer></script>
+    <script src="js/home_page.js" defer></script>
 </head>
 
 <body>
-    <h1>Welcome to Page 1</h1>
-    <p>This is the home page.</p>
-    <div id="test_button">
-        <p>Here are the ingredients:</p>
-        <button id = "add_chicken">add chicken</button> <!-- Add chicken ingredient will be exchanged for searchbar-->
-        <div id="ingredients_buttons">
-            <!-- Ingredients will be displayed here -->
-        </div>
+    <div id="search_bar">
+        <input type="text" id="input_field">
+        <button onclick="(add_ingredient())" id="add">Lägg till</button>
+    </div>
+
     <a href="recipe_list.html">
-        <button>Go to page 2</button>
+        <button id="continue">Hitta recept</button> 
     </a>
+    
+
+
 </body>
 
 </html>

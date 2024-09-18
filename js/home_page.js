@@ -1,4 +1,11 @@
-let ingredients_list = ["Chicken", "Tomatoes", "Yoghurt"];
+let ingredients_list = [];
+
+function add_ingredient() {
+    // store vales searched and clear text field
+    let text = document.getElementById("input_field").value;
+    document.getElementById("input_field").value = "";
+    ingredients_list.push(text);
+}
 
 /* Creates a div container and buttons for each ingredient within the div. */
 function display_ingredients() {
