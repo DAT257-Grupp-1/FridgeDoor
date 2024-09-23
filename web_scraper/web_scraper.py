@@ -9,8 +9,8 @@ def main(link):
 
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=options)
-    options.add_argument("--disable-search-engine-choice-screen")
-    # options.add_argument("--headless=new")
+    # options.add_argument("--disable-search-engine-choice-screen")
+    options.add_argument("--headless=new")
     
     driver = webdriver.Chrome(options)
     web_page = link
@@ -62,8 +62,10 @@ def get_energy(driver):
 
 # Gets the climate impact of the recipe
 def get_climateimpact(driver):
-    climateimpact = driver.find_element(By.CLASS_NAME, 'carbon-dioxide-wrapper')
-    return climateimpact.text
+    climatewunit = driver.find_element(By.CLASS_NAME, 'carbon-dioxide-wrapper').text
+    unit = driver.find_element(By.CLASS_NAME, 'carbon-unit').text
+    climate = climatewunit[:len(climatewunit)-len(unit)]
+    return climate
 
 def print_html(elem):
     content = elem.get_attribute("innerHTML")
