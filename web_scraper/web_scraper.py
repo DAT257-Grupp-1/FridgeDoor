@@ -55,6 +55,11 @@ def get_energy(driver):
     energy = driver.find_element(By.CLASS_NAME, 'health-section__data')
     return energy.text
 
+# Gets amount of portions for the recipe
+def get_portions(driver):
+    portions = driver.find_element(By.CLASS_NAME, "ingredients-change-portions").find_element(By.TAG_NAME, "div").text
+    return portions
+
 def print_html(elem):
     content = elem.get_attribute("innerHTML")
     soup = BeautifulSoup(content, 'html.parser')
