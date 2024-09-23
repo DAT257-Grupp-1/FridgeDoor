@@ -10,7 +10,7 @@ def main(link):
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=options)
     options.add_argument("--disable-search-engine-choice-screen")
-    # options.add_argument("--headless=new")
+    options.add_argument("--headless=new")
     
     driver = webdriver.Chrome(options)
     web_page = link
@@ -69,6 +69,37 @@ def get_portions(driver):
 def get_climateimpact(driver):
     climateimpact = driver.find_element(By.CLASS_NAME, 'carbon-dioxide-wrapper')
     return climateimpact.text
+
+# Gets each ingredient, name & quantity for the recipe
+def get_ingredients_list(driver):
+    ingredients_list = []
+    div_elements = driver.find_elements(By.CLASS_NAME, 'ingredients-list-group__card')
+    for element in div_elements:
+        ingredients_list.append(get_ingredient(element))
+    
+    return ingredients_list
+    
+def get_ingredient(element):
+    inner_elements = element.find_elements(By.TAG_NAME, "span")
+        
+    name = ""
+    quantity = ""
+    if (len(inner_elements) > 1):
+        name = inner_elements[1].text
+        quantity = inner_elements[0].text
+    else:
+        name = inner_elements[0].text
+    
+    ingredient = {
+        "name": name,
+        "quantity": quantity
+    }
+    return ingredient
+
+# Gets the recipe title
+def get_title(driver):
+    title = driver.find_element(By.CLASS_NAME, 'recipe-header__title').get_attribute("innerHTML")
+    return title
 
 def print_html(elem):
     content = elem.get_attribute("innerHTML")
