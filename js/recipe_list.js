@@ -1,8 +1,5 @@
-// User's ingredients as a string
-const user_ingredients_string = "mjölk, tomatpuré, soja"; 
-
-// Convert the string to an array of ingredients, removing any leading/trailing spaces and converting to lower case
-const user_ingredients = user_ingredients_string.split(',').map(ingredient => ingredient.trim().toLowerCase());
+//Import list of ingredients from previous page
+let user_ingredients = JSON.parse(sessionStorage.getItem('saved_items'));;
 
 // List of ingredients required for the recipe
 const recipe_ingredients = [
@@ -18,6 +15,7 @@ const recipe_ingredients = [
     'peppar',
     'salt'
 ];
+
 
 // Function to get matching ingredients between user's ingredients and recipe's ingredients
 function get_matching_ingredients(user_ingredients, recipe_ingredients) {

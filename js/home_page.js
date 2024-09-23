@@ -43,6 +43,7 @@ function delete_ingredients(){
 function clear_ingredients(){
     ingredients_list = [];
     delete_ingredients();
+    save_to_session_storage();
 }
 
 /* Helper function to return the index of given ingredient in ingredients_list.*/
