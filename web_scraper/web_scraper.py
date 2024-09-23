@@ -16,9 +16,12 @@ def main(link):
     web_page = link
     driver.get(web_page)
 
-    title = driver.find_element(By.CLASS_NAME, 'recipe-header__title').get_attribute("innerHTML")
-    print(title)
-    
+def get_cooking_steps(driver):
+    steps = driver.find_elements(By.CLASS_NAME, "cooking-steps-main__text")
+    steps_in_text = []
+    for i in steps:
+        steps_in_text.append(i.text)
+    return steps_in_text
 
 def print_html(elem):
     content = elem.get_attribute("innerHTML")
