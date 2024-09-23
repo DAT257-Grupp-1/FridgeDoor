@@ -16,6 +16,7 @@ def main(link):
     web_page = link
     driver.get(web_page)
 
+# Gets the cooking steps of the recipe
 def get_cooking_steps(driver):
     steps = driver.find_elements(By.CLASS_NAME, "cooking-steps-main__text")
     steps_in_text = []
