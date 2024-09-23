@@ -49,6 +49,11 @@ def get_energy(driver):
     energy = driver.find_element(By.CLASS_NAME, 'health-section__data')
     return energy.text
 
+# Gets the climate impact of the recipe
+def get_climateimpact(driver):
+    climateimpact = driver.find_element(By.CLASS_NAME, 'carbon-dioxide-wrapper')
+    return climateimpact.text
+
 def print_html(elem):
     content = elem.get_attribute("innerHTML")
     soup = BeautifulSoup(content, 'html.parser')
