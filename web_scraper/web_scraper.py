@@ -16,8 +16,6 @@ def main(link):
     web_page = link
     driver.get(web_page)
 
-    print(get_rating(driver))
-
 # Gets the cooking steps of the recipe
 def get_cooking_steps(driver):
     steps = driver.find_elements(By.CLASS_NAME, "cooking-steps-main__text")
@@ -45,6 +43,11 @@ def get_difficulty(driver):
 def get_rating(driver):
     rating = driver.find_element(By.CLASS_NAME, 'ids-ratings__stars-wrapper')
     return rating.text
+
+# Gets the energy of the recipe
+def get_energy(driver):
+    energy = driver.find_element(By.CLASS_NAME, 'health-section__data')
+    return energy.text
 
 def print_html(elem):
     content = elem.get_attribute("innerHTML")
