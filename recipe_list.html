@@ -15,34 +15,59 @@
         <h1>Recept</h1>
     </header>
     <div class="recipe">
+
         <h2 class="recipe_name">Korv Stoganoff</h2>
-        <div class="ingredient_list">
-            <h3 id="match_count">Ingredienser:</h3>
-            <ul id="matching_ingredients">
-                <!-- <li>Falukorv</li>
-                <li>Grädde</li>
-                <li>Tomatpuré</li>
-                <li>Gullök</li> -->
-            </ul>
+
+        <!-- columnen till vänster -->
+        <div id="left"> 
+
+            <div class="ingredient_list">
+                <h3 id="match_count">Ingredienser:</h3>
+                <ul id="matching_ingredients">
+                    <!-- <li>Falukorv</li>
+                    <li>Grädde</li>
+                    <li>Tomatpuré</li>
+                    <li>Gullök</li> -->
+                </ul>
+            </div>
+
+            <div id="footprint">
+                <p>Inte bra för miljön</p>
+            </div>
+
+            <a href="https://www.ica.se/recept/korvstroganoff-med-ris-533512/">
+                <button  id="recept_knapp">Gå till recept</button>
+            </a>
+
+            <button id="show_cocktail_btn">Visa en cocktail</button>
+
+            
+
         </div>
-        <div class="image">
-            <img src="korvstroganoff_med_ris.jpg" alt="Korv Stroganoff">
+        
+
+        <!-- bilden -->
+        <div id="right">
+
+            <div class="image">
+                <img src="korvstroganoff_med_ris.jpg" alt="Korv Stroganoff">
+            </div>
+
         </div>
-        <div class="footprint">
-            <p>Inte bra för miljön</p>
-        </div>
-        <a href="https://www.ica.se/recept/korvstroganoff-med-ris-533512/">
-            <button class="recept_knapp">Gå till recept</button>
-        </a>
+
+
+        <!-- Cocktail section -->
+    <div id="cocktail">            
+    </div>
+
+       
     </div>
 
     <a href="home_page.html">
         <button id="back">Tillbaka</button>
     </a>
-    <button id="show_cocktail_btn">Visa en cocktail</button>
-    <!-- Cocktail section -->
-    <div id="cocktail">            
-    </div>
+    
+    
 </div>
 
 </body>
