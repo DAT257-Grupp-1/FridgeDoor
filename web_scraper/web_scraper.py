@@ -16,6 +16,12 @@ def main(link):
     web_page = link
     driver.get(web_page)
 
+# Gets the image of the dish
+def get_image(driver):
+    image = driver.find_element(By.CLASS_NAME, "recipe-header__desktop-image-wrapper__inner").find_element(By.TAG_NAME, "img").get_attribute("src")
+    print(image)
+    return image
+
 # Gets the cooking steps of the recipe
 def get_cooking_steps(driver):
     steps = driver.find_elements(By.CLASS_NAME, "cooking-steps-main__text")
