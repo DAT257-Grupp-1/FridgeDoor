@@ -128,7 +128,7 @@ function display_cocktail(cocktail) {
     }
 }
 
-function showDiv() {
+function show_div() {
     document.getElementById('hidden_div').style.visibility = 'visible';
 }
 
@@ -136,7 +136,7 @@ function showDiv() {
 // Add an event listener to the button that triggers the random cocktail fetch function when clicked
 const show_cocktail_btn = document.getElementById('show_cocktail_btn');
 show_cocktail_btn.addEventListener('click', function() {
-    showDiv();
+    show_div();
     get_random_cocktail();
 });
 
