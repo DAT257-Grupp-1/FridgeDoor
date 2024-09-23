@@ -62,3 +62,59 @@ matching_ingredients.forEach(ingredient => {
     // Add the list item to the 'matching_ingredients' list
     matching_ingredients_list.appendChild(li);
 });
+
+document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
+    const slider = document.getElementById("colorSlider");
+    const footprintInput = document.getElementById("footprintInput");
+
+    footprintInput.addEventListener("input", () => { // right now takes the input value and sets the slider value to it will be changed to take value from database and remove input field
+        const CO2value = footprintInput.value;
+        if (CO2value >= 0 && CO2value <= 100) { //OBS!!! Change to the "value" to be the value from the database
+            slider.value = CO2value;
+            updateThumbColor(CO2value); // changes color of slider thumb
+            updateFootprintText(CO2value); // changes paragraph text
+            displayWarning(CO2value);  // displays warning for climate impact Low/Medium/High = Green/Yellow/Red
+        }
+    });
+});
+
+function updateThumbColor(value) {
+    const slider = document.getElementById("colorSlider"); // gets the slider element
+    const percentage = value / slider.max; // create a precentage value of the input value to change color of thumb accordingly
+
+    var color;
+    if (percentage <= 0.5) {
+    
+        const greenToYellow = percentage * 2;
+        color = `rgb(${255 * greenToYellow}, 255, 0)`; // sets the color of the thumb to go from green to yellow
+    } else {
+        
+        const yellowToRed = (percentage - 0.5) * 2;
+        color = `rgb(255, ${255 * (1 - yellowToRed)}, 0)`; // sets the color of the thumb to go from yellow to red
+    }
+
+    slider.style.setProperty('--thumb-color', color); // sets the color of the thumb
+}
+function updateFootprintText(value) { // simple function to change the text of the paragraph at a certain place
+    const footprintText = document.getElementById("footprintText");
+    footprintText.textContent = `Klimatavtryck: ${value} kg/CO2`;
+}
+
+function displayWarning(value) { // creates a warning for impact on climate
+    const warning = document.getElementById("warning");
+    const percentage = value / 100; // same idea as before to create a percentage value
+
+    if (percentage <= 0.33) { // 33% for each value to change color and text: 0-33% = Low, 33-66% = Medium, 66-100% = High
+        // Green zone
+        warning.textContent = "Low";
+        warning.style.color = "green";
+    } else if (percentage <= 0.66) {
+        // Yellow zone
+        warning.textContent = "Medium";
+        warning.style.color = "yellow";
+    } else {
+        // Red zone
+        warning.textContent = "High";
+        warning.style.color = "red";
+    }
+}
