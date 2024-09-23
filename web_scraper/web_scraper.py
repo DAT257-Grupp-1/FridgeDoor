@@ -22,6 +22,11 @@ def get_image(driver):
     print(image)
     return image
 
+# Gets the link to the recipe
+def get_link(driver):
+    link = driver.current_url
+    return link
+
 # Gets the cooking steps of the recipe
 def get_cooking_steps(driver):
     steps = driver.find_elements(By.CLASS_NAME, "cooking-steps-main__text")
@@ -59,6 +64,11 @@ def get_energy(driver):
 def get_portions(driver):
     portions = driver.find_element(By.CLASS_NAME, "ingredients-change-portions").find_element(By.TAG_NAME, "div").text
     return portions
+
+# Gets the climate impact of the recipe
+def get_climateimpact(driver):
+    climateimpact = driver.find_element(By.CLASS_NAME, 'carbon-dioxide-wrapper')
+    return climateimpact.text
 
 def print_html(elem):
     content = elem.get_attribute("innerHTML")
