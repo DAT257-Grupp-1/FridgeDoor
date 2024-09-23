@@ -22,6 +22,11 @@ def get_image(driver):
     print(image)
     return image
 
+# Gets the link to the recipe
+def get_link(driver):
+    link = driver.current_url
+    return link
+
 # Gets the cooking steps of the recipe
 def get_cooking_steps(driver):
     steps = driver.find_elements(By.CLASS_NAME, "cooking-steps-main__text")
