@@ -94,3 +94,19 @@ img {
 .receptknapp:hover {
     background-color: #2a4887;
 }
+#show_cocktail_btn {
+    width: 90%;
+    background-color: #3b5998;
+    color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+}
+
+#show_cocktail_btn:hover {
+    background-color: #2a4887;
+}
