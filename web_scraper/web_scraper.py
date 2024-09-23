@@ -60,12 +60,48 @@ def get_energy(driver):
     energy = driver.find_element(By.CLASS_NAME, 'health-section__data')
     return energy.text
 
+# Gets amount of portions for the recipe
+def get_portions(driver):
+    portions = driver.find_element(By.CLASS_NAME, "ingredients-change-portions").find_element(By.TAG_NAME, "div").text
+    return portions
+
 # Gets the climate impact of the recipe
 def get_climateimpact(driver):
     climatewunit = driver.find_element(By.CLASS_NAME, 'carbon-dioxide-wrapper').text
     unit = driver.find_element(By.CLASS_NAME, 'carbon-unit').text
     climate = climatewunit[:len(climatewunit)-len(unit)]
     return climate
+
+# Gets each ingredient, name & quantity for the recipe
+def get_ingredients_list(driver):
+    ingredients_list = []
+    div_elements = driver.find_elements(By.CLASS_NAME, 'ingredients-list-group__card')
+    for element in div_elements:
+        ingredients_list.append(get_ingredient(element))
+    
+    return ingredients_list
+    
+def get_ingredient(element):
+    inner_elements = element.find_elements(By.TAG_NAME, "span")
+        
+    name = ""
+    quantity = ""
+    if (len(inner_elements) > 1):
+        name = inner_elements[1].text
+        quantity = inner_elements[0].text
+    else:
+        name = inner_elements[0].text
+    
+    ingredient = {
+        "name": name,
+        "quantity": quantity
+    }
+    return ingredient
+
+# Gets the recipe title
+def get_title(driver):
+    title = driver.find_element(By.CLASS_NAME, 'recipe-header__title').get_attribute("innerHTML")
+    return title
 
 def print_html(elem):
     content = elem.get_attribute("innerHTML")
