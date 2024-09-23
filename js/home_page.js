@@ -29,6 +29,10 @@ function display_ingredients() {
 function delete_ingredients(){
     document.getElementById("ingredients_buttons").innerHTML = "";
 }
+function clear_ingredients(){
+    ingredients_list = [];
+    delete_ingredients();
+}
 
 /* Helper function to return the index of given ingredient in ingredients_list.*/
 function get_ingredient_index(ingredient){
