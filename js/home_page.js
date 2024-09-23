@@ -1,10 +1,20 @@
 let ingredients_list = [];
 
+/* loads saved_items when the home_page window is loaded. */
+window.onload = function(){
+    const saved_items = sessionStorage.getItem('saved_items');
+    if(saved_items) {
+        ingredients_list = JSON.parse(saved_items);
+        display_ingredients();
+    }
+}
+
 function add_ingredient() {
     // store vales searched and clear text field
     let text = document.getElementById("input_field").value;
     document.getElementById("input_field").value = "";
     ingredients_list.push(text);
+    save_to_session_storage();
     display_ingredients();  
 }
 
@@ -19,6 +29,7 @@ function display_ingredients() {
             button.addEventListener('click', clicked_button => {
                 const clickedIngredient = clicked_button.target.innerText;
                 splice_ingredient(clickedIngredient);
+                save_to_session_storage();
                 display_ingredients();
         });
         container.appendChild(button);
@@ -48,4 +59,9 @@ function get_ingredient_index(ingredient){
 function splice_ingredient(ingredient){             
     let index = get_ingredient_index(ingredient);
     ingredients_list.splice(index, 1);
+}
+
+/* Updates the contents of saved_items to equal ingredients_list */
+function save_to_session_storage() {
+    sessionStorage.setItem('saved_items', JSON.stringify(ingredients_list));
 }
