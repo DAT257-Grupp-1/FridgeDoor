@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
+import re
 
 link = "https://www.ica.se/recept/ugnspannkaka-grundrecept-720978/"
 
@@ -62,8 +63,9 @@ def get_energy(driver):
 
 # Gets amount of portions for the recipe
 def get_portions(driver):
-    portions = driver.find_element(By.CLASS_NAME, "ingredients-change-portions").find_element(By.TAG_NAME, "div").text
-    return portions
+    portions = str(driver.find_element(By.CLASS_NAME, "ingredients-change-portions").find_element(By.TAG_NAME, "div").text)
+    r = int(re.search(r'\d+', portions).group())
+    return r
 
 # Gets the climate impact of the recipe
 def get_climateimpact(driver):
