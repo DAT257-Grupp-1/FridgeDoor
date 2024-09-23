@@ -118,5 +118,16 @@ img {
 
 #cocktail{
     width: 50%;
+}
 
+#hidden_div{
+    visibility: hidden;
+}
+
+#close_cocktail{
+    height: 50px;
+    width: 200px;
+    position: absolute;
+    right: 100px;
+    
 }
