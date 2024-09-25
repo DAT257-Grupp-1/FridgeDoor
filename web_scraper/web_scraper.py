@@ -20,7 +20,7 @@ def main():
     working = "https://www.ica.se/recept/ugnspannkaka-grundrecept-720978/"
     links = extract_links(10000)
     links.reverse()
-    links = links[:10]
+    links = links[:100]
 
     string_array_to_json(links, "links_file.json")
 
@@ -206,8 +206,9 @@ def get_time(driver):
 
 # Gets the number of ingredients of the recipe
 def get_number_ingredients(driver):
-    number = driver.find_elements(By.CLASS_NAME, 'items')
-    return number[1].text  
+    str_number = driver.find_elements(By.CLASS_NAME, 'items')[1].text
+    num = int(re.search(r'\d+', str_number).group())
+    return num
 
 # Gets the difficulty of the recipe
 def get_difficulty(driver):
@@ -227,8 +228,8 @@ def get_energy(driver):
 # Gets amount of portions for the recipe
 def get_portions(driver):
     portions = str(driver.find_element(By.CLASS_NAME, "ingredients-change-portions").find_element(By.TAG_NAME, "div").text)
-    r = int(re.search(r'\d+', portions).group())
-    return r
+    num = int(re.search(r'\d+', portions).group())
+    return num
 
 # Gets the climate impact of the recipe
 def get_climateimpact(driver):
