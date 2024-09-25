@@ -8,7 +8,6 @@ window.onload = function(){
         display_ingredients();
     }
 }
-
 function add_ingredient() {
     // store vales searched and clear text field
     let text = document.getElementById("input_field").value;
@@ -25,6 +24,8 @@ function display_ingredients() {
     ingredients_list.forEach(ingredient => {                    
             const button = document.createElement("button");
             button.textContent = ingredient;
+            button.innerHTML = `${ingredient} <span class="remove-icon">✕</span>`;
+            button.classList.add("custom_button");
             button.id = ingredient;
             button.addEventListener('click', clicked_button => {
                 const clickedIngredient = clicked_button.target.innerText;
@@ -66,3 +67,13 @@ function splice_ingredient(ingredient){
 function save_to_session_storage() {
     sessionStorage.setItem('saved_items', JSON.stringify(ingredients_list));
 }
+
+function amount_of_ingredients(){
+    ingredients_list.c
+}
+
+document.getElementById("input_field").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        add_ingredient(); 
+    }
+});
