@@ -22,8 +22,7 @@ h1 {
 
 .recipe {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     gap: 20px;
     margin: 20px;
     padding: 20px;
@@ -35,7 +34,6 @@ h1 {
 
 .recipe_name {
     grid-column: 1 / 3;
-    grid-row: 1;
     background-color: #3b5998;
     color: #fff;
     padding: 20px;
@@ -45,22 +43,11 @@ h1 {
 }
 
 .ingredient_list {
-    grid-column: 1;
-    grid-row: 2;
+    height: 40%;
     background-color: #8b9dc3;
     color: #fff;
     padding: 20px;
     /* border-right: 5px solid #6d84b4; */
-}
-
-.image {
-    grid-column: 2;
-    grid-row: 2 / 5;
-    /* background-color: #dfe3ee; */
-    /* color: #333; */
-    /* padding: 20px; */
-    /* text-align: center; */
-    /* border-bottom: 5px solid #c7cfe2; */
 }
 
 img {
@@ -68,31 +55,72 @@ img {
     max-height: 100%;
 }
 
-.footprint {
-    grid-column: 1;
-    grid-row: 3;
+#footprint {
+    height: 20%;
     background-color: #f7f7f7;
     color: #333;
-    padding: 20px;
+    margin-top: 3%;
     text-align: center;
     /* border-bottom: 5px solid #e1e1e1; */
 }
 
-.recept_knapp {
-    grid-column: 1;
-    grid-row: 4;
+#recept_knapp {
     background-color: #3b5998;
     color: #fff;
     padding: 20px;
+    margin-top:3% ;
     text-align: center;
     /* border-bottom: 5px solid #2a4887; */
     width: 100%;
+    height: 15%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .receptknapp:hover {
     background-color: #2a4887;
+}
+
+#show_cocktail_btn {
+    margin-top: 3%;
+    height: 15%;
+    width: 100%;
+    background-color: #3b5998;
+    color: #fff;
+    border: none;    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+}
+
+#show_cocktail_btn:hover {
+    background-color: #2a4887;
+}
+
+#left{
+    grid: flex;
+    padding: 10px;
+
+}
+
+#right{
+    grid: flex;
+    padding: 10px;
+}
+
+#cocktail{
+    width: 50%;
+}
+
+#hidden_div{
+    visibility: hidden;
+}
+
+#close_cocktail{
+    height: 50px;
+    width: 200px;
+    position: absolute;
+    right: 100px;
+    
 }
 
 /* Slider container */
@@ -136,3 +164,4 @@ img {
     background: var(--thumb-color, #4CAF50);
     cursor: pointer;
 }
+

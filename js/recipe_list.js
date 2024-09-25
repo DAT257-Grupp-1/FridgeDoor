@@ -61,6 +61,89 @@ matching_ingredients.forEach(ingredient => {
     matching_ingredients_list.appendChild(li);
 });
 
+function get_random_cocktail() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+        .then(response => response.json())
+        .then(data => {
+            const cocktail = data.drinks[0];
+            display_cocktail(cocktail);
+        })
+        .catch(error => {
+            console.error('Error fetching cocktail:', error);
+            display_cocktail(null); // Show a message if fetching fails
+        });
+}
+
+function display_cocktail(cocktail) {
+    // Get the cocktail section element and clear any existing content
+    const cocktail_section = document.getElementById('cocktail');
+    cocktail_section.innerHTML = ''; // Clear previous content
+
+    // Create and append a title to the cocktail section
+    const title = document.createElement('h3');
+    title.textContent = 'Här är en god cocktail att avnjuta med maten!';
+    cocktail_section.appendChild(title);
+
+    if (cocktail) {
+        // If a cocktail is available, display its name
+        const name = document.createElement('h4');
+        name.textContent = cocktail.strDrink;
+        cocktail_section.appendChild(name);
+
+        // Display the cocktail image
+        const image = document.createElement('img');
+        image.src = cocktail.strDrinkThumb;
+        image.alt = cocktail.strDrink; // Use cocktail name as alternative text for the image
+        cocktail_section.appendChild(image);
+
+        // Display the cocktail instructions
+        const instructions = document.createElement('p');
+        instructions.textContent = cocktail.strInstructions;
+        cocktail_section.appendChild(instructions);
+
+        // Create an unordered list element to display the ingredients
+        const ingredients_list_cocktail = document.createElement('ul');
+
+        // Loop through the 15 potential ingredients and measurements
+        for (let i = 1; i <= 15; i++) {
+            const ingredient = cocktail[`strIngredient${i}`]; // Get the ingredient name
+            const measure = cocktail[`strMeasure${i}`]; // Get the measurement for the ingredient
+
+            if (ingredient) { // Check if the ingredient is present (not null or undefined)
+                const list_item = document.createElement('li'); // Create a list item element
+                list_item.textContent = `${measure ? measure : ''} ${ingredient}`; // Format and set the text for the list item
+                ingredients_list_cocktail.appendChild(list_item); // Add the list item to the ingredients list
+            }
+        }
+
+        // Append the ingredients list to the cocktail section
+        cocktail_section.appendChild(ingredients_list_cocktail);
+    } else {
+        // If no cocktail data is available, show an error message
+        const message = document.createElement('p');
+        message.textContent = 'Kunde inte hämta cocktail just nu. Försök igen senare.';
+        cocktail_section.appendChild(message);
+    }
+}
+
+function show_div() {
+    document.getElementById('hidden_div').style.visibility = 'visible';
+}
+
+
+// Add an event listener to the button that triggers the random cocktail fetch function when clicked
+const show_cocktail_btn = document.getElementById('show_cocktail_btn');
+show_cocktail_btn.addEventListener('click', function() {
+    show_div();
+    get_random_cocktail();
+});
+
+
+document.getElementById('close_cocktail').addEventListener('click', function() {
+    document.getElementById('hidden_div').style.visibility = 'hidden';
+});
+
+
 document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
     const slider = document.getElementById("colorSlider");
     const footprintInput = document.getElementById("footprintInput");
@@ -116,3 +199,4 @@ function displayWarning(value) { // creates a warning for impact on climate
         warning.style.color = "red";
     }
 }
+
