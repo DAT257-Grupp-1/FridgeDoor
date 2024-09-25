@@ -1,0 +1,525 @@
+[
+    {
+        "title": "Quorn med rostade grönsaker och solrospesto",
+        "description": "Stekta quornfiléer smakar supergott när de får sällskap av ugnsrostade grönsaker, pesto på solroskärnor, parmesan och basilika. Paprika, blomkål och broccoli rostas i ugn och tillsammans med peston fylls köket av härliga dofter. Servera filéerna av quorn till grönsakerna och njut en riktigt god vegorätt.",
+        "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_192655/cf_259/quorn_med_rostade_gronsaker_och_solrospesto.jpg",
+        "link": "https://www.ica.se/recept/quorn-med-rostade-gronsaker-och-solrospesto-724877/",
+        "ingredients": [
+            {
+                "name": "broccoli (à 250 g)",
+                "quantity": "2  "
+            },
+            {
+                "name": "litet blomkålshuvud (à ca 500 g)",
+                "quantity": "1  "
+            },
+            {
+                "name": "gula paprikor",
+                "quantity": "2  "
+            },
+            {
+                "name": "olja",
+                "quantity": "2 msk "
+            },
+            {
+                "name": "salt",
+                "quantity": ""
+            },
+            {
+                "name": "svartpeppar",
+                "quantity": ""
+            },
+            {
+                "name": "vitlöksklyfta",
+                "quantity": "1  "
+            },
+            {
+                "name": "solroskärnor",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "finriven parmesan",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "kruka basilika",
+                "quantity": "1  "
+            },
+            {
+                "name": "vinäger",
+                "quantity": "1/2 tsk "
+            },
+            {
+                "name": "olivolja",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "quornfiléer",
+                "quantity": "312 g "
+            },
+            {
+                "name": "olja",
+                "quantity": "1 msk "
+            },
+            {
+                "name": "körsbärstomater",
+                "quantity": "250 g "
+            },
+            {
+                "name": "krutonger",
+                "quantity": "2 dl "
+            }
+        ],
+        "portions": 4,
+        "numingredients": "16",
+        "cooktime": "Under 45 min",
+        "rating": "Betyg 4.7 av 5.",
+        "difficulty": "Medel",
+        "instructions": [
+            "Sätt ugnen på 225°C. Sätt in en plåt i ugnen.",
+            "Rostade grönsaker: Skär bort lite av botten på broccolistjälken. Skala stjälken med en potatisskalare. Dela broccolin på längden i 4 delar. Ansa och skär blomkålen i grova buketter. Dela, kärna ur och skär paprikorna i fjärdedelar.",
+            "Blanda grönsakerna med olja, smaksätt med salt och peppar.",
+            "Lägg grönsakerna på den förvärmda plåten. Rosta grönsakerna mitt i ugnen ca 20 minuter. Vänd dem försiktigt någon gång.",
+            "Solrospesto: Skala och skiva vitlöksklyftan. Mixa vitlök, solroskärnor, parmesan och basilika med vinäger och olivolja till en jämn smet. Smaka av med salt och peppar.",
+            "Stek quornfiléerna i oljan enligt anvisningen på förpackningen. Skär dem i ca 3 cm stora bitar efter stekningen.",
+            "Blanda rostade grönsaker, quornfiléer och tomater med solrospeston.",
+            "Lägg upp grönsaksblandningen med quorn på ett fat och strö över krutonger."
+        ],
+        "energy": "2706 KJ / 646 kCal",
+        "climateimpact": {
+            "value": "0,5 - 1,40 ",
+            "unit": "kg CO2e/portion"
+        }
+    },
+    {
+        "title": "Salsiccia med bönpasta och zuccini",
+        "description": "Salsiccia al limone en riktigt god korv kryddad med rosmarin och citron är basen i denna snabblagade grönsakstäta pasta. I pannan får salsiccian sällskap av rödlök och tomatpesto. Bönpastan blandas med tunt hyvlad zucchini och fräsch mangold. Riven parmesan på toppen och rätten är klar att servera.",
+        "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_192651/cf_259/salsiccia_med_bonpasta_och_zuccini.jpg",
+        "link": "https://www.ica.se/recept/salsiccia-med-bonpasta-och-zuccini-724876/",
+        "ingredients": [
+            {
+                "name": "zucchini (à ca 300 g)",
+                "quantity": "1  "
+            },
+            {
+                "name": "rödlökar",
+                "quantity": "2  "
+            },
+            {
+                "name": "förp salsiccia al limone (à 240 g)",
+                "quantity": "1  "
+            },
+            {
+                "name": "olivolja",
+                "quantity": "1 msk "
+            },
+            {
+                "name": "tomatpesto",
+                "quantity": "3 msk "
+            },
+            {
+                "name": "matlagningsgrädde (15%)",
+                "quantity": "2 1/2 dl "
+            },
+            {
+                "name": "port bönpasta (gärna fusilli)",
+                "quantity": "4  "
+            },
+            {
+                "name": "kokvatten",
+                "quantity": "2 dl "
+            },
+            {
+                "name": "salt",
+                "quantity": ""
+            },
+            {
+                "name": "svartpeppar",
+                "quantity": ""
+            },
+            {
+                "name": "röda mangoldskott",
+                "quantity": "65 g "
+            },
+            {
+                "name": "finriven parmesan",
+                "quantity": ""
+            }
+        ],
+        "portions": 4,
+        "numingredients": "12",
+        "cooktime": "Under 30 min",
+        "rating": "Betyg 4.5 av 5.",
+        "difficulty": "Medel",
+        "instructions": [
+            "Sätt på en kastrull med vatten till pastan.",
+            "Ansa och hyvla zuccinin på längden, gärna med en mandolin.",
+            "Skala och skiva lökarna.",
+            "Skär korven i slantar.",
+            "Stek lök och korv i olivoljan i en stor stekpanna, tillsätt tomatpesto och grädde. Koka upp och sjud någon minut.",
+            "Koka pastan enligt anvisningen på förpackningen. Spara 1 dl kokvatten (för 4 port) och häll av pastan.",
+            "Rör i pastan och kokvattnet i korv- och tomatgrädden och blanda ordentligt. Smaksätt med salt och peppar. Vänd ner mangold och zuccini.",
+            "Till servering: Servera pastan gärna med finriven parmesanost."
+        ],
+        "energy": "2493 KJ / 597 kCal",
+        "climateimpact": {
+            "value": "0,5 - 1,40 ",
+            "unit": "kg CO2e/portion"
+        }
+    },
+    {
+        "title": "Kebab på kycklingfärs med pitabröd och paprikayoghurt",
+        "description": "Goda smaker samlas i en kebab av kycklingfärs som du serverar i pita. Fyll pitabrödet med sallad, stekt kycklingfärs smaksatt med spiskummin och krämig turkisk yoghurt som du kryddar med grillad paprika och citron. Sätt dig och njut av en snabblagad och mättande måltid som gillas av både liten och stor.",
+        "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_192639/cf_259/kebab_pa_kycklingfars_med_pitabrod_och_paprikayoghurt.jpg",
+        "link": "https://www.ica.se/recept/kebab-pa-kycklingfars-med-pitabrod-och-paprikayoghurt-724875/",
+        "ingredients": [
+            {
+                "name": "vitlöksklyfta",
+                "quantity": "1  "
+            },
+            {
+                "name": "kycklingfärs",
+                "quantity": "500 g "
+            },
+            {
+                "name": "salt",
+                "quantity": "1/2 tsk "
+            },
+            {
+                "name": "ägg",
+                "quantity": "1  "
+            },
+            {
+                "name": "svartpeppar",
+                "quantity": "2 krm "
+            },
+            {
+                "name": "spiskummin",
+                "quantity": "1 tsk "
+            },
+            {
+                "name": "koriander",
+                "quantity": "1 tsk "
+            },
+            {
+                "name": "olja",
+                "quantity": "2 msk "
+            },
+            {
+                "name": "grillade paprikor",
+                "quantity": "2  "
+            },
+            {
+                "name": "citron",
+                "quantity": "finrivet skal och saft av 1  "
+            },
+            {
+                "name": "turkisk yoghurt (10%)",
+                "quantity": "2 dl "
+            },
+            {
+                "name": "hjärtsalladshuvud",
+                "quantity": "1  "
+            },
+            {
+                "name": "pitabröd",
+                "quantity": "4  "
+            }
+        ],
+        "portions": 4,
+        "numingredients": "13",
+        "cooktime": "Under 30 min",
+        "rating": "Betyg 4.5 av 5.",
+        "difficulty": "Medel",
+        "instructions": [
+            "Skala och riv vitlöksklyftan.",
+            "Blanda vitlöken med kycklingfärs och salt.",
+            "Blanda i ägg och kryddor i färsen.",
+            "Forma färsen i 4 lika stora biffar (för 4 port). Stek biffarna på medelvärme i oljan i en stekpanna, ca 5 minuter på varje sida, eller till en innertemperatur på 72°C.",
+            "Låt paprikan rinna av på hushållspapper.",
+            "Tvätta citronen och riv det yttersta av skalet.",
+            "Strimla paprikan i tunna strimlor.",
+            "Blanda paprikastrimlor och citronskal med yoghurt. Smaka av med salt, peppar och citronsaft.",
+            "Ansa och dela salladsbladen från varandra.",
+            "Värm pitabröden enligt anvisningen på förpackningen.",
+            "Servera kycklingkebaben med sallad och paprikayoghurt i pitabröden."
+        ],
+        "energy": "2030 KJ / 483 kCal",
+        "climateimpact": {
+            "value": "0,5 - 1,40 ",
+            "unit": "kg CO2e/portion"
+        }
+    },
+    {
+        "title": "Medelhavssallad med tomat, oliver och basilikadressing",
+        "description": "Denna vego-sallad är en mättande sallad som för tankarna till medelhavsmat. Grunden är en klassisk och god basilikadressing som du kryddar med dijonsenap. Bönor, oliver och ris gjort på kikärtor ger dig bra energi och är mättande. Salladen toppas med krämig mozzarella och krispiga granatäppelkärnor.",
+        "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_192633/cf_259/medelhavssallad_med_tomat__oliver_och_basilikadressing.jpg",
+        "link": "https://www.ica.se/recept/medelhavssallad-med-tomat-oliver-och-basilikadressing-724874/",
+        "ingredients": [
+            {
+                "name": "frysta granatäppelkärnor",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "apelsin (1 apelsin motsvarar 1 dl saft)",
+                "quantity": "finrivet skal och saft av 1  "
+            },
+            {
+                "name": "kruka basilika",
+                "quantity": "1  "
+            },
+            {
+                "name": "dijonsenap",
+                "quantity": "2 tsk "
+            },
+            {
+                "name": "vitvinsvinäger",
+                "quantity": "1 tsk "
+            },
+            {
+                "name": "olivolja",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "salt",
+                "quantity": ""
+            },
+            {
+                "name": "svartpeppar",
+                "quantity": ""
+            },
+            {
+                "name": "port havreris eller annat gryn",
+                "quantity": "4  "
+            },
+            {
+                "name": "haricots verts (bönor)",
+                "quantity": "150 g "
+            },
+            {
+                "name": "silverlök",
+                "quantity": "1  "
+            },
+            {
+                "name": "gurka",
+                "quantity": "1/2  "
+            },
+            {
+                "name": "gula körsbärstomater",
+                "quantity": "250 g "
+            },
+            {
+                "name": "mozzarella (à 125 g)",
+                "quantity": "2  "
+            },
+            {
+                "name": "kalamataoliver utan kärnor",
+                "quantity": "2 dl "
+            }
+        ],
+        "portions": 4,
+        "numingredients": "15",
+        "cooktime": "Under 30 min",
+        "rating": "Betyg 4.2 av 5.",
+        "difficulty": "Medel",
+        "instructions": [
+            "Tina granatäppelkärnorna.",
+            "Tvätta och riv det yttersta av skalet på apelsinen. Pressa 1 dl juice (för 4 port) ur apelsinen.",
+            "Mixa basilikabladen med apelsinskal, apelsinjuice, senap, vinäger och olivolja. Smaksätt dressingen med salt och peppar.",
+            "Koka riset enligt anvisningen på förpackningen.",
+            "Ansa och koka bönorna i saltat vatten 4-5 minuter. Häll av vattnet.",
+            "Skala och skiva löken tunt, gärna med en mandolin.",
+            "Hyvla gurkan på längden med en mandolin eller osthyvel.",
+            "Blanda riset med dressing, bönor, lök, gurka och tomater.",
+            "Riv mozzarellaosten i bitar.",
+            "Lägg upp riset på ett fat. Strö över mozzarella, oliver och granatäppelkärnor."
+        ],
+        "energy": "2571 KJ / 614 kCal",
+        "climateimpact": {
+            "value": "0,5 - 1,40 ",
+            "unit": "kg CO2e/portion"
+        }
+    },
+    {
+        "title": "Quorn med rostade grönsaker och solrospesto",
+        "description": "Stekta quornfiléer smakar supergott när de får sällskap av ugnsrostade grönsaker, pesto på solroskärnor, parmesan och basilika. Paprika, blomkål och broccoli rostas i ugn och tillsammans med peston fylls köket av härliga dofter. Servera filéerna av quorn till grönsakerna och njut en riktigt god vegorätt.",
+        "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_192655/cf_259/quorn_med_rostade_gronsaker_och_solrospesto.jpg",
+        "link": "https://www.ica.se/recept/quorn-med-rostade-gronsaker-och-solrospesto-724877/",
+        "ingredients": [
+            {
+                "name": "broccoli (à 250 g)",
+                "quantity": "2  "
+            },
+            {
+                "name": "litet blomkålshuvud (à ca 500 g)",
+                "quantity": "1  "
+            },
+            {
+                "name": "gula paprikor",
+                "quantity": "2  "
+            },
+            {
+                "name": "olja",
+                "quantity": "2 msk "
+            },
+            {
+                "name": "salt",
+                "quantity": ""
+            },
+            {
+                "name": "svartpeppar",
+                "quantity": ""
+            },
+            {
+                "name": "vitlöksklyfta",
+                "quantity": "1  "
+            },
+            {
+                "name": "solroskärnor",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "finriven parmesan",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "kruka basilika",
+                "quantity": "1  "
+            },
+            {
+                "name": "vinäger",
+                "quantity": "1/2 tsk "
+            },
+            {
+                "name": "olivolja",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "quornfiléer",
+                "quantity": "312 g "
+            },
+            {
+                "name": "olja",
+                "quantity": "1 msk "
+            },
+            {
+                "name": "körsbärstomater",
+                "quantity": "250 g "
+            },
+            {
+                "name": "krutonger",
+                "quantity": "2 dl "
+            }
+        ],
+        "portions": 4,
+        "numingredients": "16",
+        "cooktime": "Under 45 min",
+        "rating": "Betyg 4.7 av 5.",
+        "difficulty": "Medel",
+        "instructions": [
+            "Sätt ugnen på 225°C. Sätt in en plåt i ugnen.",
+            "Rostade grönsaker: Skär bort lite av botten på broccolistjälken. Skala stjälken med en potatisskalare. Dela broccolin på längden i 4 delar. Ansa och skär blomkålen i grova buketter. Dela, kärna ur och skär paprikorna i fjärdedelar.",
+            "Blanda grönsakerna med olja, smaksätt med salt och peppar.",
+            "Lägg grönsakerna på den förvärmda plåten. Rosta grönsakerna mitt i ugnen ca 20 minuter. Vänd dem försiktigt någon gång.",
+            "Solrospesto: Skala och skiva vitlöksklyftan. Mixa vitlök, solroskärnor, parmesan och basilika med vinäger och olivolja till en jämn smet. Smaka av med salt och peppar.",
+            "Stek quornfiléerna i oljan enligt anvisningen på förpackningen. Skär dem i ca 3 cm stora bitar efter stekningen.",
+            "Blanda rostade grönsaker, quornfiléer och tomater med solrospeston.",
+            "Lägg upp grönsaksblandningen med quorn på ett fat och strö över krutonger."
+        ],
+        "energy": "2706 KJ / 646 kCal",
+        "climateimpact": {
+            "value": "0,5 - 1,40 ",
+            "unit": "kg CO2e/portion"
+        }
+    },
+    {
+        "title": "Medelhavssallad med tomat, oliver och basilikadressing",
+        "description": "Denna vego-sallad är en mättande sallad som för tankarna till medelhavsmat. Grunden är en klassisk och god basilikadressing som du kryddar med dijonsenap. Bönor, oliver och ris gjort på kikärtor ger dig bra energi och är mättande. Salladen toppas med krämig mozzarella och krispiga granatäppelkärnor.",
+        "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_192633/cf_259/medelhavssallad_med_tomat__oliver_och_basilikadressing.jpg",
+        "link": "https://www.ica.se/recept/medelhavssallad-med-tomat-oliver-och-basilikadressing-724874/",
+        "ingredients": [
+            {
+                "name": "frysta granatäppelkärnor",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "apelsin (1 apelsin motsvarar 1 dl saft)",
+                "quantity": "finrivet skal och saft av 1  "
+            },
+            {
+                "name": "kruka basilika",
+                "quantity": "1  "
+            },
+            {
+                "name": "dijonsenap",
+                "quantity": "2 tsk "
+            },
+            {
+                "name": "vitvinsvinäger",
+                "quantity": "1 tsk "
+            },
+            {
+                "name": "olivolja",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "salt",
+                "quantity": ""
+            },
+            {
+                "name": "svartpeppar",
+                "quantity": ""
+            },
+            {
+                "name": "port havreris eller annat gryn",
+                "quantity": "4  "
+            },
+            {
+                "name": "haricots verts (bönor)",
+                "quantity": "150 g "
+            },
+            {
+                "name": "silverlök",
+                "quantity": "1  "
+            },
+            {
+                "name": "gurka",
+                "quantity": "1/2  "
+            },
+            {
+                "name": "gula körsbärstomater",
+                "quantity": "250 g "
+            },
+            {
+                "name": "mozzarella (à 125 g)",
+                "quantity": "2  "
+            },
+            {
+                "name": "kalamataoliver utan kärnor",
+                "quantity": "2 dl "
+            }
+        ],
+        "portions": 4,
+        "numingredients": "15",
+        "cooktime": "Under 30 min",
+        "rating": "Betyg 4.2 av 5.",
+        "difficulty": "Medel",
+        "instructions": [
+            "Tina granatäppelkärnorna.",
+            "Tvätta och riv det yttersta av skalet på apelsinen. Pressa 1 dl juice (för 4 port) ur apelsinen.",
+            "Mixa basilikabladen med apelsinskal, apelsinjuice, senap, vinäger och olivolja. Smaksätt dressingen med salt och peppar.",
+            "Koka riset enligt anvisningen på förpackningen.",
+            "Ansa och koka bönorna i saltat vatten 4-5 minuter. Häll av vattnet.",
+            "Skala och skiva löken tunt, gärna med en mandolin.",
+            "Hyvla gurkan på längden med en mandolin eller osthyvel.",
+            "Blanda riset med dressing, bönor, lök, gurka och tomater.",
+            "Riv mozzarellaosten i bitar.",
+            "Lägg upp riset på ett fat. Strö över mozzarella, oliver och granatäppelkärnor."
+        ],
+        "energy": "2571 KJ / 614 kCal",
+        "climateimpact": {
+            "value": "0,5 - 1,40 ",
+            "unit": "kg CO2e/portion"
+        }
+    }
+]
