@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
@@ -22,9 +23,24 @@ def main():
     working = "https://www.ica.se/recept/ugnspannkaka-grundrecept-720978/"
     links = extract_links(10000)
     links.reverse()
-    links = links[:10]
+    links = links[:100]
 
-    for link in links:
+    string_array_to_json(links, "links_file.json")
+
+    # for link in links:
+    #     total += 1
+    #     try:
+    #         scrape_page(link)
+    #         success += 1
+    #         print(f"success {success} of {total}")
+    #     except:
+    #         fail += 1
+    #         print(f"fail {fail} of {total}")
+    # print(f"\nTotal: {total} | Success: {success} | Fail: {fail}")
+
+    while (count_items_in_json("links_file.json") > 0):
+        link = pop_first_item_from_json("links_file.json")
+        print("link " + link)
         total += 1
         try:
             scrape_page(link)
@@ -89,7 +105,45 @@ def scrape_page(link):
     
     save_data(recipe, "data.json")
 
-# gen ai, idk thanks
+# gen ai, idk thanks ---------------------------------------------------------
+def count_items_in_json(filename):
+    # Load the JSON file
+    with open(filename, 'r') as json_file:
+        string_array = json.load(json_file)
+    
+    # Return the length of the array
+    return len(string_array)
+
+def pop_first_item_from_json(filename):
+    # Load the JSON file
+    with open(filename, 'r') as json_file:
+        string_array = json.load(json_file)
+    
+    # Check if the list is non-empty
+    if string_array:
+        # Store the first item in a constant
+        FIRST_ITEM = string_array[0]
+        
+        # Remove the first item from the list
+        string_array = string_array[1:]
+        
+        # Save the updated list back to the JSON file
+        with open(filename, 'w') as json_file:
+            json.dump(string_array, json_file, indent=4)
+        
+        return FIRST_ITEM
+    else:
+        raise ValueError("The JSON file contains an empty array")
+
+def string_array_to_json(string_array, filename):
+    # Ensure the input is a list of strings
+    if not isinstance(string_array, list) or not all(isinstance(item, str) for item in string_array):
+        raise ValueError("Input should be a list of strings")
+    
+    # Create the JSON file and write the data
+    with open(filename, 'w') as json_file:
+        json.dump(string_array, json_file, indent=4)
+
 def save_data(json_object, file_name):
     # Check if the file exists
     if os.path.exists(file_name):
@@ -114,8 +168,6 @@ def save_data(json_object, file_name):
     # Write the updated list back to the file
     with open(file_name, 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
- 
-
 
 def save_json(json_object, file_name):
     try:
@@ -125,6 +177,7 @@ def save_json(json_object, file_name):
     except Exception as e:
         print(f"An error occurred: {e}")
 
+# ----------------------------------------------------------------------------
 
 # Gets the image of the dish
 def get_image(driver):
