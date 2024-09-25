@@ -12,22 +12,25 @@
 </head>
 
 <body>
-    <div id="search_bar">
-        <input type="text" id="input_field">
-        <button onclick="(add_ingredient())" id="add">Lägg till</button>
-    </div>
-    <div id="clear_button">
-        <button onclick="(clear_ingredients())" id="clear">Rensa</button>
 
-    <div id="ingredients_buttons">
-
+    <div id="icon">
+        <img id="product_icon" src="korvstroganoff_med_ris.jpg">
+        <h1 id="productName">Fridgedoora</h1>
     </div>
-    <a href="recipe_list.html">
-        <button id="continue">Hitta recept</button> 
-    </a>
-    
-    
-    
+    <div id="contentDiv">
+        <div id="search_bar">
+            <input type="text" id="input_field" placeholder="Vad har du i ditt kylskåp?">
+            <button onclick="(add_ingredient())" id="add">Lägg till</button>
+        </div>
+        <div id="clear_button">
+            <button id="clear_button_button" onclick="(clear_ingredients())" id="clear">Rensa</button>
+            <div id="ingredients_buttons">
+            </div>
+        </div>
+        <a href="recipe_list.html">
+            <button id="continue">Hitta recept</button>
+        </a>
+    </div>
 
 </body>
 

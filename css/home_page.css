@@ -1,14 +1,100 @@
 #input_field {
-    width: 75%;
+    width: 70%;
     height: 100px;
     font-size: 55px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 1.3em;
+    opacity: 0.7;
+    background-color: darkviolet;
+    color: yellow;
 }
 
 #search_bar {
+    border-radius: 10px;
     display: flex;
+    background-color: lightcoral;
 }
 
 #add {
-    width: 25%;
-    font-size: 55px;
+    margin-top: auto;
+    border-radius: 10px;
+    height: 105px;
+    font-size: 30px;
+    background-color: lightgreen;
+}
+body{
+    background-color: orange;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#contentDiv{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 350px;
+    height: 800px;
+    background-color:lightblue;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+#continue {  
+    width: 200px;
+    height: 50px;
+    padding: 15px;
+    margin-left: 60px;
+    font-family: Arial, sans-serif;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 20px;
+  }
+
+#ingredients_buttons{
+    border-radius: 10px;
+}
+
+#clear_button_button{
+    border-radius: 10px;
+    color: red;
+    background-color: navy;
+}
+
+.custom_button{
+    border-radius: 10px;
+    justify-content: space-between;
+    color: aqua;
+    background-color: navy;
+}
+#icon{
+    margin-top: 30px;
+    display: flex;
+}
+
+#productName{
+    margin-left: 10px;
+}
+
+.remove-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-left: 10px;
+    background-color: #ffffff;
+    color: #ff6347;
+    font-weight: bold;
+
+}
+
+#product_icon{
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    margin-left: 80px;
 }

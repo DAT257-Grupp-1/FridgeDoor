@@ -1,14 +1,11 @@
 
 #continue{
-    font-size: 80px;
-    position:fixed;
-    bottom: 20px;
-    right: 20px;
+    font-size: 20px;
 }
 
 
 #back{
-    font-size: 80px;
+    font-size: 20px;
     position:fixed;
     bottom: 20px;
     left: 20px;
