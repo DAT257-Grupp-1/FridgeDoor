@@ -1,5 +1,5 @@
 //Import list of ingredients from previous page
-let user_ingredients = JSON.parse(sessionStorage.getItem('saved_items'));;
+let user_ingredients = JSON.parse(sessionStorage.getItem('saved_items') || []);
 
 // List of ingredients required for the recipe
 const recipe_ingredients = [
