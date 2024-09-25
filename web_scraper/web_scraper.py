@@ -2,25 +2,133 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import re
+import json
+import os
+from xml.etree import ElementTree as ET
 
-link = "https://www.ica.se/recept/ugnspannkaka-grundrecept-720978/"
+#link = "https://www.ica.se/recept/ugnspannkaka-grundrecept-720978/"
+#link2 = "https://www.ica.se/recept/gul-habanerosoppa-med-vitlokskrutonger-3/"
+
+total = 0
+fail = 0
+success = 0
 
 #  Defining main function
-def main(link):
+def main():
+    global total
+    global fail
+    global success
 
-    options = webdriver.ChromeOptions()
-    driver = webdriver.Chrome(options=options)
-    # options.add_argument("--disable-search-engine-choice-screen")
-    options.add_argument("--headless=new")
+    working = "https://www.ica.se/recept/ugnspannkaka-grundrecept-720978/"
+    links = extract_links(10000)
+    links.reverse()
+    links = links[:10]
+
+    for link in links:
+        total += 1
+        try:
+            scrape_page(link)
+            success += 1
+            print(f"success {success} of {total}")
+        except:
+            fail += 1
+            print(f"fail {fail} of {total}")
+
+    print(f"\nTotal: {total} | Success: {success} | Fail: {fail}")
+
+
+def extract_links(max):
+    # Let's write the Python code to extract all the URLs from the XML file.
+
+    # Load the XML file
+    tree = ET.parse('www.ica2.se.xml')
+    root = tree.getroot()
+
+    # Define the namespace used in the XML file
+    namespace = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+
+    # Extract all URLs from the XML
+    urls = []
+    c = 0
+    for url in root.findall('ns:url/ns:loc', namespace):
+        c += 1
+        urls.append(url.text)
+        if c == max: break
+
+    return urls
+
     
-    driver = webdriver.Chrome(options)
-    web_page = link
-    driver.get(web_page)
+def scrape_page(link):
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+    options.add_argument("--disable-search-engine-choice-screen")
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.page_load_strategy = 'eager'
+
+    driver = webdriver.Chrome(options=options)
+    driver.get(link)
+
+    recipe = {
+    "title": str(get_title(driver)),
+    "description": get_description(driver),
+    "image": get_image(driver),
+    "link": get_link(driver),
+    "ingredients": get_ingredients_list(driver),
+    "portions": get_portions(driver),
+    "numingredients": get_number_ingredients(driver),    
+    "cooktime": get_time(driver),
+    "rating": get_rating(driver),
+    "difficulty": get_difficulty(driver),
+    "instructions": get_cooking_steps(driver),
+    "energy": get_energy(driver),
+    "climateimpact": get_climateimpact(driver)
+    }
+    
+    save_data(recipe, "data.json")
+
+# gen ai, idk thanks
+def save_data(json_object, file_name):
+    # Check if the file exists
+    if os.path.exists(file_name):
+        # Load existing data
+        with open(file_name, 'r', encoding='utf-8') as file:
+            try:
+                data = json.load(file)
+            except json.JSONDecodeError:
+                # Handle the case where the file is empty or corrupted
+                data = []
+    else:
+        # If the file doesn't exist, start with an empty list
+        data = []
+
+    # Ensure data is a list
+    if not isinstance(data, list):
+        raise ValueError("The JSON file must contain a list at the root.")
+
+    # Append the new JSON object to the list
+    data.append(json_object)
+
+    # Write the updated list back to the file
+    with open(file_name, 'w', encoding='utf-8') as file:
+        json.dump(data, file, indent=4, ensure_ascii=False)
+ 
+
+
+def save_json(json_object, file_name):
+    try:
+        with open(file_name, 'w', encoding='utf-8') as file:
+            json.dump(json_object, file, indent=4, ensure_ascii=False)  # ensure_ascii=False decodes Unicode characters
+        print(f"JSON data has been successfully written to {file_name}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
 
 # Gets the image of the dish
 def get_image(driver):
     image = driver.find_element(By.CLASS_NAME, "recipe-header__desktop-image-wrapper__inner").find_element(By.TAG_NAME, "img").get_attribute("src")
-    print(image)
     return image
 
 # Gets the link to the recipe
@@ -45,6 +153,11 @@ def get_description(driver):
 def get_time(driver):
     time = driver.find_elements(By.CLASS_NAME, 'items')
     return time[0].text
+
+# Gets the number of ingredients of the recipe
+def get_number_ingredients(driver):
+    number = driver.find_elements(By.CLASS_NAME, 'items')
+    return number[1].text  
 
 # Gets the difficulty of the recipe
 def get_difficulty(driver):
@@ -72,7 +185,11 @@ def get_climateimpact(driver):
     climatewunit = driver.find_element(By.CLASS_NAME, 'carbon-dioxide-wrapper').text
     unit = driver.find_element(By.CLASS_NAME, 'carbon-unit').text
     climate = climatewunit[:len(climatewunit)-len(unit)]
-    return climate
+    object = {
+        "value": climate,
+        "unit": unit
+    }
+    return object
 
 # Gets each ingredient, name & quantity for the recipe
 def get_ingredients_list(driver):
@@ -112,4 +229,4 @@ def print_html(elem):
     print(pretty_html)
 
 # Program
-main(link)
+main()
