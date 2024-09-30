@@ -63,39 +63,39 @@ matching_ingredients.forEach(ingredient => {
 
 /* Create a div with two buttons for popup_check_age */
 function create_popup_age_verification() {
-   
-    // Create the container
-    const container = document.createElement('div');
-    container.className = 'age_verify_container';
+    return new Promise((resolve) => {
+    
+      const container = document.createElement('div');
+      container.className = 'age_verify_container';
   
-    // Create the popup
-    const popup = document.createElement('div');
-    popup.className = 'age_verify_popup';
+      
+      const popup = document.createElement('div');
+      popup.className = 'age_verify_popup';
   
-    // Add content to the popup
-    popup.innerHTML = `
-      <h2>Bekräfta din ålder</h2>
-      <p>För att se drink förslag måste du ha fyllt 18 år.</p>
-      <button id="over18">Jag har fyllt 18 år</button>
-      <button id="under18">Jag är under 18 år</button>
-    `;
+      
+      popup.innerHTML = `
+        <h2>Bekräfta din ålder</h2>
+        <p>För att se drink förslag måste du ha fyllt 18 år.</p>
+        <button id="over18">Jag har fyllt 18 år</button>
+        <button id="under18">Jag är under 18 år</button>
+      `;
   
-    // Add the popup to the container
-    container.appendChild(popup);
+      
+      container.appendChild(popup);
   
-    // Add the container to the body
-    document.body.appendChild(container);
+      
+      document.body.appendChild(container);
   
-    // Event listeners for the buttons
-    document.getElementById('over18').addEventListener('click', () => {
-      container.remove();
-      // Call function for users over 18
-      userIsOver18();
-    });
-    document.getElementById('under18').addEventListener('click', () => {
-      container.remove();
-      // Call function for users under 18
-      userIsUnder18();
+      
+      document.getElementById('over18').addEventListener('click', () => {
+        container.remove();
+        resolve('over18');
+      });
+  
+      document.getElementById('under18').addEventListener('click', () => {
+        container.remove();
+        resolve('under18');
+      });
     });
   }
   
@@ -171,10 +171,25 @@ function show_div() {
 
 // Add an event listener to the button that triggers the random cocktail fetch function when clicked
 const show_cocktail_btn = document.getElementById('show_cocktail_btn');
-show_cocktail_btn.addEventListener('click', function() {
-    show_div();
-    get_random_cocktail();
-});
+show_cocktail_btn.addEventListener('click', async function() {
+    try {
+      const ageStatus = await create_popup_age_verification();
+      
+      if (ageStatus === 'over18') {
+        // User is over 18, proceed to show cocktail
+        show_div();
+        get_random_cocktail();
+      } else {
+        // User is under 18
+       // alert('Tyvärr, du måste vara över 18 år för att se cocktailförslag.');
+       show_div();
+       get_mocktail();
+        
+      }
+    } catch (error) {
+      console.error('Ett fel uppstod vid åldersverifiering:', error);
+    }
+  });
 
 
 document.getElementById('close_cocktail').addEventListener('click', function() {
