@@ -193,23 +193,27 @@ function show_div() {
 const show_cocktail_btn = document.getElementById('show_cocktail_btn');
 show_cocktail_btn.addEventListener('click', async function() {
     try {
-      const ageStatus = await create_popup_age_verification();
-      
-      if (ageStatus === 'over18') {
-        // User is over 18, proceed to show cocktail
-        show_div();
-        get_random_cocktail();
-      } else {
-        // User is under 18
-       // alert('Tyvärr, du måste vara över 18 år för att se cocktailförslag.');
-       show_div();
-       get_mocktail();
-        
-      }
+        let ageStatus = sessionStorage.getItem('ageStatus');
+
+        if (!ageStatus) {
+            ageStatus = await create_popup_age_verification();
+            sessionStorage.setItem('ageStatus', ageStatus); 
+        }
+
+        if (ageStatus === 'over18') {
+            // User is over 18, proceed to show cocktail
+            show_div();
+            get_random_cocktail();
+        } else {
+            // User is under 18
+            show_div();
+            get_mocktail();
+        }
     } catch (error) {
-      console.error('Ett fel uppstod vid åldersverifiering:', error);
+        console.error('Ett fel uppstod vid åldersverifiering:', error);
     }
-  });
+});
+
 
 
 document.getElementById('close_cocktail').addEventListener('click', function() {
