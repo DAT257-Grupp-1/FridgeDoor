@@ -1,4 +1,4 @@
-{
+[{
     "title": "Spaghetti Carbonara",
     "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper for a simple yet rich flavor.",
     "image": "https://example.com/images/spaghetti-carbonara.jpg",
@@ -10,7 +10,7 @@
         }
     ],
     "ingredient_tags": [
-    	"Spaghetti",
+    	"spaghetti",
     	"korv"
     ],
     "portions": 4,
@@ -31,4 +31,85 @@
         "value": "0 - 0,5",
         "unit": "kg CO2e/portion"
     }
-}
+},
+{
+    "title": "Salsiccia med bönpasta och zuccini",
+    "description": "Salsiccia al limone en riktigt god korv kryddad med rosmarin och citron är basen i denna snabblagade grönsakstäta pasta. I pannan får salsiccian sällskap av rödlök och tomatpesto. Bönpastan blandas med tunt hyvlad zucchini och fräsch mangold. Riven parmesan på toppen och rätten är klar att servera.",
+    "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_192651/cf_259/salsiccia_med_bonpasta_och_zuccini.jpg",
+    "link": "https://www.ica.se/recept/salsiccia-med-bonpasta-och-zuccini-724876/",
+    "ingredients": [
+        {
+            "name": "zucchini (à ca 300 g)",
+            "quantity": "1  "
+        },
+        {
+            "name": "rödlökar",
+            "quantity": "2  "
+        },
+        {
+            "name": "förp salsiccia al limone (à 240 g)",
+            "quantity": "1  "
+        },
+        {
+            "name": "olivolja",
+            "quantity": "1 msk "
+        },
+        {
+            "name": "tomatpesto",
+            "quantity": "3 msk "
+        },
+        {
+            "name": "matlagningsgrädde (15%)",
+            "quantity": "2 1/2 dl "
+        },
+        {
+            "name": "port bönpasta (gärna fusilli)",
+            "quantity": "4  "
+        },
+        {
+            "name": "kokvatten",
+            "quantity": "2 dl "
+        },
+        {
+            "name": "salt",
+            "quantity": ""
+        },
+        {
+            "name": "svartpeppar",
+            "quantity": ""
+        },
+        {
+            "name": "röda mangoldskott",
+            "quantity": "65 g "
+        },
+        {
+            "name": "finriven parmesan",
+            "quantity": ""
+        }
+    ],
+    "ingredient_tags": [
+    	"tomatpesto",
+    	"zuccini", 
+        "rödlök"
+    ],
+    "portions": 4,
+    "numingredients": 12,
+    "cooktime": "Under 30 min",
+    "rating": "Betyg 4.5 av 5.",
+    "difficulty": "Medel",
+    "instructions": [
+        "Sätt på en kastrull med vatten till pastan.",
+        "Ansa och hyvla zuccinin på längden, gärna med en mandolin.",
+        "Skala och skiva lökarna.",
+        "Skär korven i slantar.",
+        "Stek lök och korv i olivoljan i en stor stekpanna, tillsätt tomatpesto och grädde. Koka upp och sjud någon minut.",
+        "Koka pastan enligt anvisningen på förpackningen. Spara 1 dl kokvatten (för 4 port) och häll av pastan.",
+        "Rör i pastan och kokvattnet i korv- och tomatgrädden och blanda ordentligt. Smaksätt med salt och peppar. Vänd ner mangold och zuccini.",
+        "Till servering: Servera pastan gärna med finriven parmesanost."
+    ],
+    "energy": "2493 KJ / 597 kCal",
+    "climateimpact": {
+        "value": "0,5 - 1,40 ",
+        "unit": "kg CO2e/portion"
+    }
+}]

@@ -1,5 +1,6 @@
 let ingredients_list = [];
 
+
 /* loads saved_items when the home_page window is loaded. */
 window.onload = function(){
     const saved_items = sessionStorage.getItem('saved_items');
@@ -77,3 +78,19 @@ document.getElementById("input_field").addEventListener("keydown", function(even
         add_ingredient(); 
     }
 });
+
+// Function to sort recepies by ingredients
+
+function sort_recipes(){
+    const data = JSON.parse('.recipie_normalizer/raw_data.json');
+
+    let sorted_recipe_list = []
+    sorted_recipe_list.push([7,["gurka", "kork"]])
+    sorted_recipe_list.push([2,["gurka", "kork"]])
+    // for(let m = 0; m < data.length; m++ ){
+
+    // }
+    console.log(sorted_recipe_list);
+    console.log(JSON.stringify(data[0]["Title"]));
+    return sorted_recipe_list
+}
