@@ -9,6 +9,10 @@
             "quantity": "200g"
         }
     ],
+    "ingredient_tags": [
+    	"Spaghetti",
+    	"korv"
+    ],
     "portions": 4,
     "numingredients": 0,
     "cooktime": "Under 30 min",
