@@ -22,15 +22,35 @@ def normalize_ingredients():
     ingredients_file_path = os.path.join(os.path.dirname(__file__), 'ingredients.json')
     with open(ingredients_file_path, 'r', encoding='utf-8') as file:
         ingredients = json.load(file)
-        ingredients = ingredients[:5]
+        # Limit the number of ingredients for testing
+        # ingredients = ingredients[:5]
 
     # Initialize the normalized list and block list
     normalized = []
     block_list = []
 
+    # Get already normalized ingredients
+    normalized_file_path = os.path.join(os.path.dirname(__file__), 'normalized_ingredients.json')
+    if os.path.exists(normalized_file_path):
+        with open(normalized_file_path, 'r', encoding='utf-8') as file:
+            if os.stat(normalized_file_path).st_size == 0:
+                normalized_dict = {}
+            else:
+                normalized_dict = json.load(file)
+            normalized = [[key, value] for key, value in normalized_dict.items()]
+
+    # Get already blocked ingredients
+    block_list_file_path = os.path.join(os.path.dirname(__file__), 'block_list.json')
+    if os.path.exists(block_list_file_path):
+        with open(block_list_file_path, 'r', encoding='utf-8') as file:
+            if os.stat(block_list_file_path).st_size == 0:
+                block_list = {}
+            else:
+                block_list = json.load(file)
+
     for ingredient in ingredients:
         # Check if the ingredient is already normalized
-        if any(ingredient in sublist for sublist in normalized):
+        if any(ingredient in sublist for sublist in normalized) or ingredient in block_list:
             continue
 
         # Print ingredient to terminal
@@ -42,20 +62,28 @@ def normalize_ingredients():
         if user_input.lower() == 'block':
             block_list.append(ingredient)
             print(f"Blocked ingredient: {ingredient}")
+        elif user_input == 'cancel':
+            break
         elif user_input:
             normalized_ingredients = [item.strip() for item in user_input.split(',')]
             normalized.append([ingredient, normalized_ingredients])
             print(f"Normalized ingredient(s): {normalized_ingredients}")
-        elif user_input == 'cancel':
-            break
         else:
             normalized.append([ingredient, [ingredient]])
             print(f"Normalized ingredient(s): {ingredient}")
 
-    # Save the normalized list and block list to JSON files
+    # Convert the normalized list to a dictionary
+    normalized_dict = {item[0]: item[1] for item in normalized}
+
+    # Save the normalized dictionary and block list to JSON files
     normalized_file_path = os.path.join(os.path.dirname(__file__), 'normalized_ingredients.json')
     with open(normalized_file_path, 'w', encoding='utf-8') as file:
-        json.dump(normalized, file, ensure_ascii=False, indent=4)
+        json.dump(normalized_dict, file, ensure_ascii=False, indent=4)
+
+    # # Save the normalized list and block list to JSON files
+    # normalized_file_path = os.path.join(os.path.dirname(__file__), 'normalized_ingredients.json')
+    # with open(normalized_file_path, 'w', encoding='utf-8') as file:
+    #     json.dump(normalized, file, ensure_ascii=False, indent=4)
 
     block_list_file_path = os.path.join(os.path.dirname(__file__), 'block_list.json')
     with open(block_list_file_path, 'w', encoding='utf-8') as file:
@@ -70,8 +98,8 @@ def normalize_ingredients():
 # Get all the ingredients from the recipes in data.json and svaes them to ingredients.json
 def get_ingredients():
     # Load the data from the JSON file
-    raw_data_file_path = os.path.join(os.path.dirname(__file__), '..', 'web_scraper', 'data.json')
-    with open(raw_data_file_path, 'r', encoding='utf-8') as file:
+    data_file_path = os.path.join(os.path.dirname(__file__), '..', 'web_scraper', 'data.json')
+    with open(data_file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
 
     # Extract ingredients from each recipe
@@ -84,5 +112,20 @@ def get_ingredients():
     ingredients_file_path = os.path.join(os.path.dirname(__file__), 'ingredients.json')
     with open(ingredients_file_path, 'w', encoding='utf-8') as file:
         json.dump(ingredients_list, file, ensure_ascii=False, indent=4)
+
+def save_ingredient_keys():
+    # Load the JSON file
+    # data_file_path = os.path.join(os.path.dirname(__file__), '..', 'web_scraper', 'data.json')
+
+    with open('raw_data.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    
+    # Iterate through each recipe and add the new key
+    for recipe in data:
+        recipe['ingredient_tags'] = []  # Add your desired values here
+    
+    # Save the updated JSON back to the file
+    with open('raw_data.json', 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
 
 main()
