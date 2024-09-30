@@ -1,5 +1,5 @@
 let ingredients_list = [];
-
+let json_data = null;
 
 /* loads saved_items when the home_page window is loaded. */
 window.onload = function(){
@@ -79,18 +79,72 @@ document.getElementById("input_field").addEventListener("keydown", function(even
     }
 });
 
+function partition(recipe_list_arr, low, high) { 
+	let pivot = recipe_list_arr[high]; 
+	let i = low - 1; 
+
+	for (let j = low; j <= high - 1; j++) { 
+		// If current element is smaller than the pivot 
+		if (recipe_list_arr[j][1].length > pivot) {         // Changed the ordering from "<" to ">"
+			// Increment index of smaller element 
+			i++; 
+			// Swap elements 
+			[recipe_list_arr[i], recipe_list_arr[j]] = [recipe_list_arr[j], recipe_list_arr[i]]; 
+		} 
+	} 
+	// Swap pivot to its correct position 
+	[recipe_list_arr[i + 1], recipe_list_arr[high]] = [recipe_list_arr[high], recipe_list_arr[i + 1]]; 
+	return i + 1; // Return the partition index 
+} 
+
+function quickSort(recipe_list_arr, low, high) { 
+	if (low >= high) return; 
+	let pi = partition(recipe_list_arr, low, high); 
+
+	quickSort(recipe_list_arr, low, pi - 1); 
+	quickSort(recipe_list_arr, pi + 1, high); 
+}
+
+// Fetch the JSON data and store it
+fetch('./structure.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        json_data = data; // Store fetched data in a higher-scope variable
+        console.log('Data fetched and stored.');
+    })
+    .catch(error => {
+        console.error('Error fetching the JSON file:', error);
+    });
+
 // Function to sort recepies by ingredients
-
 function sort_recipes(){
-    const data = JSON.parse('.recipie_normalizer/raw_data.json');
-
+    // The sorting algoritm
     let sorted_recipe_list = []
-    sorted_recipe_list.push([7,["gurka", "kork"]])
-    sorted_recipe_list.push([2,["gurka", "kork"]])
-    // for(let m = 0; m < data.length; m++ ){
+    for(let m = 0; m < json_data.length; m++){
+        let matched = [];
+        for(let i = 0; i < json_data[m]["ingredient_tags"].length; i++){
+            for(j = 0; j < ingredients_list.length; j++){
+                if (json_data[m]["ingredient_tags"][i] == ingredients_list[j]){
+                    matched.push(ingredients_list[j]);
+                }
+            }
+        }
+        if(matched.length > 0){
+            sorted_recipe_list.push([m, matched])
+        }
+    }
 
-    // }
+    quickSort(sorted_recipe_list, 0, sorted_recipe_list.length - 2)     // Perhaps a slight bug. Ordering of recipes with the same amount of
+                                                                        // matched ingredients depends on the input order of the ingredients.
+
+    // Debugging
+    console.log("-------Sort-------")    
     console.log(sorted_recipe_list);
-    console.log(JSON.stringify(data[0]["Title"]));
+
     return sorted_recipe_list
 }
