@@ -13,7 +13,7 @@ function add_ingredient() {
     let text = document.getElementById("input_field").value;
     document.getElementById("input_field").value = "";
     ingredients_list.push(text);
-    save_to_session_storage();
+    save_to_session_storage('saved_items', ingredients_list);
     display_ingredients();  
 }
 
@@ -30,7 +30,7 @@ function display_ingredients() {
             button.addEventListener('click', clicked_button => {
                 const clickedIngredient = clicked_button.target.innerText;
                 splice_ingredient(clickedIngredient);
-                save_to_session_storage();
+                save_to_session_storage('saved_items', ingredients_list);
                 display_ingredients();
         });
         container.appendChild(button);
@@ -44,7 +44,7 @@ function delete_ingredients(){
 function clear_ingredients(){
     ingredients_list = [];
     delete_ingredients();
-    save_to_session_storage();
+    save_to_session_storage('saved_items', ingredients_list);
 }
 
 /* Helper function to return the index of given ingredient in ingredients_list.*/
@@ -64,9 +64,6 @@ function splice_ingredient(ingredient){
 }
 
 /* Updates the contents of saved_items to equal ingredients_list */
-function save_to_session_storage() {
-    sessionStorage.setItem('saved_items', JSON.stringify(ingredients_list));
-}
 
 function amount_of_ingredients(){
     ingredients_list.c

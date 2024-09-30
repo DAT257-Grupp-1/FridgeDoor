@@ -2,7 +2,6 @@
 #container {
   display: flex;
   flex-wrap: wrap;
-  
 }  
 
 #description_container{
@@ -17,18 +16,19 @@
   align-items: center; 
 }
 
-#title_container #title {
+#title {
   font-size: 2.5em;
   font-weight: bold;
 }
 
 
-#title_container #climate_impact {
-  font-size: 1.5em;
+#climate_impact {
+  font-size: 40px;  
    
 }
-#description_container #description {
-  font-size: 2em;
+
+#description {
+  font-size: 50px;
 }
 
 #image_container{
@@ -38,7 +38,7 @@
     align-items: center;
 }
 
-#image_container img {
+img {
   max-width: 100%;
   height: 100%;
   object-fit: cover;
@@ -49,20 +49,30 @@
   background-color: hotpink;
   margin-top: 10px;
 }
-#ingredients {
+
+#ingredients_container {
   flex:  50%; 
   background-color: lightgreen;
   margin-top: 10px;
+}
+
+#ingredients {
+  font-size: 20px;
 }
 
 #instructions {
   flex: 50%; 
   background-color: lightblue;
   margin-top: 10px;
+  font-size: 40px;
 }
-#cocktail {
+
+#cocktail_container {
   flex-basis: 100%;
   background-color: orangered;
   margin-top: 10px;
+} 
+
+#cocktail {
   text-align: center;
 }
