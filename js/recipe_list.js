@@ -195,7 +195,44 @@ function displayWarning(value, warningId) { // creates a warning for impact on c
     }
 }
 
-/*
+
+/* Create a div with two buttons for age verification popup
+function create_popup_age_verification() {
+    return new Promise((resolve) => {
+    
+      const container = document.createElement('div');
+      container.className = 'age_verify_container';
+  
+      
+      const popup = document.createElement('div');
+      popup.className = 'age_verify_popup';
+  
+      
+      popup.innerHTML = `
+        <h2>Bekräfta din ålder</h2>
+        <p>För att se drink förslag måste du ha fyllt 18 år.</p>
+        <button id="over18">Jag har fyllt 18 år</button>
+        <button id="under18">Jag är under 18 år</button>
+      `;
+  
+      
+      container.appendChild(popup);
+  
+      
+      document.body.appendChild(container);
+  
+      
+      document.getElementById('over18').addEventListener('click', () => {
+        container.remove();
+        resolve('over18');
+      });
+  
+      document.getElementById('under18').addEventListener('click', () => {
+        container.remove();
+        resolve('under18');
+      });
+    });
+  }
 function get_random_cocktail() {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
         .then(response => response.json())
@@ -209,6 +246,24 @@ function get_random_cocktail() {
         });
 }
 
+Gets non-alcoholic drink suggestions from the database
+function get_mocktail() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
+      .then(response => response.json())
+      .then(data => {
+        const mocktail = data.drinks[Math.floor(Math.random() * data.drinks.length)];
+        // Fetch full details for the selected mocktail
+        return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${mocktail.idDrink}`);
+      })
+      .then(response => response.json())
+      .then(data => {
+        display_cocktail(data.drinks[0]);
+      })
+      .catch(error => {
+        console.error('Error fetching mocktail:', error);
+        display_cocktail(null); // Show a message if fetching fails
+      });
+  }
 function display_cocktail(cocktail) {
     // Get the cocktail section element and clear any existing content
     const cocktail_section = document.getElementById('cocktail');
@@ -266,13 +321,32 @@ function show_div() {
 }
 
 
-// Add an event listener to the button that triggers the random cocktail fetch function when clicked
-const show_cocktail_btn = document.getElementById('show_cocktail_btn');
-show_cocktail_btn.addEventListener('click', function() {
-    show_div();
-    get_random_cocktail();
-});
+Add an event listener to the button that triggers the age verification popup and 
+   recommends alcoholic or non-alcoholic drinks based on user response
 
+const show_cocktail_btn = document.getElementById('show_cocktail_btn');
+show_cocktail_btn.addEventListener('click', async function() {
+    try {
+        let ageStatus = sessionStorage.getItem('ageStatus');
+
+        if (!ageStatus) {
+            ageStatus = await create_popup_age_verification();
+            sessionStorage.setItem('ageStatus', ageStatus); 
+        }
+
+        if (ageStatus === 'over18') {
+            // User is over 18, proceed to show cocktail
+            show_div();
+            get_random_cocktail();
+        } else {
+            // User is under 18
+            show_div();
+            get_mocktail();
+        }
+    } catch (error) {
+        console.error('Ett fel uppstod vid åldersverifiering:', error);
+    }
+});
 document.getElementById('close_cocktail').addEventListener('click', function() {
     document.getElementById('hidden_div').style.visibility = 'hidden';
 });*/
