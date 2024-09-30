@@ -61,6 +61,44 @@ matching_ingredients.forEach(ingredient => {
     matching_ingredients_list.appendChild(li);
 });
 
+/* Create a div with two buttons for popup_check_age */
+function create_popup_age_verification() {
+   
+    // Create the container
+    const container = document.createElement('div');
+    container.className = 'age_verify_container';
+  
+    // Create the popup
+    const popup = document.createElement('div');
+    popup.className = 'age_verify_popup';
+  
+    // Add content to the popup
+    popup.innerHTML = `
+      <h2>Bekräfta din ålder</h2>
+      <p>För att se drink förslag måste du ha fyllt 18 år.</p>
+      <button id="over18">Jag har fyllt 18 år</button>
+      <button id="under18">Jag är under 18 år</button>
+    `;
+  
+    // Add the popup to the container
+    container.appendChild(popup);
+  
+    // Add the container to the body
+    document.body.appendChild(container);
+  
+    // Event listeners for the buttons
+    document.getElementById('over18').addEventListener('click', () => {
+      container.remove();
+      // Call function for users over 18
+      userIsOver18();
+    });
+    document.getElementById('under18').addEventListener('click', () => {
+      container.remove();
+      // Call function for users under 18
+      userIsUnder18();
+    });
+  }
+  
 function get_random_cocktail() {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
         .then(response => response.json())
