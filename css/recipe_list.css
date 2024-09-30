@@ -43,7 +43,14 @@ h1 {
 }
 
 .ingredient_list {
-    height: 40%;
+    height: 100%;
+    background-color: #8b9dc3;
+    color: #fff;
+    padding: 20px;
+    /* border-right: 5px solid #6d84b4; */
+}
+.match_count{
+    height: 10%;
     background-color: #8b9dc3;
     color: #fff;
     padding: 20px;
