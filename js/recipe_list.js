@@ -61,7 +61,7 @@ matching_ingredients.forEach(ingredient => {
     matching_ingredients_list.appendChild(li);
 });
 
-/* Create a div with two buttons for popup_check_age */
+/* Create a div with two buttons for age verification popup */
 function create_popup_age_verification() {
     return new Promise((resolve) => {
     
@@ -112,6 +112,7 @@ function get_random_cocktail() {
         });
 }
 
+/* Gets non-alcoholic drink suggestions from the database*/
 function get_mocktail() {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
       .then(response => response.json())
@@ -186,7 +187,9 @@ function show_div() {
 }
 
 
-// Add an event listener to the button that triggers the random cocktail fetch function when clicked
+/* Add an event listener to the button that triggers the age verification popup and 
+   recommends alcoholic or non-alcoholic drinks based on user response
+*/
 const show_cocktail_btn = document.getElementById('show_cocktail_btn');
 show_cocktail_btn.addEventListener('click', async function() {
     try {
