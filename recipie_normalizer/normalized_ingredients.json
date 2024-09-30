@@ -1,12 +1,21 @@
 [
-    "mjöl",
-    "socker",
-    "ägg",
-    "mjölk",
-    "smör",
-    "bakpulver",
-    "vaniljextrakt",
-    "salt",
-    "kakaopulver",
-    "chokladbitar"
+    [
+        "broccoli (à 250 g)",
+        [
+            "broccoli"
+        ]
+    ],
+    [
+        "litet blomkålshuvud (à ca 500 g)",
+        [
+            "blomkål"
+        ]
+    ],
+    [
+        "gula paprikor",
+        [
+            "paprika",
+            "gul paprika"
+        ]
+    ]
 ]
