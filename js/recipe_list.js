@@ -112,6 +112,23 @@ function get_random_cocktail() {
         });
 }
 
+function get_mocktail() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
+      .then(response => response.json())
+      .then(data => {
+        const mocktail = data.drinks[Math.floor(Math.random() * data.drinks.length)];
+        // Fetch full details for the selected mocktail
+        return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${mocktail.idDrink}`);
+      })
+      .then(response => response.json())
+      .then(data => {
+        display_cocktail(data.drinks[0]);
+      })
+      .catch(error => {
+        console.error('Error fetching mocktail:', error);
+        display_cocktail(null); // Show a message if fetching fails
+      });
+  }
 function display_cocktail(cocktail) {
     // Get the cocktail section element and clear any existing content
     const cocktail_section = document.getElementById('cocktail');
