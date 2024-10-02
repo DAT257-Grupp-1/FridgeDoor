@@ -2,10 +2,10 @@ import json
 import os
 
 def main():
-    # normalize_ingredients()
+    normalize_ingredients()
     # get_ingredients()
     # save_ingredient_keys()
-    get_normalized_list()
+    # get_normalized_list()
 
 
 def normalize_ingredients():
@@ -98,7 +98,7 @@ def normalize_ingredients():
 # Get all the ingredients from the recipes in data.json and svaes them to ingredients.json
 def get_ingredients():
     # Load the data from the JSON file
-    data_file_path = os.path.join(os.path.dirname(__file__), '..', 'web_scraper', 'data.json')
+    data_file_path = os.path.join(os.path.dirname(__file__), 'data.json')
     with open(data_file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
 
@@ -107,6 +107,8 @@ def get_ingredients():
     for recipe in data:
         for ingredient in recipe['ingredients']:
             ingredients_list.append(ingredient['name'])
+
+    ingredients_list = list(set(ingredients_list))
 
     # Save the ingredients to a new JSON file
     ingredients_file_path = os.path.join(os.path.dirname(__file__), 'ingredients.json')
