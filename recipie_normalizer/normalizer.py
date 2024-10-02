@@ -2,10 +2,10 @@ import json
 import os
 
 def main():
-    normalize_ingredients()
+    # normalize_ingredients()
     # get_ingredients()
     # save_ingredient_keys()
-    # get_normalized_list()
+    get_normalized_list()
 
 
 def normalize_ingredients():
