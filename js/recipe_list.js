@@ -45,7 +45,7 @@ matching_ingredients.forEach(ingredient => {
 
 document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
 
-    fetch('https://raw.githubusercontent.com/DAT257-Grupp-1/FridgeDoor/refs/heads/main/web_scraper/data.json')
+    fetch('../web_scraper/data.json')
     .then(response => response.json())
     .then(data => {
 
@@ -77,8 +77,11 @@ document.addEventListener("DOMContentLoaded", () => { // listen for the DOMConte
 
         // Create and append the recipe link
         const linkElement = document.createElement('button');
-        linkElement.href = recipe_link;
         linkElement.textContent = "Gå till recept";
+        linkElement.addEventListener('click', function() {
+            save_to_session_storage('link', recipe_link);
+            window.location.href = 'recipe_page.html';
+        });
         recipeDiv.appendChild(linkElement);
 
         // Create and append the ingredient list
@@ -153,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => { // listen for the DOMConte
         document.getElementById('recipeList').appendChild(recipeDiv);
     });
 });
+
 
 function updateThumbColor(value, sliderId) {
     const slider = document.getElementById(sliderId); // gets the slider element
