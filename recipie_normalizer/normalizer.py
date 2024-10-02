@@ -4,7 +4,8 @@ import os
 def main():
     # normalize_ingredients()
     # get_ingredients()
-    save_ingredient_keys()
+    # save_ingredient_keys()
+    get_normalized_list()
 
 
 def normalize_ingredients():
@@ -23,8 +24,6 @@ def normalize_ingredients():
     ingredients_file_path = os.path.join(os.path.dirname(__file__), 'ingredients.json')
     with open(ingredients_file_path, 'r', encoding='utf-8') as file:
         ingredients = json.load(file)
-        # Limit the number of ingredients for testing
-        # ingredients = ingredients[:5]
 
     # Initialize the normalized list and block list
     normalized = []
@@ -120,8 +119,6 @@ def save_ingredient_keys():
     data_file_path = os.path.join(os.path.dirname(__file__), 'raw_data.json')
     ing_file_path = os.path.join(os.path.dirname(__file__), 'normalized_ingredients.json')
 
-    ingredient_keys = []
-
     with open(data_file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
 
@@ -145,5 +142,23 @@ def save_ingredient_keys():
     # Save the updated JSON back to the file
     with open(data_file_path, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
+
+def get_normalized_list():
+    normalized_list = []
+    normalized_file_path = os.path.join(os.path.dirname(__file__), 'normalized_ingredients.json')
+    with open(normalized_file_path, 'r', encoding='utf-8') as file:
+        normalized_dict = json.load(file)
+    
+    # Get all normalized ingredients
+    for ingredient in normalized_dict.values():
+        normalized_list.extend(ingredient)
+
+    # Remove all duplicates
+    ingredient_tags = list(set(normalized_list))
+
+    # Save ingredient_tags to a JSON file
+    ingredient_tags_file_path = os.path.join(os.path.dirname(__file__), 'ingredient_tags.json')
+    with open(ingredient_tags_file_path, 'w', encoding='utf-8') as file:
+        json.dump(ingredient_tags, file, ensure_ascii=False, indent=4)
 
 main()
