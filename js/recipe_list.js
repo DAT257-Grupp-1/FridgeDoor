@@ -3,19 +3,7 @@ let user_ingredients = JSON.parse(sessionStorage.getItem('saved_items')) || [];
 
 // List of ingredients required for the recipe
 const recipe_ingredients = [
-    'ris',
-    'falukorv eller kycklingstekkorv',
-    'gul lök',
-    'olja',
-    'tomatpuré',
-    'matlagningsgrädde',
-    'mjölk',
-    'japansk soja',
-    'dijonsenap',
-    'peppar',
-    'salt'
 ];
-
 
 // Function to get matching ingredients between user's ingredients and recipe's ingredients
 function get_matching_ingredients(user_ingredients, recipe_ingredients) {
@@ -42,12 +30,6 @@ function get_matching_ingredients(user_ingredients, recipe_ingredients) {
 // Get the matching ingredients
 const matching_ingredients = get_matching_ingredients(user_ingredients, recipe_ingredients);
 
-// Get the count of matching ingredients
-const match_count = matching_ingredients.length;
-
-// Display the count of matching ingredients in the HTML element with id 'match_count'
-document.getElementById('match_count').textContent = `Antal matchande ingredienser: ${match_count}`;
-
 // Get the HTML element with id 'matching_ingredients'
 const matching_ingredients_list = document.getElementById('matching_ingredients');
 
@@ -61,7 +43,160 @@ matching_ingredients.forEach(ingredient => {
     matching_ingredients_list.appendChild(li);
 });
 
-/* Create a div with two buttons for age verification popup */
+document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
+
+    fetch('https://raw.githubusercontent.com/DAT257-Grupp-1/FridgeDoor/refs/heads/main/web_scraper/data.json')
+    .then(response => response.json())
+    .then(data => {
+
+        const recipe = data[0]; // Get the first recipe for demonstration
+
+        // Extract recipe title and ingredients
+        const recipe_title = recipe.title;
+        const recipe_ingredients = recipe.ingredients;
+        const recipe_image = recipe.image;
+        const recipe_link = recipe.link;
+        const recipe_CO2 = recipe.climateimpact;
+
+
+        // Create a div element for the recipe
+        const recipeDiv = document.createElement('div');
+        recipeDiv.classList.add('recipe');
+
+        // Create and append the recipe title
+        const titleElement = document.createElement('h2');
+        titleElement.classList.add('recipe_name');
+        titleElement.textContent = recipe_title;
+        recipeDiv.appendChild(titleElement);
+        
+        // Create and append the recipe image
+        const imageElement = document.createElement('img');
+        imageElement.src = recipe_image;
+        imageElement.alt = recipe_title;
+        recipeDiv.appendChild(imageElement);
+
+        // Create and append the recipe link
+        const linkElement = document.createElement('button');
+        linkElement.href = recipe_link;
+        linkElement.textContent = "Gå till recept";
+        recipeDiv.appendChild(linkElement);
+
+        // Create and append the ingredient list
+        const ingredientList = document.createElement('div');
+        ingredientList.classList.add('ingredient_list');
+        const full_ingredients_name = [];
+        recipe_ingredients.forEach(ingredient => {
+            full_ingredients_name.push(ingredient.name);
+        });
+        
+        const matching = get_matching_ingredients(user_ingredients, full_ingredients_name);
+        const matching_count = document.createElement('h3');
+        matching_count.textContent = `Matchande ingredienser: ${matching.length}`;
+        ingredientList.appendChild(matching_count);
+        
+        // Filter and display only matching ingredients
+        const matchingIngredients = recipe_ingredients.filter(ingredient => matching.includes(ingredient.name));
+        
+        matchingIngredients.forEach(ingredient => {
+            const ingredientElement = document.createElement('li');
+            ingredientElement.textContent = ingredient.name;
+            ingredientElement.style.color = 'green';
+            ingredientList.appendChild(ingredientElement);
+        });
+
+        recipeDiv.appendChild(ingredientList);
+        
+        // Create and append the slider element
+        const footprintSlider = document.createElement('div');
+        footprintSlider.classList.add('footprint');
+        recipeDiv.appendChild(footprintSlider);
+        
+        // Create and append the slider element
+        const slider = document.createElement('input');
+        slider.type = 'range';
+        slider.min = 0;
+        slider.max = 3;
+        slider.value = parseFloat(recipe_CO2.value[0] + "." + recipe_CO2.value[2]); // OBS ugly but works :)
+        slider.id = recipe.title + "colorSlider";
+        slider.classList.add('slider');
+        slider.disabled = true;
+        footprintSlider.appendChild(slider);
+        //updateThumbColor(slider.value, slider.id);
+
+        // Create and append the warning element
+        const warning = document.createElement('p');
+        warning.id = recipe.title + 'warning';
+        warning.classList.add('warning');
+        warning.textContent = "";
+        footprintSlider.appendChild(warning);
+
+        // Create and append the footprint text element
+        const footprintText = document.createElement('p');
+        footprintText.id = recipe.title + "footprintText";
+        footprintText.classList.add('footprint_text');
+        footprintText.textContent = "";
+        footprintSlider.appendChild(footprintText);
+
+        
+        // Append the recipe div to the existing div with id 'recipeList'
+        document.getElementById('recipeList').appendChild(recipeDiv);
+        displayWarning(slider.value, warning.id);
+        updateThumbColor(slider.value, slider.id);
+        updateFootprintText(recipe_CO2.value, footprintText.id);
+    })
+    .catch(error => {console.error('Error fetching data:', error)
+        const recipeDiv = document.createElement('div');
+        recipeDiv.classList.add('recipe');
+        const testh2 = document.createElement('h2');
+        testh2.textContent = "hello this page cannot be loaded";
+        recipeDiv.appendChild(testh2);
+        document.getElementById('recipeList').appendChild(recipeDiv);
+    });
+});
+
+function updateThumbColor(value, sliderId) {
+    const slider = document.getElementById(sliderId); // gets the slider element
+    const percentage = value / slider.max; // create a precentage value of the input value to change color of thumb accordingly
+
+    var color;
+    if (percentage <= 0.5) {
+    
+        const greenToYellow = percentage * 2;
+        color = `rgb(${255 * greenToYellow}, 255, 0)`; // sets the color of the thumb to go from green to yellow
+    } else {
+        
+        const yellowToRed = (percentage - 0.5) * 2;
+        color = `rgb(255, ${255 * (1 - yellowToRed)}, 0)`; // sets the color of the thumb to go from yellow to red
+    }
+
+    slider.style.setProperty('--thumb-color', color); // sets the color of the thumb
+}
+function updateFootprintText(value, footprintId) { // simple function to change the text of the paragraph at a certain place
+    const footprintText = document.getElementById(footprintId);
+    footprintText.textContent = `Klimatavtryck: ${value} kg CO2e / portion`;
+}
+
+function displayWarning(value, warningId) { // creates a warning for impact on climate
+    const warning = document.getElementById(warningId);
+    const percentage = value / 100; // same idea as before to create a percentage value
+
+    if (percentage <= 0.33) { // 33% for each value to change color and text: 0-33% = Low, 33-66% = Medium, 66-100% = High
+        // Green zone
+        warning.textContent = "Low";
+        warning.style.color = "green";
+    } else if (percentage <= 0.66) {
+        // Yellow zone
+        warning.textContent = "Medium";
+        warning.style.color = "yellow";
+    } else {
+        // Red zone
+        warning.textContent = "High";
+        warning.style.color = "red";
+    }
+}
+
+
+/* Create a div with two buttons for age verification popup
 function create_popup_age_verification() {
     return new Promise((resolve) => {
     
@@ -98,7 +233,6 @@ function create_popup_age_verification() {
       });
     });
   }
-  
 function get_random_cocktail() {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
         .then(response => response.json())
@@ -112,7 +246,7 @@ function get_random_cocktail() {
         });
 }
 
-/* Gets non-alcoholic drink suggestions from the database*/
+Gets non-alcoholic drink suggestions from the database
 function get_mocktail() {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
       .then(response => response.json())
@@ -187,9 +321,9 @@ function show_div() {
 }
 
 
-/* Add an event listener to the button that triggers the age verification popup and 
+Add an event listener to the button that triggers the age verification popup and 
    recommends alcoholic or non-alcoholic drinks based on user response
-*/
+
 const show_cocktail_btn = document.getElementById('show_cocktail_btn');
 show_cocktail_btn.addEventListener('click', async function() {
     try {
@@ -213,67 +347,6 @@ show_cocktail_btn.addEventListener('click', async function() {
         console.error('Ett fel uppstod vid åldersverifiering:', error);
     }
 });
-
-
-
 document.getElementById('close_cocktail').addEventListener('click', function() {
     document.getElementById('hidden_div').style.visibility = 'hidden';
-});
-
-
-document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
-    const slider = document.getElementById("colorSlider");
-    const footprintInput = document.getElementById("footprintInput");
-
-    footprintInput.addEventListener("input", () => { // right now takes the input value and sets the slider value to it will be changed to take value from database and remove input field
-        const CO2value = footprintInput.value;
-        if (CO2value >= 0 && CO2value <= 100) { //OBS!!! Change to the "value" to be the value from the database
-            slider.value = CO2value;
-            updateThumbColor(CO2value); // changes color of slider thumb
-            updateFootprintText(CO2value); // changes paragraph text
-            displayWarning(CO2value);  // displays warning for climate impact Low/Medium/High = Green/Yellow/Red
-        }
-    });
-});
-
-function updateThumbColor(value) {
-    const slider = document.getElementById("colorSlider"); // gets the slider element
-    const percentage = value / slider.max; // create a precentage value of the input value to change color of thumb accordingly
-
-    var color;
-    if (percentage <= 0.5) {
-    
-        const greenToYellow = percentage * 2;
-        color = `rgb(${255 * greenToYellow}, 255, 0)`; // sets the color of the thumb to go from green to yellow
-    } else {
-        
-        const yellowToRed = (percentage - 0.5) * 2;
-        color = `rgb(255, ${255 * (1 - yellowToRed)}, 0)`; // sets the color of the thumb to go from yellow to red
-    }
-
-    slider.style.setProperty('--thumb-color', color); // sets the color of the thumb
-}
-function updateFootprintText(value) { // simple function to change the text of the paragraph at a certain place
-    const footprintText = document.getElementById("footprintText");
-    footprintText.textContent = `Klimatavtryck: ${value} kg/CO2`;
-}
-
-function displayWarning(value) { // creates a warning for impact on climate
-    const warning = document.getElementById("warning");
-    const percentage = value / 100; // same idea as before to create a percentage value
-
-    if (percentage <= 0.33) { // 33% for each value to change color and text: 0-33% = Low, 33-66% = Medium, 66-100% = High
-        // Green zone
-        warning.textContent = "Low";
-        warning.style.color = "green";
-    } else if (percentage <= 0.66) {
-        // Yellow zone
-        warning.textContent = "Medium";
-        warning.style.color = "yellow";
-    } else {
-        // Red zone
-        warning.textContent = "High";
-        warning.style.color = "red";
-    }
-}
-
+});*/
