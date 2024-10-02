@@ -89,7 +89,25 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "broccoli",
+            "blomkål",
+            "paprika",
+            "olja",
+            "vitlök",
+            "solroskärnor",
+            "solrosfrön",
+            "parmesan",
+            "basilika",
+            "vinäger",
+            "olivolja",
+            "quorn",
+            "quornfilé",
+            "olja",
+            "tomat",
+            "krutonger"
+        ]
     },
     {
         "title": "Salsiccia med bönpasta och zuccini",
@@ -165,7 +183,21 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "zucchini",
+            "rödlök",
+            "salsiccia",
+            "olivolja",
+            "tomatpesto",
+            "grädde",
+            "bönpasta",
+            "pasta",
+            "mangold",
+            "röd mangold",
+            "sallad",
+            "parmesan"
+        ]
     },
     {
         "title": "Kebab på kycklingfärs med pitabröd och paprikayoghurt",
@@ -248,7 +280,20 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "vitlök",
+            "kycklingfärs",
+            "ägg",
+            "spiskummin",
+            "koriander",
+            "olja",
+            "paprika",
+            "citron",
+            "turkisk yoghurt",
+            "sallad",
+            "pitabröd"
+        ]
     },
     {
         "title": "Medelhavssallad med tomat, oliver och basilikadressing",
@@ -338,7 +383,24 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "granatäpple",
+            "granatäppelkärnor",
+            "apelsin",
+            "basilika",
+            "dijonsenap",
+            "vitvinsvinäger",
+            "olivolja",
+            "havreris",
+            "ris",
+            "haricots verts",
+            "silverlök",
+            "gurka",
+            "tomat",
+            "mozzarella",
+            "oliver"
+        ]
     },
     {
         "title": "Pad thai med färdig sås och böngroddar",
@@ -426,7 +488,23 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "morot",
+            "salladslök",
+            "paprika",
+            "risnudlar",
+            "salladsärtor",
+            "olja",
+            "vitlök",
+            "böngroddar",
+            "ägg",
+            "woksås",
+            "solroskärnor",
+            "solrosfrön",
+            "koriander",
+            "lime"
+        ]
     },
     {
         "title": "Soppa på butternutpumpa och yoghurt",
@@ -495,7 +573,20 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "butternutpumpa",
+            "pumpa",
+            "scharlottenlök",
+            "chili",
+            "grädde",
+            "rysk yoghurt",
+            "turkisk yoghurt",
+            "yoghurt",
+            "rödvinsvinäger",
+            "yoghurt",
+            "pinjenötter"
+        ]
     },
     {
         "title": "Halloumi- och sötpotatisbiffar",
@@ -575,7 +666,22 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "sötpotatis",
+            "halloumi",
+            "yoghurt",
+            "turkisk yoghurt",
+            "rysk yoghurt",
+            "sallad",
+            "ägg",
+            "ströbröd",
+            "chiliflakes",
+            "spiskummin",
+            "olja",
+            "ris",
+            "vitlök"
+        ]
     },
     {
         "title": "Pasta med tomat- och bönsås samt mozzarella",
@@ -650,7 +756,22 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "spaghetti",
+            "pasta",
+            "svarta bönor",
+            "morot",
+            "gullök",
+            "olja",
+            "tomatpuré",
+            "pastasås",
+            "tomatsås",
+            "grönsaksbuljong",
+            "grönsaksbuljongtärning",
+            "buljongtärning",
+            "mozzarella"
+        ]
     },
     {
         "title": "Chicken drumsticks med bbq-sås och avokado",
@@ -710,7 +831,16 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "kyckling",
+            "olja",
+            "bbq sås",
+            "glaze",
+            "ris",
+            "avokado",
+            "rödlök"
+        ]
     },
     {
         "title": "Krämig fiskgryta med saffran",
@@ -772,7 +902,18 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "potatis",
+            "vitlök",
+            "saffran",
+            "matlagningsgrädde",
+            "fiskbuljongtärning",
+            "alaska pollock",
+            "sej",
+            "torsk",
+            "blomkål"
+        ]
     },
     {
         "title": "Ost- och skinkpaj med majs",
@@ -839,7 +980,18 @@
         "climateimpact": {
             "value": "1,40 - 2,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "pajdeg",
+            "majs",
+            "skinka",
+            "olja",
+            "ägg",
+            "mjölk",
+            "oregano",
+            "chilisås",
+            "ost"
+        ]
     },
     {
         "title": "Kotletter med korma och blomkål",
@@ -900,7 +1052,16 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "ris",
+            "rödlök",
+            "blomkål",
+            "olja",
+            "koklett",
+            "korma sås",
+            "mjölk"
+        ]
     },
     {
         "title": "Linscurry i kokosmjölk",
@@ -974,7 +1135,22 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "ris",
+            "gullök",
+            "rödlök",
+            "blomkål",
+            "olja",
+            "curry",
+            "kokosmjölk",
+            "grönsaksbuljong",
+            "grönsaksbuljongtärning",
+            "buljongtärning",
+            "röda linser",
+            "linser",
+            "paprika"
+        ]
     },
     {
         "title": "Krämig kycklinggryta med apelsin",
@@ -1040,7 +1216,18 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "ris",
+            "kyckling",
+            "kycklingfilé",
+            "olja",
+            "apelsin",
+            "mjölk",
+            "crème fraiche",
+            "kycklingbuljongtärning",
+            "spenat"
+        ]
     },
     {
         "title": "Stekt lax med romsås och gurka",
@@ -1098,7 +1285,15 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "potatis",
+            "caviar",
+            "crème fraiche",
+            "gurka",
+            "lax",
+            "olja"
+        ]
     },
     {
         "title": "Baconpasta med spenat",
@@ -1173,7 +1368,19 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "rödlök",
+            "bacon",
+            "olja",
+            "vitlök",
+            "pasta",
+            "spenat",
+            "mjölk",
+            "majsstärkelse",
+            "matlagningsgrädde",
+            "tomat"
+        ]
     },
     {
         "title": "Köttfärssås med majs",
@@ -1242,7 +1449,17 @@
         "climateimpact": {
             "value": "1,40 - 2,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "majs",
+            "pasta",
+            "blandfärs",
+            "olja",
+            "tomatpuré",
+            "tomat",
+            "köttbuljongtärning",
+            "timjan"
+        ]
     },
     {
         "title": "Spenatsoppa med piadina",
@@ -1314,7 +1531,19 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "vita bönor",
+            "bakpotatis",
+            "spenat",
+            "olja",
+            "matlagningsgrädde",
+            "grönsaksbuljongtärningar",
+            "gräddfil",
+            "libabröd",
+            "tunnbröd",
+            "piadinabröd"
+        ]
     },
     {
         "title": "Fetaostfylld kyckling med oregano och vitlökssås",
@@ -1381,7 +1610,19 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "potatis",
+            "kyckling",
+            "kycklingfilé",
+            "fetaost",
+            "feta",
+            "oregano",
+            "olja",
+            "gräddfil",
+            "vitlök",
+            "gurka"
+        ]
     },
     {
         "title": "Kotlett med grönärtsguacamole",
@@ -1443,7 +1684,16 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "ris",
+            "kotlett",
+            "olja",
+            "ärtor",
+            "crème fraiche",
+            "vitlök",
+            "sallad"
+        ]
     },
     {
         "title": "Halloumiburgare med klyftpotatis",
@@ -1509,7 +1759,18 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "potatis",
+            "olja",
+            "tomat",
+            "sallad",
+            "halloumi",
+            "hamburgerbröd",
+            "crème fraiche",
+            "soltorkad tomat",
+            "tomat"
+        ]
     },
     {
         "title": "Köttfärsgryta med pasta",
@@ -1573,7 +1834,18 @@
         "climateimpact": {
             "value": "1,40 - 2,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "pasta",
+            "blandfärs",
+            "olja",
+            "mjölk",
+            "majsstärkelse",
+            "matlagningsgrädde",
+            "pesto",
+            "tomatpesto",
+            "gurka"
+        ]
     },
     {
         "title": "Pizzafisk med potatis",
@@ -1631,7 +1903,19 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "potatis",
+            "alaska pollock",
+            "sej",
+            "torsk",
+            "pizzasås",
+            "tomatsås",
+            "oregano",
+            "mozzarella",
+            "cheddar",
+            "paprika"
+        ]
     },
     {
         "title": "Pasta och krämig kyckling med timjan",
@@ -1691,7 +1975,18 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "pasta",
+            "matlagningsgrädde",
+            "mjölk",
+            "majsstärkelse",
+            "kyckling",
+            "kalkon",
+            "senap",
+            "timjan",
+            "tomat"
+        ]
     },
     {
         "title": "Vegetariska vårrullar med sojamajonnäs",
@@ -1745,7 +2040,16 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "vårrullar",
+            "ris",
+            "morot",
+            "lime",
+            "ärtskott",
+            "majonnäs",
+            "japansk soja"
+        ]
     },
     {
         "title": "Kycklinggryta med paprikapesto och tomat",
@@ -1810,7 +2114,18 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "pasta",
+            "kyckling",
+            "kycklingfilé",
+            "olja",
+            "timjan",
+            "vitlök",
+            "matlagningsgrädde",
+            "pesto paprika",
+            "tomat"
+        ]
     },
     {
         "title": "Stekt fisk med dillsås",
@@ -1868,7 +2183,17 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "sej",
+            "torsk",
+            "alaska pollock",
+            "potatis",
+            "morot",
+            "crème fraiche",
+            "dill",
+            "smör"
+        ]
     },
     {
         "title": "Pizza med salami och paprika",
@@ -1912,7 +2237,16 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "pizzakit med tomatsås",
+            "pizzadeg",
+            "pizzakit",
+            "paprika",
+            "rödlök",
+            "ost",
+            "salami"
+        ]
     },
     {
         "title": "Pizzabullar med soppa",
@@ -1956,7 +2290,15 @@
         "climateimpact": {
             "value": "1,40 - 2,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "pizzakit",
+            "pizzadeg",
+            "skinka",
+            "ost",
+            "soppa",
+            "oregano"
+        ]
     },
     {
         "title": "Burgare med vego-schnitzel och avokadoröra",
@@ -2020,7 +2362,17 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "avokado",
+            "pesto arrabbiata",
+            "tomat",
+            "sallad",
+            "vego schnitzel",
+            "hamburgerbröd",
+            "vitlök",
+            "olja"
+        ]
     },
     {
         "title": "Enkla vegobullar med makaroner",
@@ -2088,7 +2440,18 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "kidneybönor",
+            "potatis",
+            "pasta",
+            "makaroner",
+            "broccoli",
+            "ströbröd",
+            "ägg",
+            "rostad lök",
+            "olja"
+        ]
     },
     {
         "title": "Snabba vegotacos med tomater och majs",
@@ -2154,7 +2517,20 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "bönor",
+            "svarta bönor",
+            "majs",
+            "gullök",
+            "olja",
+            "tacokrydda",
+            "vitlök",
+            "tomat",
+            "sallad",
+            "tortilla",
+            "gräddfil"
+        ]
     },
     {
         "title": "Vego pastagratäng på okokt pasta",
@@ -2217,7 +2593,21 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "vita bönor",
+            "bönor",
+            "grönsaksbuljong",
+            "grönsaksbuljongtärning",
+            "buljongtärning",
+            "chilisås",
+            "oregano",
+            "vispgrädde",
+            "grädde",
+            "pasta",
+            "mozzarella",
+            "haricots verts"
+        ]
     },
     {
         "title": "Allt i en form - lax med couscous och morot",
@@ -2280,7 +2670,17 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "lax",
+            "sojabönor",
+            "couscous",
+            "morotssoppa",
+            "grönsaksbuljong",
+            "grönsaksbuljongtärning",
+            "buljongtärning",
+            "spiskummin"
+        ]
     },
     {
         "title": "Allt i en form - kycklingfilé med tomatris",
@@ -2346,7 +2746,22 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "kyckling",
+            "kycklingfilé",
+            "paprika",
+            "ris",
+            "pastasås",
+            "tomatsås",
+            "ost",
+            "curry",
+            "paprikapulver",
+            "lökpulver",
+            "grönsaksbuljong",
+            "grönsaksbuljongtärning",
+            "buljongtärning"
+        ]
     },
     {
         "title": "Kyckling teriyaki med frysta bönor i ugn",
@@ -2408,7 +2823,18 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "kyckling",
+            "teriyakisås",
+            "teriyaki",
+            "haricots verts",
+            "lime",
+            "olja",
+            "sesam",
+            "sesamfrön",
+            "ris"
+        ]
     },
     {
         "title": "Rödbetsgryta med rött vin och portabello",
@@ -2508,7 +2934,28 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "potatis",
+            "vispgrädde",
+            "grädde",
+            "rödlök",
+            "morot",
+            "olja",
+            "vitlök",
+            "tomatpuré",
+            "portabellosvamp",
+            "majsstärkelse",
+            "rödvin",
+            "rött matlagningsvin",
+            "grönsaksbuljong",
+            "grönsaksbuljongstärning",
+            "timjan",
+            "lagerblad",
+            "rödbeta",
+            "persilja",
+            "rucola"
+        ]
     },
     {
         "title": "Curryrostad butternutpumpa och pärlcouscous med tranbär",
@@ -2587,7 +3034,23 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "butternutpumpa",
+            "olivolja",
+            "honung",
+            "curry",
+            "couscous",
+            "pärlcouscous",
+            "pecannöt",
+            "salladslök",
+            "spenat",
+            "tranbär",
+            "yoghurt",
+            "turkisk yoghurt",
+            "rysk yoghurt",
+            "dijonsenap"
+        ]
     },
     {
         "title": "Pasta med mandel- och paprikasås",
@@ -2661,7 +3124,20 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "pasta",
+            "haricots verts",
+            "blomkål",
+            "paprika",
+            "persilja",
+            "vitlök",
+            "olivolja",
+            "vispgrädde",
+            "grädde",
+            "mandel",
+            "sallad"
+        ]
     },
     {
         "title": "Lins- och portabellogryta med rosmarin",
@@ -2743,7 +3219,24 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "ris",
+            "linser",
+            "röda linser",
+            "rödvin",
+            "rött matlagningsvin",
+            "tomat",
+            "grönsaksbuljong",
+            "grönsaksbuljongstärning",
+            "rödlök",
+            "portabellosvamp",
+            "zucchini",
+            "rosmarin",
+            "olja",
+            "sambal oelek",
+            "sallad"
+        ]
     },
     {
         "title": "Skaldjurspasta med bellaverde",
@@ -2808,7 +3301,19 @@
         "climateimpact": {
             "value": "1,40 - 2,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "pasta",
+            "broccoli",
+            "kräfta",
+            "kräftstjärtar",
+            "majs",
+            "musslor",
+            "crème fraiche",
+            "citron",
+            "röd mangold",
+            "sallad"
+        ]
     },
     {
         "title": "Kotlett med rostad blomkål och prickig sås",
@@ -2882,7 +3387,20 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "potatis",
+            "morot",
+            "olja",
+            "blomkål",
+            "rödlök",
+            "kotlett",
+            "olja",
+            "smörgåskrasse",
+            "krasse",
+            "smetana",
+            "senap"
+        ]
     },
     {
         "title": "Kycklingsteak med couscous och hummus",
@@ -2943,7 +3461,18 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "kyckling",
+            "olja",
+            "spiskummin",
+            "couscous",
+            "grönsaksbuljong",
+            "grönsaksbuljongtärning",
+            "buljongtärning",
+            "spenat",
+            "hummus"
+        ]
     },
     {
         "title": "Pastagryta med färs och ärtor",
@@ -3024,7 +3553,22 @@
         "climateimpact": {
             "value": "1,40 - 2,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "gullök",
+            "morot",
+            "blandfärs",
+            "olja",
+            "oregano",
+            "vitlök",
+            "passerade tomater",
+            "grönsaksbuljong",
+            "grönsaksbuljongstärning",
+            "baguett",
+            "pasta",
+            "pasta risoni",
+            "ärtor"
+        ]
     },
     {
         "title": "Vego bollo med majs",
@@ -3088,7 +3632,16 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "majs",
+            "vegofärs",
+            "tomat",
+            "crème fraiche",
+            "pasta",
+            "olivolja",
+            "japansk soja"
+        ]
     },
     {
         "title": "Fylld pasta med blomkål och mozzarella",
@@ -3139,7 +3692,14 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "blomkål",
+            "pasta",
+            "mozzarella",
+            "pesto basilika",
+            "rucola"
+        ]
     },
     {
         "title": "Krämig fiskgryta med broccoli",
@@ -3201,7 +3761,18 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "potatis",
+            "broccoli",
+            "passerade tomater",
+            "crème fraiche",
+            "saffran",
+            "fiskbuljongtärning",
+            "torsk",
+            "alaska pollock",
+            "sej"
+        ]
     },
     {
         "title": "Fisk i paneng curry med minimajs",
@@ -3260,7 +3831,18 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "ris",
+            "majs",
+            "salladslök",
+            "olja",
+            "paneng curry",
+            "majsstärkelse",
+            "alaska pollock",
+            "sej",
+            "torsk"
+        ]
     },
     {
         "title": "Kyckling i tacosås med broccoli",
@@ -3321,7 +3903,18 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "pasta",
+            "ris",
+            "kyckling",
+            "kycklingfilé",
+            "crème fraiche",
+            "broccoli",
+            "olja",
+            "tacokrydda",
+            "mjölk"
+        ]
     },
     {
         "title": "Tofu tacos med avokado och nachos",
@@ -3415,7 +4008,26 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "bönor",
+            "svarta bönor",
+            "majs",
+            "tomat",
+            "rödlök",
+            "koriander",
+            "lime",
+            "olivolja",
+            "avokado",
+            "sallad",
+            "haricots verts",
+            "olja",
+            "tofu",
+            "teriyakisås",
+            "teriyaki",
+            "tortilla",
+            "tortillachips"
+        ]
     },
     {
         "title": "Ugnsrostade tomater med linser och mozzarella",
@@ -3494,7 +4106,20 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "zucchini",
+            "olivolja",
+            "balsamvinäger",
+            "tomater",
+            "linser",
+            "gröna linser",
+            "persilja",
+            "pasta",
+            "vitlök",
+            "mozzarella",
+            "sallad"
+        ]
     },
     {
         "title": "Halloumistroganoff med kålrabbisallad",
@@ -3589,7 +4214,24 @@
         "climateimpact": {
             "value": "1,40 - 2,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "rödlök",
+            "paprika",
+            "halloumi",
+            "olja",
+            "vitlök",
+            "tomatpuré",
+            "oregano",
+            "paprikapulver",
+            "passerade tomater",
+            "matlagningsgrädde",
+            "ris",
+            "kålrabbi",
+            "persilja",
+            "citron",
+            "olivolja"
+        ]
     },
     {
         "title": "Kotlett med sötsyrlig tomatsallad",
@@ -3661,7 +4303,19 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "ris",
+            "tomat",
+            "sallad",
+            "rödlök",
+            "honung",
+            "balsamvinäger",
+            "olivolja",
+            "tomatpuré",
+            "kotlett",
+            "olja"
+        ]
     },
     {
         "title": "Lax med blomkålsmos och morotssallad",
@@ -3740,7 +4394,20 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "potatis",
+            "blomkål",
+            "mjölk",
+            "morot",
+            "rödlök",
+            "kruksallad",
+            "lime",
+            "olivolja",
+            "solrosfrön",
+            "lax",
+            "olja"
+        ]
     },
     {
         "title": "Kycklingklubba med rostad sötpotatis och sesamyoghurt",
@@ -3815,7 +4482,22 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "kyckling",
+            "olja",
+            "sötpotatis",
+            "olja",
+            "paprika",
+            "sesam",
+            "sesamfrön",
+            "yoghurt",
+            "turkisk yoghurt",
+            "rysk yoghurt",
+            "gräslök",
+            "vitlök",
+            "chiliflakes"
+        ]
     },
     {
         "title": "Svartkålspasta med sojabönor",
@@ -3898,7 +4580,25 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "pasta",
+            "gullök",
+            "svartkål",
+            "sojabönor",
+            "sockerärtor",
+            "olivolja",
+            "majsstärkelse",
+            "mjölk",
+            "vitvin",
+            "vitt matlagningsvin",
+            "smetana",
+            "grönsaksbuljong",
+            "grönsaksbuljongtärning",
+            "buljongtärning",
+            "grana padano",
+            "solrosfrön"
+        ]
     },
     {
         "title": "Kryddstekt kyckling med sötpotatis och avokadoröra",
@@ -3985,7 +4685,22 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "palsternackor",
+            "rotselleri",
+            "olja",
+            "sötpotatis",
+            "kyckling",
+            "olja",
+            "spiskummin",
+            "paprikapulver",
+            "avokado",
+            "smetana",
+            "vitlök",
+            "lime",
+            "sallad"
+        ]
     },
     {
         "title": "Mac ’n cheese med rökt skinka",
@@ -4059,7 +4774,22 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "makaroner",
+            "pasta",
+            "ägg",
+            "mjölk",
+            "ketchup",
+            "chilisås",
+            "smör",
+            "margarin",
+            "skinka",
+            "ost",
+            "tomat",
+            "olja",
+            "rödvinsvinäger"
+        ]
     },
     {
         "title": "Fisksoppa med saffran",
@@ -4129,7 +4859,21 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "bröd",
+            "bakpotatis",
+            "morot",
+            "rödlök",
+            "olja",
+            "saffran",
+            "passerade tomater",
+            "fiskbuljong",
+            "fiskbuljongtärning",
+            "salladsärtor",
+            "torsk",
+            "lax"
+        ]
     },
     {
         "title": "Linsgryta med kokosmjölk",
@@ -4224,7 +4968,26 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "ris",
+            "gullök",
+            "olja",
+            "vitlök",
+            "curry",
+            "tomatpuré",
+            "kokosmjölk",
+            "grönsaksbuljong",
+            "grönsaksbuljongtärning",
+            "buljongtärning",
+            "röda linser",
+            "sambal oelek",
+            "naanbröd",
+            "tomat",
+            "koriander",
+            "yoghurt",
+            "turkisk yoghurt"
+        ]
     },
     {
         "title": "Hel kyckling med rosmarin- och citronsmör",
@@ -4308,7 +5071,20 @@
         "climateimpact": {
             "value": "0 - 0,5 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "sardeller",
+            "vitlök",
+            "citron",
+            "rosmarin",
+            "smör",
+            "kyckling",
+            "gullök",
+            "rödlök",
+            "rosmarin",
+            "potatis",
+            "sallad"
+        ]
     },
     {
         "title": "Pasta med salviastekt kyckling, kapris och oliver",
@@ -4388,7 +5164,20 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "kyckling",
+            "olivolja",
+            "salvia",
+            "vitlök",
+            "pasta",
+            "tomat",
+            "kapris",
+            "oliver",
+            "citron",
+            "salladslök",
+            "parmesan"
+        ]
     },
     {
         "title": "Glaserade kycklingben med äppel- och pepparrotsslaw",
@@ -4480,7 +5269,22 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "kyckling",
+            "rosmarin",
+            "honung",
+            "chili",
+            "äppelcidervinäger",
+            "spetskål",
+            "äpple",
+            "majonnäs",
+            "gräddfil",
+            "pepparrot",
+            "gräslök",
+            "potatis",
+            "sallad"
+        ]
     },
     {
         "title": "Kyckling med bönsallad och ärtcrème",
@@ -4598,7 +5402,29 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "kyckling",
+            "smör",
+            "olja",
+            "timjan",
+            "rosmarin",
+            "schalottenlök",
+            "vitlök",
+            "olja",
+            "ärtor",
+            "crème fraiche",
+            "citron",
+            "majs",
+            "rödlök",
+            "bönor",
+            "bondbönor",
+            "citron",
+            "rapsolja",
+            "hasselnöt",
+            "gräslök",
+            "potatis"
+        ]
     },
     {
         "title": "Citronstekt kyckling med rostad vitlökssås och rödbetor",
@@ -4693,7 +5519,25 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "vitlök",
+            "olja",
+            "kycklingbuljong",
+            "kycklingbuljongtärning",
+            "grädde",
+            "majsstärkelse",
+            "rödbeta",
+            "olivolja",
+            "rödvinsvinäger",
+            "spenat",
+            "kyckling",
+            "timjan",
+            "citron",
+            "bulgur",
+            "potatis",
+            "ris"
+        ]
     },
     {
         "title": "Kycklingtacos med rostad majs och chipotlemajonnäs",
@@ -4804,7 +5648,27 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "kyckling",
+            "olja",
+            "chipotlepaste",
+            "paprikapulver",
+            "paprikapulver",
+            "spiskummin",
+            "vitlök",
+            "koriander",
+            "majs",
+            "lime",
+            "majonnäs",
+            "chipotlepaste",
+            "tortilla",
+            "fetaost",
+            "salladsost",
+            "koriander",
+            "lime",
+            "picklad rödlök"
+        ]
     },
     {
         "title": "Fiskgratäng med curry- och osttäcke",
@@ -4863,7 +5727,17 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "potatis",
+            "alaska pollock",
+            "sej",
+            "torsk",
+            "crème fraiche",
+            "curry",
+            "ost",
+            "gurka"
+        ]
     },
     {
         "title": "Krämig tomatpasta med tunn kotlett",
@@ -4933,7 +5807,19 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "ärtor",
+            "pasta",
+            "kotlett",
+            "rödlök",
+            "olja",
+            "matlagningsgrädde",
+            "tomat",
+            "soltorkad tomat",
+            "tomatpuré",
+            "mjölk"
+        ]
     },
     {
         "title": "Kycklingsteak med rostad majskolv",
@@ -5000,6 +5886,16 @@
         "climateimpact": {
             "value": "0,5 - 1,40 ",
             "unit": "kg CO2e/portion"
-        }
+        },
+        "ingredient_tags": [
+            "majs",
+            "rödlök",
+            "olja",
+            "ris",
+            "kyckling",
+            "chilisås",
+            "crème fraiche",
+            "sallad"
+        ]
     }
 ]

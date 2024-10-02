@@ -2,8 +2,9 @@ import json
 import os
 
 def main():
-    normalize_ingredients()
+    # normalize_ingredients()
     # get_ingredients()
+    save_ingredient_keys()
 
 
 def normalize_ingredients():
@@ -44,7 +45,7 @@ def normalize_ingredients():
     if os.path.exists(block_list_file_path):
         with open(block_list_file_path, 'r', encoding='utf-8') as file:
             if os.stat(block_list_file_path).st_size == 0:
-                block_list = {}
+                block_list = []
             else:
                 block_list = json.load(file)
 
@@ -116,16 +117,33 @@ def get_ingredients():
 def save_ingredient_keys():
     # Load the JSON file
     # data_file_path = os.path.join(os.path.dirname(__file__), '..', 'web_scraper', 'data.json')
+    data_file_path = os.path.join(os.path.dirname(__file__), 'raw_data.json')
+    ing_file_path = os.path.join(os.path.dirname(__file__), 'normalized_ingredients.json')
 
-    with open('raw_data.json', 'r', encoding='utf-8') as file:
+    ingredient_keys = []
+
+    with open(data_file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
+
+    with open(ing_file_path, 'r', encoding='utf-8') as file:
+        n_ingredients = json.load(file)
     
+
     # Iterate through each recipe and add the new key
     for recipe in data:
         recipe['ingredient_tags'] = []  # Add your desired values here
+        for ingredient in recipe['ingredients']:
+            # Find the normalized ingredient for the current ingredient
+            # normalized_ingredient = next((item[1] for item in n_ingredients if item[0] == ingredient['name']), [])
+            # print(normalized_ingredient)
+            # Append the normalized ingredient(s) to the ingredient_tags list
+            if ingredient['name'] in n_ingredients:
+                recipe['ingredient_tags'].extend(n_ingredients[ingredient['name']])
+        # print(recipe['ingredient_tags'])
     
+    print(data)
     # Save the updated JSON back to the file
-    with open('raw_data.json', 'w', encoding='utf-8') as file:
+    with open(data_file_path, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
 main()
