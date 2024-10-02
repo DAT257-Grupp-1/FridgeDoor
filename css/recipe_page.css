@@ -51,8 +51,7 @@ img {
 }
 
 #ingredients_container {
-  flex:  50%; 
-  background-color: lightgreen;
+  flex:  50%;
   margin-top: 10px;
 }
 
@@ -75,4 +74,31 @@ img {
 
 #cocktail {
   text-align: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 10px;
+  width: auto;
+  min-height: 100px;
+  height: fit-content;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.item_text {
+  margin-right: 10px;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.item_quantity {
+  font-size: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  font-weight: 900;
 }

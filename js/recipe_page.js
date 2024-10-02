@@ -29,7 +29,7 @@ var tmp = {
     }
 }
 
-window.onload = function () {
+window.onload = function () {    
     fetch('../web_scraper/data.json')
         .then(response => response.json())
         .then(data => {
@@ -51,6 +51,7 @@ window.onload = function () {
             make_elem("p", result["climateimpact"]["value"] + result["climateimpact"]["unit"], "climateimpact")
             make_elem("p", result["energy"], "energy")
             make_image(result)
+            make_ingredients(result.ingredients)
         })
 }
 
@@ -67,3 +68,49 @@ async function make_elem(type, field, id) {
 
     document.getElementById(id).appendChild(textfield);
 }
+
+async function make_ingredients(ingredients) {
+    console.log("Ingreds ", ingredients);
+    for (index in ingredients) {
+        let i = ingredients[index];
+
+        // create item (ingredient) container
+        let item = document.createElement("div");
+        item.setAttribute("class", "item")
+        
+        // ingredient name
+        let textfield = document.createElement("p");
+        textfield.appendChild(document.createTextNode(i.name))
+        textfield.setAttribute("class", "item_text")
+        
+        
+        if (i.quantity != "") {
+            let quantity = document.createElement("p");
+            quantity.appendChild(document.createTextNode(i.quantity))
+            quantity.setAttribute("class", "item_quantity")
+            
+            item.appendChild(quantity);
+        } else {
+            textfield.style['margin-left'] = "10px"
+        }
+        
+        item.appendChild(textfield);
+        document.getElementById("ingredients").appendChild(item);
+    }
+}
+
+// async function detach_quantity(string) {
+//     // split string into array
+//     let words = string.trim().split(' ');
+//     console.log("words ", words);
+//     // remove quantity
+//     let type = words.pop();
+//     // re-assemble remaining array
+//     let amount = words.join(' ');
+
+//     console.log("IN DET Amount:", amount); // Check if this is correct
+//     console.log("IN DET Type:", type);     // Check if type is as expected
+
+//     return [amount, type];
+// }
+
