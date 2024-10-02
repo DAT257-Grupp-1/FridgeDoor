@@ -4,7 +4,7 @@ import os
 def main():
     # normalize_ingredients()
     # get_ingredients()
-    # save_ingredient_keys()
+    save_ingredient_keys()
     get_normalized_list()
 
 
@@ -118,7 +118,7 @@ def get_ingredients():
 def save_ingredient_keys():
     # Load the JSON file
     # data_file_path = os.path.join(os.path.dirname(__file__), '..', 'web_scraper', 'data.json')
-    data_file_path = os.path.join(os.path.dirname(__file__), 'raw_data.json')
+    data_file_path = os.path.join(os.path.dirname(__file__), 'data.json')
     ing_file_path = os.path.join(os.path.dirname(__file__), 'normalized_ingredients.json')
 
     with open(data_file_path, 'r', encoding='utf-8') as file:
@@ -140,7 +140,7 @@ def save_ingredient_keys():
                 recipe['ingredient_tags'].extend(n_ingredients[ingredient['name']])
         # print(recipe['ingredient_tags'])
     
-    print(data)
+    # print(data)
     # Save the updated JSON back to the file
     with open(data_file_path, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
@@ -157,6 +157,9 @@ def get_normalized_list():
 
     # Remove all duplicates
     ingredient_tags = list(set(normalized_list))
+
+    # Sort ingredient tags list
+    ingredient_tags.sort()
 
     # Save ingredient_tags to a JSON file
     ingredient_tags_file_path = os.path.join(os.path.dirname(__file__), 'ingredient_tags.json')
