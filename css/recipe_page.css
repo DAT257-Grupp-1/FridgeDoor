@@ -55,13 +55,8 @@ img {
   margin-top: 10px;
 }
 
-#ingredients {
-  font-size: 20px;
-}
-
-#instructions {
-  flex: 50%; 
-  background-color: lightblue;
+#instructions_container {
+  flex: 50%;
   margin-top: 10px;
   font-size: 40px;
 }
@@ -101,4 +96,9 @@ img {
   margin-right: 10px;
   text-align: center;
   font-weight: 900;
+}
+
+.instruction_text {
+  padding: 10px;
+  font-size: 30px;
 }

@@ -38,26 +38,27 @@ window.onload = function () {
             console.log("IN GET ", link);
 
             for (i in data) {
-                const l = `"${data[i].link}"`
+                const l = `"${data[i].link}"`;
                 if (l === link) {
-                    result = data[i]
+                    result = data[i];
                 }
             }
             
-            console.log(result.title)
+            console.log(result.title);
 
-            make_elem("p", result["title"], "title")
-            make_elem("p", result["description"], "description")
-            make_elem("p", result["climateimpact"]["value"] + result["climateimpact"]["unit"], "climateimpact")
-            make_elem("p", result["energy"], "energy")
-            make_image(result)
-            make_ingredients(result.ingredients)
+            make_elem("p", result["title"], "title");
+            make_elem("p", result["description"], "description");
+            make_elem("p", result["climateimpact"]["value"] + result["climateimpact"]["unit"], "climateimpact");
+            make_elem("p", result["energy"], "energy");
+            make_image(result);
+            make_ingredients(result.ingredients);
+            make_instructions(result.instructions);
         })
 }
 
 async function make_image(data) {
-    let img = document.createElement("img")
-    img.setAttribute("src", data.image)
+    let img = document.createElement("img");
+    img.setAttribute("src", data.image);
 
     document.getElementById("image_container").appendChild(img);
 }
@@ -80,14 +81,14 @@ async function make_ingredients(ingredients) {
         
         // ingredient name
         let textfield = document.createElement("p");
-        textfield.appendChild(document.createTextNode(i.name))
-        textfield.setAttribute("class", "item_text")
+        textfield.appendChild(document.createTextNode(i.name));
+        textfield.setAttribute("class", "item_text");
         
         
-        if (i.quantity != "") {
+        if (i.quantity.length !== 0) {
             let quantity = document.createElement("p");
-            quantity.appendChild(document.createTextNode(i.quantity))
-            quantity.setAttribute("class", "item_quantity")
+            quantity.appendChild(document.createTextNode(i.quantity));
+            quantity.setAttribute("class", "item_quantity");
             
             item.appendChild(quantity);
         } else {
@@ -95,22 +96,27 @@ async function make_ingredients(ingredients) {
         }
         
         item.appendChild(textfield);
-        document.getElementById("ingredients").appendChild(item);
+        document.getElementById("ingredients_container").appendChild(item);
     }
 }
 
-// async function detach_quantity(string) {
-//     // split string into array
-//     let words = string.trim().split(' ');
-//     console.log("words ", words);
-//     // remove quantity
-//     let type = words.pop();
-//     // re-assemble remaining array
-//     let amount = words.join(' ');
+async function make_instructions(instructions) {
+    console.log("instructions ", instructions);
+    for (index in instructions) {
+        let i = instructions[index];
 
-//     console.log("IN DET Amount:", amount); // Check if this is correct
-//     console.log("IN DET Type:", type);     // Check if type is as expected
+        // create item (instruction) container
+        let item = document.createElement("div");
+        item.setAttribute("class", "item")
 
-//     return [amount, type];
-// }
+        // instruction text
+        let textfield = document.createElement("p");
+        textfield.appendChild(document.createTextNode(i));
+        textfield.setAttribute("class", "instruction_text");
 
+        console.log(i);
+
+        item.appendChild(textfield);
+        document.getElementById("instructions_container").appendChild(item);
+    }
+}
