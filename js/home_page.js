@@ -1,4 +1,3 @@
-let ingredients_list = [];
 let json_data = null;
 
 /* loads saved_items when the home_page window is loaded. */
@@ -115,38 +114,3 @@ fetch('./structure.json')
     .catch(error => {
         console.error('Error fetching the JSON file:', error);
     });
-
-// Function to sort recepies by ingredients
-function sort_recipes(){
-    // The sorting algoritm
-    let sorted_recipe_list = []
-
-    // For each recipe
-    for(let m = 0; m < json_data.length; m++){
-        // Ingredi
-        let matched = [];
-        // For each ingredient tag in the recipe
-        for(let i = 0; i < json_data[m]["ingredient_tags"].length; i++){
-            // For each ingredient in the ingredients_list we search with
-            for(j = 0; j < ingredients_list.length; j++){
-                if (json_data[m]["ingredient_tags"][i] == ingredients_list[j]){
-                    matched.push(ingredients_list[j]);
-                }
-            }
-        }
-        let limit = Math.round(ingredients_list.length / 2)
-        console.log(limit)
-        // For each recipe
-        if(matched.length >= limit){          // Perhaps make the limit depend on ingredients_list.length to shorten quicksorting time
-            sorted_recipe_list.push([m, matched])
-        }
-    }
-
-    quickSort(sorted_recipe_list, 0, sorted_recipe_list.length - 2)     // Perhaps a slight bug. Ordering of recipes with the same amount of
-                                                                        // matched ingredients depends on the input order of the ingredients.
-
-    // Debugging
-    console.log(sorted_recipe_list);
-
-    return sorted_recipe_list
-}

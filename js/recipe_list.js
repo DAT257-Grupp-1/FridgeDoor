@@ -2,8 +2,7 @@
 let user_ingredients = JSON.parse(sessionStorage.getItem('saved_items')) || [];
 
 // List of ingredients required for the recipe
-const recipe_ingredients = [
-];
+const recipe_ingredients = [];
 
 // Function to get matching ingredients between user's ingredients and recipe's ingredients
 function get_matching_ingredients(user_ingredients, recipe_ingredients) {
@@ -43,13 +42,53 @@ matching_ingredients.forEach(ingredient => {
     matching_ingredients_list.appendChild(li);
 });
 
+// Function to sort recepies by ingredients
+function sort_recipes(){
+    // The sorting algoritm
+    let sorted_recipe_list = []
+
+    // For each recipe
+    for(let m = 0; m < json_data.length; m++){
+        // Ingredi
+        let matched = [];
+        // For each ingredient tag in the recipe
+        for(let i = 0; i < json_data[m]["ingredients"].length; i++){    // Should be "ingredient_tags" instead of "ingredients"
+            // For each ingredient in the ingredients_list we search with
+            for(j = 0; j < ingredients_list.length; j++){
+                if (json_data[m]["ingredients"]["name"][i] == ingredients_list[j]){     // Should be ["ingredient_tags"] instead of ["ingredients"]["name"]
+                    matched.push(ingredients_list[j]);
+                }
+            }
+        }
+        let limit = Math.round(ingredients_list.length / 2)
+        console.log(limit)
+        // For each recipe
+        if(matched.length >= limit){          // Perhaps make the limit depend on ingredients_list.length to shorten quicksorting time
+            sorted_recipe_list.push([m, matched])
+        }
+    }
+
+    quickSort(sorted_recipe_list, 0, sorted_recipe_list.length - 2)     // Perhaps a slight bug. Ordering of recipes with the same amount of
+                                                                        // matched ingredients depends on the input order of the ingredients.
+
+    // Debugging
+    console.log(sorted_recipe_list);
+
+    return sorted_recipe_list
+}
+
+
 document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
 
     fetch('../web_scraper/data.json')
     .then(response => response.json())
     .then(data => {
 
-        const recipe = data[0]; // Get the first recipe for demonstration
+        //sorting indexes
+        let sorted_recipe_list = sort_recipes()
+        // creates recipes after sort
+
+        const recipe = data[sorted_recipe_list[0][0]]; // Get the first recipe for demonstration
 
         // Extract recipe title and ingredients
         const recipe_title = recipe.title;
