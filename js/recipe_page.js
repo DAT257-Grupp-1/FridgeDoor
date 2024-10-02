@@ -121,15 +121,15 @@ async function make_instructions(instructions) {
     }
 }
 
-function make_description(text, id) {
+async function make_description(description, id) { 
     let maxLength = 50; 
     let descriptionContainer = document.getElementById(id);
 
-    if (text.length <= maxLength) {
-        descriptionContainer.textContent = text;
+    if (description.length <= maxLength) {
+        descriptionContainer.textContent = description;
     } else {
-        let visibleText = text.substring(0, maxLength);
-        let hiddenText = text.substring(maxLength);
+        let visibleText = description.substring(0, maxLength);
+        let hiddenText = description.substring(maxLength);
 
         descriptionContainer.innerHTML = `
             ${visibleText}<span id="dots">... </span><span id="more" style="display:none;">${hiddenText}</span>
