@@ -125,16 +125,24 @@ fetch('./structure.json')
 function sort_recipes(){
     // The sorting algoritm
     let sorted_recipe_list = []
+
+    // For each recipe
     for(let m = 0; m < json_data.length; m++){
+        // Ingredi
         let matched = [];
+        // For each ingredient tag in the recipe
         for(let i = 0; i < json_data[m]["ingredient_tags"].length; i++){
+            // For each ingredient in the ingredients_list we search with
             for(j = 0; j < ingredients_list.length; j++){
                 if (json_data[m]["ingredient_tags"][i] == ingredients_list[j]){
                     matched.push(ingredients_list[j]);
                 }
             }
         }
-        if(matched.length > 0){
+        let limit = Math.round(ingredients_list.length / 2)
+        console.log(limit)
+        // For each recipe
+        if(matched.length >= limit){          // Perhaps make the limit depend on ingredients_list.length to shorten quicksorting time
             sorted_recipe_list.push([m, matched])
         }
     }
@@ -143,7 +151,6 @@ function sort_recipes(){
                                                                         // matched ingredients depends on the input order of the ingredients.
 
     // Debugging
-    console.log("-------Sort-------")    
     console.log(sorted_recipe_list);
 
     return sorted_recipe_list
