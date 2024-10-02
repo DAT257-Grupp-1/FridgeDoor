@@ -1,4 +1,5 @@
 let json_data = null;
+let ingredients_list = []
 
 /* loads saved_items when the home_page window is loaded. */
 window.onload = function(){
@@ -73,44 +74,18 @@ document.getElementById("input_field").addEventListener("keydown", function(even
     }
 });
 
-function partition(recipe_list_arr, low, high) { 
-	let pivot = recipe_list_arr[high]; 
-	let i = low - 1; 
-
-	for (let j = low; j <= high - 1; j++) { 
-		// If current element is smaller than the pivot 
-		if (recipe_list_arr[j][1].length > pivot) {         // Changed the ordering from "<" to ">"
-			// Increment index of smaller element 
-			i++; 
-			// Swap elements 
-			[recipe_list_arr[i], recipe_list_arr[j]] = [recipe_list_arr[j], recipe_list_arr[i]]; 
-		} 
-	} 
-	// Swap pivot to its correct position 
-	[recipe_list_arr[i + 1], recipe_list_arr[high]] = [recipe_list_arr[high], recipe_list_arr[i + 1]]; 
-	return i + 1; // Return the partition index 
-} 
-
-function quickSort(recipe_list_arr, low, high) { 
-	if (low >= high) return; 
-	let pi = partition(recipe_list_arr, low, high); 
-
-	quickSort(recipe_list_arr, low, pi - 1); 
-	quickSort(recipe_list_arr, pi + 1, high); 
-}
-
-// Fetch the JSON data and store it
-fetch('./structure.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        json_data = data; // Store fetched data in a higher-scope variable
-        console.log('Data fetched and stored.');
-    })
-    .catch(error => {
-        console.error('Error fetching the JSON file:', error);
-    });
+// // Fetch the JSON data and store it
+// fetch('./structure.json')
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//         json_data = data; // Store fetched data in a higher-scope variable
+//         console.log('Data fetched and stored.');
+//     })
+//     .catch(error => {
+//         console.error('Error fetching the JSON file:', error);
+//     });

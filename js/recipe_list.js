@@ -43,32 +43,23 @@ matching_ingredients.forEach(ingredient => {
 });
 
 // Function to sort recepies by ingredients
-function sort_recipes(){
+function sort_recipes(data){
+    console.log(user_ingredients)
+
     // The sorting algoritm
     let sorted_recipe_list = []
 
     // For each recipe
-    for(let m = 0; m < json_data.length; m++){
-        // Ingredi
-        let matched = [];
-        // For each ingredient tag in the recipe
-        for(let i = 0; i < json_data[m]["ingredients"].length; i++){    // Should be "ingredient_tags" instead of "ingredients"
-            // For each ingredient in the ingredients_list we search with
-            for(j = 0; j < ingredients_list.length; j++){
-                if (json_data[m]["ingredients"]["name"][i] == ingredients_list[j]){     // Should be ["ingredient_tags"] instead of ["ingredients"]["name"]
-                    matched.push(ingredients_list[j]);
-                }
-            }
-        }
-        let limit = Math.round(ingredients_list.length / 2)
-        console.log(limit)
-        // For each recipe
-        if(matched.length >= limit){          // Perhaps make the limit depend on ingredients_list.length to shorten quicksorting time
+    for(let m = 0; m < data.length; m++){
+        let matched = get_matching_ingredients(user_ingredients, data[m]["ingredient_tags"]);
+        let limit = Math.round(user_ingredients.length / 2)
+        if(matched.length >= limit){
             sorted_recipe_list.push([m, matched])
         }
     }
-
-    quickSort(sorted_recipe_list, 0, sorted_recipe_list.length - 2)     // Perhaps a slight bug. Ordering of recipes with the same amount of
+    sorted_recipe_list.sort((a, b) => a[1].length - b[1].length);
+    sorted_recipe_list.reverse();
+    // quickSort(sorted_recipe_list, 1, sorted_recipe_list.length - 1)     // Perhaps a slight bug. Ordering of recipes with the same amount of
                                                                         // matched ingredients depends on the input order of the ingredients.
 
     // Debugging
@@ -77,22 +68,21 @@ function sort_recipes(){
     return sorted_recipe_list
 }
 
-
 document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
-
-    fetch('../web_scraper/data.json')
+    fetch('../recipie_normalizer/raw_data.json')
     .then(response => response.json())
     .then(data => {
 
         //sorting indexes
-        let sorted_recipe_list = sort_recipes()
+        
+        let sorted_recipe_list = sort_recipes(data, user_ingredients)
         // creates recipes after sort
 
         const recipe = data[sorted_recipe_list[0][0]]; // Get the first recipe for demonstration
 
         // Extract recipe title and ingredients
         const recipe_title = recipe.title;
-        const recipe_ingredients = recipe.ingredients;
+        const recipe_ingredients = recipe.ingredient_tags;
         const recipe_image = recipe.image;
         const recipe_link = recipe.link;
         const recipe_CO2 = recipe.climateimpact;
@@ -128,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => { // listen for the DOMConte
         ingredientList.classList.add('ingredient_list');
         const full_ingredients_name = [];
         recipe_ingredients.forEach(ingredient => {
-            full_ingredients_name.push(ingredient.name);
+            full_ingredients_name.push(ingredient);
         });
         
         const matching = get_matching_ingredients(user_ingredients, full_ingredients_name);
@@ -137,11 +127,11 @@ document.addEventListener("DOMContentLoaded", () => { // listen for the DOMConte
         ingredientList.appendChild(matching_count);
         
         // Filter and display only matching ingredients
-        const matchingIngredients = recipe_ingredients.filter(ingredient => matching.includes(ingredient.name));
+        const matchingIngredients = recipe_ingredients.filter(ingredient => matching.includes(ingredient));
         
         matchingIngredients.forEach(ingredient => {
             const ingredientElement = document.createElement('li');
-            ingredientElement.textContent = ingredient.name;
+            ingredientElement.textContent = ingredient;
             ingredientElement.style.color = 'green';
             ingredientList.appendChild(ingredientElement);
         });
