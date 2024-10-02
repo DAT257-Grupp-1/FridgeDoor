@@ -72,3 +72,29 @@ document.getElementById("input_field").addEventListener("keydown", function(even
         add_ingredient(); 
     }
 });
+function fetch_inggredient_keys(){
+    fetch('ingredient_tags.json')
+        .then(response => response.json())
+        .then(data => {
+            const datalist = document.getElementById('ingredient_tags');
+            data.forEach(ingredient => {
+                const option = document.createElement('option');
+                option.value = ingredient;
+                datalist.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching ingredient tags:', error));
+    return option;
+}
+
+function populateDropdown(options) {
+    const dropdown = document.getElementById('dropdown');
+    dropdown.innerHTML = ''; // Clear existing options
+
+    options.forEach(option => {
+        const optionElement = document.createElement('option');
+        optionElement.value = option;
+        optionElement.text = option;
+        dropdown.appendChild(optionElement);
+    });
+}
