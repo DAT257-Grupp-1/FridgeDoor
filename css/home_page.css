@@ -1,5 +1,5 @@
 body{
-    background-color: var(--contrast-high-prio);
+    background-color: var(--primary-background);
     font-family: Arial, sans-serif;
     height: 100vh;
 }
@@ -66,7 +66,6 @@ body{
     padding: 15px;
     font-family: Arial, sans-serif;
     font-size: 50px;
-    color: white;
     border-radius: 10px;
     margin: 2%;
     color: var(--general-text);
@@ -109,8 +108,8 @@ body{
     height: 24px;
     border-radius: 50%;
     margin-left: 10px;
-    background-color: #ffffff;
-    color: #ff6347;
+    background-color: var(--contrast-high-prio);
+    color: var(--general-text);
     font-weight: bold;
 }
 

@@ -24,8 +24,8 @@ function display_ingredients() {
     ingredients_list.forEach(ingredient => {                    
             const button = document.createElement("button");
             button.textContent = ingredient;
-            button.innerHTML = `${ingredient} <span class="remove-icon">✕</span>`;
-            button.classList.add("custom_button");
+            /*button.innerHTML = `${ingredient} <span class="remove-icon">✕</span>`;
+            button.classList.add("custom_button");*/
             button.id = "ingredient";
             button.addEventListener('click', clicked_button => {
                 const clickedIngredient = clicked_button.target.innerText;

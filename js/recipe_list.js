@@ -77,6 +77,8 @@ document.addEventListener("DOMContentLoaded", () => { // listen for the DOMConte
 
         // Create and append the recipe link
         const linkElement = document.createElement('button');
+        linkElement.id = "goToRecipe";
+
         linkElement.href = recipe_link;
         linkElement.textContent = "Gå till recept";
         recipeDiv.appendChild(linkElement);
