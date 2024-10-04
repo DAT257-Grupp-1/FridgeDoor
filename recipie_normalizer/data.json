@@ -139,7 +139,8 @@
             "vetemjöl",
             "socker",
             "mjölk",
-            "ägg"
+            "ägg",
+            "smör"
         ]
     },
     {
@@ -6106,6 +6107,7 @@
             "haricots verts",
             "olja",
             "kokosmjölk",
+            "tom kha soup kryddmix",
             "räkor",
             "risnudlar"
         ]
@@ -6439,6 +6441,7 @@
             "palsternacka",
             "rotselleri",
             "olja",
+            "kyckling",
             "olja",
             "avokado",
             "crème fraiche",
@@ -6522,6 +6525,7 @@
             "nudlar",
             "kålrabbi",
             "rödlök",
+            "vattenkastanjer",
             "fläskfärs",
             "olja",
             "vitlök",
@@ -6764,6 +6768,9 @@
         },
         "ingredient_tags": [
             "rödlök",
+            "kalkon",
+            "kyckling",
+            "pasta",
             "olja",
             "vitlök",
             "mjölk",
@@ -6872,6 +6879,8 @@
             "aubergine",
             "olivolja",
             "oregano",
+            "pastasås",
+            "tomatsås",
             "vitlök",
             "fetaost",
             "vita bönor",
@@ -7099,7 +7108,8 @@
             "basilika",
             "pumpafrön",
             "flatbread",
-            "tomat"
+            "tomat",
+            "färskost"
         ]
     },
     {
@@ -7606,6 +7616,7 @@
             "majsstärkelse",
             "matlagningsgrädde",
             "japansk soja",
+            "fläskkarré",
             "olja",
             "paprikapulver",
             "sallad",
@@ -7677,6 +7688,7 @@
             "zucchini",
             "kyckling",
             "olja",
+            "krossad tomat",
             "smetana",
             "oregano"
         ]
@@ -7778,9 +7790,13 @@
             "olivolja",
             "kycklingbuljong",
             "grönsaksbuljong",
+            "timjan",
             "lagerblad",
             "färskost",
-            "färskost"
+            "färskost",
+            "skinka",
+            "hasselnötter",
+            "persilja"
         ]
     },
     {
@@ -7877,6 +7893,7 @@
         },
         "ingredient_tags": [
             "svamp",
+            "olivolja",
             "schalottenlök",
             "vitlök",
             "smör",
@@ -8011,6 +8028,7 @@
             "grönsaksbuljong",
             "ingefära",
             "färskost",
+            "apelsinjuice",
             "sojabönor",
             "sweet chilisås",
             "salladslök",
@@ -8118,6 +8136,7 @@
         "ingredient_tags": [
             "smör",
             "gullök",
+            "vitkål",
             "vitlök",
             "potatis",
             "morot",
@@ -8128,6 +8147,7 @@
             "färskost",
             "färskost",
             "pepparrot",
+            "rödbetor",
             "mangold",
             "röd mangold"
         ]
@@ -8210,6 +8230,7 @@
         "ingredient_tags": [
             "rödbeta",
             "majonnäs",
+            "tabasco",
             "citron",
             "pulled vego",
             "oumph",
@@ -8217,6 +8238,7 @@
             "sallad",
             "tomat",
             "salladslök",
+            "coleslaw",
             "briochebröd"
         ]
     },
@@ -8334,6 +8356,8 @@
             "olja",
             "spenat",
             "avokado",
+            "bbq-sås",
+            "bbq-hickorysås",
             "majonnäs",
             "soja",
             "citronsaft",
@@ -8419,7 +8443,9 @@
         },
         "ingredient_tags": [
             "majonnäs",
+            "senap",
             "äppelcidervinäger",
+            "pulled vego",
             "olja",
             "sallad",
             "gurka",
@@ -8533,6 +8559,7 @@
             "chipotlepaste",
             "russin",
             "tortilla",
+            "vegofärs",
             "olja",
             "majs",
             "avokado",
@@ -8638,6 +8665,7 @@
         },
         "ingredient_tags": [
             "avokado",
+            "sojabönor",
             "glasnudlar",
             "ägg",
             "vegostrimlor",
@@ -8785,10 +8813,13 @@
             "schalottenlök",
             "vitlök",
             "rödbeta",
+            "morot",
             "palsternacka",
             "olja",
             "timjan",
             "tomatpuré",
+            "rödvin",
+            "rött matlagningsvin",
             "grönsaksbuljong",
             "grönsaksbuljongtärning",
             "buljongtärning",
@@ -8797,6 +8828,7 @@
             "majsstärkelse",
             "timjan",
             "jordärtskocka",
+            "potatis",
             "grädde",
             "havregrädde",
             "margarin",
@@ -9078,7 +9110,8 @@
             "ajvar",
             "lasagneplattor",
             "tomat",
-            "ost"
+            "ost",
+            "sallad"
         ]
     },
     {
@@ -9261,6 +9294,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "mjölk",
             "kyckling",
             "kycklingfilé",
@@ -9269,7 +9303,8 @@
             "rotselleri",
             "vitvinsvinäger",
             "majonnäs",
-            "dijonsenap"
+            "dijonsenap",
+            "sallad"
         ]
     },
     {
@@ -9330,6 +9365,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "bacon",
             "ägg",
             "mjölk",
             "vetemjöl",
@@ -9502,6 +9538,7 @@
             "ättika",
             "majonnäs",
             "japansk soja",
+            "lax",
             "gurka",
             "sesam",
             "sesamfrön",
@@ -9592,6 +9629,7 @@
         "ingredient_tags": [
             "aubergine",
             "olja",
+            "nötfärs",
             "gullök",
             "paprika",
             "vitlök",
@@ -9601,7 +9639,8 @@
             "bönor",
             "yoghurt",
             "rucola",
-            "koriander"
+            "koriander",
+            "bröd"
         ]
     },
     {
@@ -9806,6 +9845,7 @@
             "blomkålsris",
             "ris",
             "olja",
+            "naanbröd",
             "persilja",
             "koriander"
         ]
@@ -10092,6 +10132,7 @@
             "havredryck",
             "dijonsenap",
             "zucchini",
+            "selleri",
             "rapsolja",
             "olja",
             "sojafärs",
@@ -10175,6 +10216,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "hummus",
             "pesto alla genovese",
             "pasta",
             "mandel",
@@ -10182,6 +10224,7 @@
             "koriander",
             "sesam",
             "sesamfrön",
+            "lax",
             "citron",
             "parmesan"
         ]
@@ -10267,6 +10310,7 @@
             "persilja",
             "vitlök",
             "grekisk yoghurt",
+            "oliver",
             "kyckling",
             "persilja"
         ]
@@ -10333,6 +10377,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "lax",
             "blomkål",
             "grönkål",
             "olivolja",
@@ -10493,6 +10538,7 @@
         "ingredient_tags": [
             "olivolja",
             "kyckling",
+            "zucchini",
             "tomat",
             "schalottenlök",
             "pasta",
@@ -10593,6 +10639,8 @@
         "ingredient_tags": [
             "vita bönor",
             "bönor",
+            "sötmandel",
+            "mandel",
             "ägg",
             "ströbröd",
             "fetaost",
@@ -10695,6 +10743,8 @@
             "olivolja",
             "chili",
             "ketjap manis",
+            "purjolök",
+            "salladslök",
             "haricots verts",
             "solrosfrön",
             "sesam",
@@ -10792,6 +10842,8 @@
         },
         "ingredient_tags": [
             "ris",
+            "purjolök",
+            "salladslök",
             "paprika",
             "vitlök",
             "ingefära",
@@ -10802,6 +10854,7 @@
             "krossade tomater",
             "vispgrädde",
             "grädde",
+            "spenat",
             "halloumi"
         ]
     },
@@ -10886,6 +10939,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "pasta",
             "sockerärta",
             "purjolök",
             "olja",
@@ -11097,6 +11151,7 @@
             "olja",
             "tomat",
             "krossade tomater",
+            "oliver",
             "olivspad",
             "ris",
             "sallad"
@@ -11329,6 +11384,8 @@
         },
         "ingredient_tags": [
             "ris",
+            "ananas",
+            "kassler",
             "crème fraiche",
             "ost",
             "gurka"
@@ -11554,6 +11611,8 @@
             "tomat",
             "rödlök",
             "paprika",
+            "pasta",
+            "fylld pasta",
             "matlagningsgrädde",
             "rucola"
         ]
@@ -11631,6 +11690,7 @@
             "rödlök",
             "sallad",
             "tomat",
+            "pitabröd",
             "fläskkarré",
             "olja",
             "fajita kryddmix",
@@ -11721,6 +11781,8 @@
             "tomatpuré",
             "krossade tomater",
             "matlagningsgrädde",
+            "broccoli",
+            "bellaverde",
             "räkor",
             "persilja"
         ]
@@ -11943,9 +12005,11 @@
         },
         "ingredient_tags": [
             "olja",
+            "räkor",
             "ärtor",
             "hummus",
             "vetemjöl",
+            "filodeg",
             "olja",
             "ris",
             "morot",
@@ -12057,6 +12121,7 @@
             "kyckling",
             "smör",
             "rosmarin",
+            "äpple",
             "haricots verts",
             "olivolja",
             "äppelcidervinäger"
@@ -12138,7 +12203,9 @@
             "sesam",
             "sesamfrön",
             "böngroddar",
+            "teriyakimarinad",
             "ärtskott",
+            "lax",
             "risnudlar"
         ]
     },
@@ -12226,10 +12293,13 @@
         "ingredient_tags": [
             "palsternacka",
             "olivolja",
+            "kycklingfond",
             "polenta",
             "parmesan",
             "smör",
+            "linser",
             "persilja",
+            "oliver",
             "soltorkad tomat",
             "rödvinsvinäger"
         ]
@@ -12636,9 +12706,11 @@
             "sambal oelek",
             "vetemjöl",
             "ägg",
+            "panko",
             "rapsolja",
             "risnudlar",
             "gurka",
+            "salladslök",
             "koriander",
             "japansk soja",
             "sweet chilisås",
@@ -12725,10 +12797,13 @@
             "grädde",
             "mjölk",
             "pesto basilika",
+            "salladslök",
             "soltorkad tomat",
             "alaska pollock",
             "sej",
-            "torsk"
+            "torsk",
+            "isbergsallad",
+            "sallad"
         ]
     },
     {
@@ -12799,6 +12874,8 @@
         "ingredient_tags": [
             "haricots verts",
             "citron",
+            "lax",
+            "pasta",
             "färskost",
             "béchamelsås",
             "sallad",
@@ -12868,6 +12945,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "isterband",
             "olja",
             "salladsärtor",
@@ -13211,9 +13289,11 @@
         },
         "ingredient_tags": [
             "potatis",
+            "pimiento de padron",
             "olja",
             "kotlett",
-            "chilimajonnäs"
+            "chilimajonnäs",
+            "sallad"
         ]
     },
     {
@@ -13280,9 +13360,12 @@
         "ingredient_tags": [
             "kyckling",
             "olja",
+            "pastasås",
+            "tomatsås",
             "soltorkad tomat",
             "pasta",
-            "sockerärta"
+            "sockerärta",
+            "sallad"
         ]
     },
     {
@@ -13400,8 +13483,10 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "sallad",
             "olja",
+            "lax",
             "hummus"
         ]
     },
@@ -13471,6 +13556,7 @@
             "lime",
             "kyckling",
             "olja",
+            "satay curry",
             "ärtskott"
         ]
     },
@@ -13547,6 +13633,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatisgratäng",
             "oregano",
             "paprika",
             "avokado",
@@ -13687,6 +13774,7 @@
         "ingredient_tags": [
             "ris",
             "morot",
+            "lax",
             "dill",
             "pastasås",
             "tomatsås",
@@ -13934,6 +14022,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "lax",
             "fish taco kryddmix",
             "olja",
             "quinoa",
@@ -14049,6 +14138,7 @@
             "fish taco kryddmix",
             "olja",
             "fänkål",
+            "äpple",
             "yoghurt",
             "turkisk yoghurt",
             "citron",
@@ -14057,7 +14147,8 @@
             "dill",
             "jalapeño",
             "citron",
-            "olivolja"
+            "olivolja",
+            "tortilla"
         ]
     },
     {
@@ -14154,6 +14245,7 @@
             "saffran",
             "paprikapulver",
             "chilipulver",
+            "ris",
             "vitvin",
             "vitt matlagningsvin",
             "grönsaksbuljong",
@@ -14267,6 +14359,7 @@
             "broccoli",
             "olivolja",
             "rosmarin",
+            "champinjon",
             "gullök",
             "olja",
             "vitvin",
@@ -14399,9 +14492,11 @@
             "vitlök",
             "selleri",
             "morot",
+            "kummin",
             "ingefära",
             "olivolja",
             "gurkmeja",
+            "kanel",
             "lagerblad",
             "tomatpuré",
             "grönsaksbuljongtärning",
@@ -14480,6 +14575,9 @@
         },
         "ingredient_tags": [
             "pasta",
+            "broccoli",
+            "bellaverde",
+            "salladslök",
             "fänkål",
             "morot",
             "musslor",
@@ -14580,6 +14678,7 @@
             "vispgrädde",
             "grädde",
             "fänkål",
+            "salladslök",
             "kikärtor",
             "pumpakärnor",
             "olja"
@@ -15154,7 +15253,8 @@
             "sallad",
             "tomat",
             "kolja",
-            "olja"
+            "olja",
+            "crème fraiche"
         ]
     },
     {
@@ -15220,10 +15320,12 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "pasta",
             "haricots verts",
             "ostronskivling",
             "svamp",
             "olja",
+            "kyckling",
             "dijonsenap",
             "crème av svamp med tryffel"
         ]
@@ -15316,10 +15418,12 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "chili",
             "avokado",
             "vitlök",
             "lime",
             "koriander",
+            "mango",
             "halloumi",
             "paprika",
             "olja",
@@ -15488,6 +15592,8 @@
         "ingredient_tags": [
             "linser",
             "gröna linser",
+            "paprika",
+            "basilika",
             "pastasås",
             "tomatsås",
             "pastasås",
@@ -15712,7 +15818,8 @@
             "dijonsenap",
             "vitvinsvinäger",
             "roquefortost",
-            "gräslök"
+            "gräslök",
+            "sallad"
         ]
     },
     {
@@ -16130,6 +16237,7 @@
         },
         "ingredient_tags": [
             "ris",
+            "svamp",
             "pak choi",
             "salladslök",
             "chili",
@@ -16223,6 +16331,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "pasta",
             "salladslök",
             "chili",
             "räkor",
@@ -16232,6 +16341,8 @@
             "matlagningsgrädde",
             "mjölk",
             "räklag",
+            "hjärtkål",
+            "kål",
             "olivolja"
         ]
     },
@@ -17558,7 +17669,8 @@
             "crème fraiche",
             "mjölk",
             "timjan",
-            "senap"
+            "senap",
+            "sallad"
         ]
     },
     {
@@ -17768,6 +17880,7 @@
             "potatis",
             "blomkål",
             "olja",
+            "tonfisk",
             "rödlök",
             "crème fraiche",
             "sallad"
@@ -17911,6 +18024,7 @@
         },
         "ingredient_tags": [
             "ris",
+            "blomkål",
             "kotlett",
             "olja",
             "hoisinsås",
@@ -17972,6 +18086,7 @@
         "ingredient_tags": [
             "broccoli",
             "pasta",
+            "pesto",
             "mozzarella",
             "mjölk"
         ]
@@ -18195,7 +18310,8 @@
             "rysk yoghurt",
             "vitlök",
             "ostwurst",
-            "olja"
+            "olja",
+            "sallad"
         ]
     },
     {
@@ -18343,6 +18459,8 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "ris",
+            "pasta",
             "gullök",
             "halloumi",
             "grillost",
@@ -18418,6 +18536,7 @@
             "kycklingfilé",
             "olja",
             "tikka masala sås",
+            "paprika",
             "gurka"
         ]
     },
@@ -18654,6 +18773,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "olivolja",
             "kikärtor",
             "tahini",
@@ -18896,6 +19016,7 @@
             "mjölk",
             "gorgonzolaost",
             "valnöt",
+            "pasta",
             "haricots verts",
             "tomat",
             "rödlök",
@@ -18959,6 +19080,8 @@
         },
         "ingredient_tags": [
             "ris",
+            "haricots verts",
+            "majs",
             "lax",
             "olja",
             "hoisinsås"
@@ -19022,6 +19145,7 @@
         },
         "ingredient_tags": [
             "pasta",
+            "haricots verts",
             "tomat",
             "mjölk",
             "matlagningsgrädde",
@@ -19106,6 +19230,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "olja",
             "smetana",
             "pesto arrabbiata",
@@ -19507,6 +19632,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "rödbetor",
             "sesam",
             "sesamfrön",
             "vitlök",
@@ -19768,6 +19894,7 @@
             "alaska pollock",
             "sej",
             "ris",
+            "mango chutney",
             "crème fraiche",
             "morot",
             "blomkål"
@@ -19845,6 +19972,7 @@
             "olja",
             "curry",
             "kokosmjölk",
+            "mango chutney",
             "äggnudlar"
         ]
     },
@@ -19918,6 +20046,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "mjölk",
             "falukorv",
             "tomat",
@@ -20001,7 +20130,8 @@
             "olja",
             "mjölk",
             "majsstärkelse",
-            "matlagningsgrädde"
+            "matlagningsgrädde",
+            "soltorkade tomater"
         ]
     },
     {
@@ -20199,6 +20329,7 @@
             "ägg",
             "fond",
             "japansk soja",
+            "ingefära",
             "köttfärslimpa",
             "rödkål",
             "kål",
@@ -20317,6 +20448,8 @@
             "smör",
             "vitpeppar",
             "ägg",
+            "rågmjöl",
+            "vetemjöl",
             "fetaost",
             "persilja",
             "smör",
@@ -20405,7 +20538,9 @@
             "alaska pollock",
             "sej",
             "lax",
+            "rotfrukter",
             "crème fraiche",
+            "ajvar relish",
             "parmesan",
             "persilja"
         ]
@@ -20531,6 +20666,7 @@
             "fänkålsfrön",
             "vetemjöl",
             "smör",
+            "vitlök",
             "salvia",
             "tomat",
             "olivolja",
@@ -20540,7 +20676,8 @@
             "grädde",
             "citronjuice",
             "citronskal",
-            "citron"
+            "citron",
+            "timjan"
         ]
     },
     {
@@ -20651,7 +20788,9 @@
             "vispgrädde",
             "grädde",
             "mjölk",
-            "vitpeppar"
+            "vitpeppar",
+            "timjan",
+            "tryffelolja"
         ]
     },
     {
@@ -20709,6 +20848,7 @@
             "cashewnötter",
             "solroskärnor",
             "solrosfrön",
+            "tacokrydda",
             "tomatpuré",
             "rapsolja"
         ]
@@ -20907,9 +21047,12 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "köttfärs",
             "blandfärs",
             "olivolja",
             "tomatpuré",
+            "rödvin",
+            "rött matlagningsvin",
             "gullök",
             "morot",
             "selleri",
@@ -21009,6 +21152,7 @@
             "vitvin",
             "tomatsås",
             "olivolja",
+            "pasta",
             "chiliflakes"
         ]
     },
@@ -21196,11 +21340,15 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "ägg",
             "vetemjöl",
             "gullök",
             "smör",
             "kantareller",
+            "'block'",
+            "hasselnöt",
+            "smör",
             "lingon",
             "rårörda lingon",
             "smör",
@@ -21272,10 +21420,12 @@
         "ingredient_tags": [
             "kyckling",
             "rödlök",
+            "bacon",
             "smör & rapsolja",
             "linser",
             "sallad",
             "balsamvinäger",
+            "crème fraiche",
             "krutonger"
         ]
     },
@@ -21360,6 +21510,7 @@
             "gräddmjölk",
             "gullök",
             "morot",
+            "zucchini",
             "smör & rapsolja",
             "bönor",
             "crème fraiche",
@@ -21421,7 +21572,8 @@
             "potatis",
             "kyckling",
             "smör",
-            "broccoli"
+            "broccoli",
+            "crème fraiche"
         ]
     },
     {
@@ -21616,6 +21768,7 @@
             "olja",
             "sweet chilisås",
             "japansk soja",
+            "ingefära",
             "torsk",
             "kolja",
             "alaska pollock",
@@ -21686,6 +21839,7 @@
             "tomat",
             "vispgrädde",
             "grädde",
+            "senap",
             "ris",
             "potatis"
         ]
@@ -21889,6 +22043,7 @@
             "sej",
             "alaska pollock",
             "olivolja",
+            "pimiento de padron",
             "bröd",
             "rostat bröd"
         ]
@@ -22277,6 +22432,7 @@
             "majsstärkelse",
             "mjölk",
             "ajvar",
+            "grädde",
             "sallad"
         ]
     },
@@ -22655,6 +22811,9 @@
         "ingredient_tags": [
             "potatis",
             "broccoli",
+            "torsk",
+            "alaska pollock",
+            "sej",
             "citron",
             "remouladsås"
         ]
@@ -22930,9 +23089,12 @@
             "rödlök",
             "vitlök",
             "zucchini",
+            "champinjon",
             "olivolja",
             "timjan",
+            "grädde",
             "majsstärkelse",
+            "vegansk ost",
             "sallad"
         ]
     },
@@ -23004,6 +23166,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "smör",
             "vitlök",
             "citron",
@@ -23297,6 +23460,7 @@
             "hasselnöt",
             "hjärtkål",
             "kål",
+            "salladslök",
             "olja",
             "vitvin",
             "vitt matlagningsvin",
@@ -23372,6 +23536,7 @@
         },
         "ingredient_tags": [
             "potatis",
+            "salladslök",
             "olja",
             "saffran",
             "vitvin",
@@ -23476,11 +23641,15 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "mjölk",
             "mjölk",
             "ströbröd",
             "blandfärs",
+            "senap",
+            "dijonsenap",
             "olja",
+            "champinjon",
             "rödlök",
             "olja",
             "matlagningsgrädde",
@@ -23651,6 +23820,7 @@
         "ingredient_tags": [
             "ris",
             "gullök",
+            "äpple",
             "fläskytterfilé",
             "smör",
             "margarin",
@@ -23746,7 +23916,10 @@
             "vispgrädde",
             "grädde",
             "mjölk",
-            "pesto basilika"
+            "pesto basilika",
+            "bröd",
+            "flatbread",
+            "färskost"
         ]
     },
     {
@@ -24448,6 +24621,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "blomkål",
             "pasta",
             "tomat",
             "smör",
@@ -24523,8 +24697,10 @@
         "ingredient_tags": [
             "ris",
             "paprika",
+            "kyckling",
             "olja",
             "persilja",
+            "crème fraiche",
             "mangold",
             "sallad"
         ]
@@ -24612,9 +24788,12 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "mango",
             "salladslök",
             "chili",
+            "lime",
             "honung",
+            "mynta",
             "sojafärs",
             "rapsolja",
             "soja",
@@ -24692,6 +24871,7 @@
             "grönsaksbuljong",
             "grönsaksbuljongtärning",
             "buljongtärning",
+            "morot",
             "mjukost",
             "mjukost med kantarellsmak",
             "persilja"
@@ -24766,6 +24946,7 @@
             "olja",
             "kycklingbuljongtärning",
             "kyckling",
+            "mjukost",
             "sockerärta",
             "koriander"
         ]
@@ -24841,12 +25022,14 @@
         "ingredient_tags": [
             "ägg",
             "schalottenlök",
+            "vitlök",
             "olja",
             "kycklingbuljong",
             "grönsaksbuljong",
             "kycklingbuljongtärning",
             "grönsaksbuljongtärning",
             "spenat",
+            "mjukost",
             "bröd"
         ]
     },
@@ -24997,6 +25180,7 @@
             "ost",
             "pimiento de padron",
             "bacon",
+            "linser",
             "haricots verts",
             "tomat",
             "silverlök",
@@ -25163,6 +25347,7 @@
             "kronärtskockscrème",
             "tomat",
             "basilika",
+            "fiskbuljong",
             "tomatpesto",
             "ärtor",
             "potatis"
@@ -25255,7 +25440,9 @@
             "färskost",
             "citron",
             "knäckebröd",
-            "champinjon"
+            "färskost",
+            "champinjon",
+            "krasse"
         ]
     },
     {
@@ -25342,6 +25529,7 @@
             "krossade tomater",
             "chiliflakes",
             "spenat",
+            "lasagneplattor",
             "ost"
         ]
     },
@@ -25438,6 +25626,7 @@
             "tomat",
             "koriander",
             "mango curry kryddblandning",
+            "mango chutney",
             "paprikapulver"
         ]
     },
@@ -25897,6 +26086,7 @@
             "olja",
             "bönor",
             "hasselnöt",
+            "champinjon",
             "smör",
             "matlagningsgrädde",
             "japansk soja",
@@ -25970,6 +26160,7 @@
             "morot",
             "olja",
             "haricots verts",
+            "currypasta",
             "kokosmjölk",
             "kyckling",
             "risnudlar",
@@ -26057,6 +26248,7 @@
             "fetaost",
             "kikärtor",
             "solrosfrön",
+            "bulgur",
             "citron",
             "yoghurt",
             "turkisk yoghurt",
@@ -26135,6 +26327,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "tonfisk",
             "gullök",
             "olja",
             "curry",
@@ -26307,7 +26500,8 @@
             "rosmarin",
             "kalkon",
             "kyckling",
-            "smör"
+            "smör",
+            "sallad"
         ]
     },
     {
@@ -26521,7 +26715,8 @@
             "kräftstjärtar",
             "pasta",
             "risonipasta",
-            "persilja"
+            "persilja",
+            "baguetter"
         ]
     },
     {
@@ -26882,6 +27077,7 @@
         "ingredient_tags": [
             "blomkål",
             "broccoli",
+            "vitlök",
             "olivolja",
             "vispgrädde",
             "grädde",
@@ -26983,9 +27179,11 @@
             "fläskkarré",
             "smör",
             "vitlök",
+            "ingefära",
             "äppeljuice",
             "kantareller",
             "champinjon",
+            "pasta",
             "smör",
             "vispgrädde",
             "grädde",
@@ -27382,6 +27580,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "pasta",
             "vitlök",
             "olja",
             "krossade tomater",
@@ -27531,6 +27730,7 @@
         "ingredient_tags": [
             "lax",
             "russin",
+            "getost",
             "pinjenötter",
             "olivolja",
             "sallad"
@@ -27596,6 +27796,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "kolja",
             "smör",
             "smör",
@@ -27663,6 +27864,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "pasta",
             "kantareller",
             "smör",
             "vitlök",
@@ -27766,7 +27968,10 @@
             "vispgrädde",
             "grädde",
             "vitvin",
+            "fänkålssalami",
+            "salami",
             "parmesan",
+            "timjan",
             "olivolja"
         ]
     },
@@ -27918,6 +28123,7 @@
             "grädde",
             "gräslök",
             "kolja",
+            "bacon",
             "olja",
             "röd mangold",
             "sallad"
@@ -28022,8 +28228,10 @@
         },
         "ingredient_tags": [
             "ris",
+            "salladslök",
             "chilipulver",
             "curry",
+            "kardemumma",
             "kanel",
             "olja",
             "vitlök",
@@ -28130,6 +28338,7 @@
             "crème fraiche",
             "chilisås",
             "senap",
+            "lax",
             "ägg",
             "ströbröd",
             "olja",
@@ -28452,7 +28661,9 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "olja",
+            "pimiento de padron",
             "kotlett",
             "crème fraiche",
             "sallad"
@@ -28530,6 +28741,8 @@
             "currypasta",
             "kokosmjölk",
             "majsstärkelse",
+            "purjolök",
+            "pak choi",
             "äggnudlar",
             "koriander"
         ]
@@ -28588,8 +28801,10 @@
         },
         "ingredient_tags": [
             "baguette",
+            "jordärtskockssoppa",
             "mjölk",
             "pepparrot",
+            "lax",
             "sallad",
             "krasse"
         ]
@@ -28777,7 +28992,9 @@
             "olivolja",
             "rödvinsvinäger",
             "chiliflakes",
+            "tomat",
             "koriander",
+            "fläskkarré",
             "olja",
             "vitlök"
         ]
@@ -28851,6 +29068,8 @@
             "aubergine",
             "tomat",
             "olivolja",
+            "cannellinibönor",
+            "bönor",
             "fetaost",
             "pastasås",
             "tomatsås",
@@ -29319,6 +29538,9 @@
             "potatis",
             "tomat",
             "persilja",
+            "torsk",
+            "alaska pollock",
+            "sej",
             "smör",
             "kapris"
         ]
@@ -29422,6 +29644,7 @@
             "köttbuljong",
             "köttbuljongtärning",
             "cornichons",
+            "oliver",
             "syltlök",
             "majsstärkelse",
             "persilja",
@@ -29570,6 +29793,8 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "fläskfilé",
+            "fläskytterfilé",
             "smör",
             "gullök",
             "champinjon",
@@ -29687,11 +29912,13 @@
             "gräslök",
             "koriander",
             "sallad",
+            "jalapeño",
             "olivolja",
             "socker",
             "ris",
             "svarta bönor",
             "kyckling",
+            "jamaican jerkkrydda",
             "olja",
             "tortilla",
             "lime",
@@ -29788,6 +30015,7 @@
         "ingredient_tags": [
             "purjolök",
             "vitlök",
+            "champinjon",
             "olja",
             "pasta",
             "mjölk",
@@ -29888,6 +30116,8 @@
             "färskost",
             "crème fraiche",
             "tomat",
+            "pizzabotten",
+            "pizzadeg",
             "ost",
             "persilja"
         ]
@@ -29968,8 +30198,10 @@
             "olivolja",
             "paprikapulver",
             "lax",
+            "citron",
             "tortilla",
             "tomat",
+            "dragon",
             "yoghurt",
             "turkisk yoghurt",
             "fetaost",
@@ -30087,6 +30319,7 @@
             "rödvinsvinäger",
             "champinjon",
             "smör",
+            "gnocchi",
             "mozzarella",
             "pesto basilika",
             "pumpakärnor",
@@ -30211,6 +30444,7 @@
             "sesamfrön",
             "bönor",
             "broccoli",
+            "chili",
             "salladslök",
             "rapsolja",
             "bulgur",
@@ -30540,6 +30774,7 @@
             "potatis",
             "morot",
             "olivolja",
+            "äpple",
             "crème fraiche",
             "senap",
             "honung",
@@ -30711,12 +30946,14 @@
             "vitlök",
             "limejuice",
             "lime",
+            "crème fraiche",
             "svarta bönor",
             "tomat",
             "chili",
             "lime",
             "spenat",
             "koriander",
+            "crème fraiche",
             "tortilla"
         ]
     },
@@ -30853,6 +31090,7 @@
             "vitlök",
             "basilika",
             "ströbröd",
+            "olivolja",
             "fänkål",
             "citronjuice",
             "grekisk yoghurt",
@@ -30947,11 +31185,18 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "bacon",
             "vitlök",
             "purjolök",
+            "majs",
+            "svamp",
+            "zucchini",
             "pasta",
             "rapsolja",
-            "parmesan"
+            "ägg",
+            "äggula",
+            "parmesan",
+            "basilika"
         ]
     },
     {
@@ -31250,14 +31495,19 @@
             "kål",
             "savoykål",
             "vitlök",
+            "svamp",
             "vattenkastanjer",
             "linser",
             "gröna linser",
             "rapsolja",
+            "ingefära",
             "japansk soja",
+            "misopasta",
             "smör",
             "margarin",
-            "sweet chilisås"
+            "lingon",
+            "sweet chilisås",
+            "koriander"
         ]
     },
     {
@@ -31358,8 +31608,10 @@
             "citrongräs",
             "vitlök",
             "socker",
+            "fläskkarré",
             "fisksås",
             "sesamolja",
+            "chilimayo",
             "kålrabbi",
             "äpple",
             "salladslök",
@@ -31456,9 +31708,11 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "gullök",
             "vitlök",
             "selleri",
             "olivolja",
+            "krossade tomater",
             "socker",
             "citronskal",
             "citron",
@@ -31565,11 +31819,14 @@
             "butternutpumpa",
             "pumpa",
             "savoykål",
+            "sidfläsk",
             "olivolja",
             "kycklingbuljongtärning",
             "grönsaksbuljongtärning",
+            "krossade tomater",
             "timjan",
             "lagerblad",
+            "pasta",
             "bönor",
             "parmesan"
         ]
@@ -31643,11 +31900,13 @@
         "ingredient_tags": [
             "gullök",
             "olivolja",
+            "ris",
             "ras el hanout",
             "kycklingbuljong",
             "grönsaksbuljong",
             "kycklingbuljongtärning",
             "grönsaksbuljongtärning",
+            "lax",
             "salladsärtor",
             "koriander",
             "persilja"
@@ -31742,6 +32001,7 @@
             "aubergine",
             "olivolja",
             "gullök",
+            "vitlök",
             "paprika",
             "tomat",
             "krossade tomater",
@@ -31749,7 +32009,9 @@
             "honung",
             "basilika",
             "crème fraiche",
-            "bönor"
+            "bönor",
+            "lasangeplattor",
+            "ost"
         ]
     },
     {
@@ -31911,10 +32173,12 @@
             "röda linser",
             "tomat",
             "krossade tomater",
+            "grönsaksfond",
             "honung",
             "grädde",
             "timjan",
-            "bönor"
+            "bönor",
+            "halloumi"
         ]
     },
     {
@@ -32006,12 +32270,14 @@
         },
         "ingredient_tags": [
             "gullök",
+            "vitlök",
             "morot",
             "olja",
             "tomatpuré",
             "timjan",
             "rosmarin",
             "örter",
+            "rotselleri",
             "tomat",
             "krossade tomater",
             "linser",
@@ -32087,7 +32353,9 @@
             "chili",
             "ingefära",
             "olja",
+            "räkor",
             "böngroddar",
+            "sojasås",
             "ris",
             "koriander"
         ]
@@ -32173,9 +32441,11 @@
             "rödlök",
             "kyckling",
             "olja",
+            "sojasås",
             "fisksås",
             "sockerärta",
             "böngroddar",
+            "ris",
             "sesam",
             "sesamfrön",
             "koriander"
@@ -32432,6 +32702,7 @@
             "rödvinsvinäger",
             "dijonsenap",
             "sallad",
+            "getost",
             "crème fraiche",
             "kyckling",
             "olja"
@@ -32597,7 +32868,8 @@
             "tomat",
             "paprika",
             "rödvinsvinäger",
-            "rucola"
+            "rucola",
+            "bresaola"
         ]
     },
     {
@@ -32736,6 +33008,8 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "nudlar",
+            "ris",
             "majs",
             "kyckling",
             "kycklingfilé",
@@ -33063,9 +33337,11 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "tonfisk",
             "potatis",
             "sallad",
             "majs",
+            "ajvar relish",
             "paprikapulver",
             "olja"
         ]
@@ -33276,6 +33552,8 @@
             "purjolök",
             "grönsaksbuljong",
             "grönsaksbuljongtärning",
+            "pasta",
+            "fylld pasta",
             "ärtor",
             "tomatpesto",
             "tomat"
@@ -33459,6 +33737,7 @@
         "ingredient_tags": [
             "gullök",
             "vitlök",
+            "champinjon",
             "linser",
             "olivolja",
             "spiskummin",
@@ -33552,12 +33831,14 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "ris",
             "currypasta",
             "räkor",
             "musslor",
             "rödlök",
             "blomkål",
             "olja",
+            "sojabönor",
             "ägg",
             "koriander",
             "lime"
@@ -33677,6 +33958,7 @@
             "majsstärkelse",
             "lime",
             "salladslök",
+            "ris",
             "koriander"
         ]
     },
@@ -34054,6 +34336,7 @@
             "olivolja",
             "chilipulver",
             "spiskummin",
+            "kanel",
             "kyckling",
             "kycklingfilé",
             "olja"
@@ -34128,6 +34411,7 @@
             "spaghetti",
             "pasta",
             "ärtor",
+            "grönkål",
             "basilika",
             "crème fraiche"
         ]
@@ -34214,12 +34498,14 @@
             "sötpotatis",
             "olja",
             "tomat",
+            "citron",
             "olivolja",
             "oregano",
             "kikärtor",
             "kidneybönor",
             "bönor",
             "rödlök",
+            "paprika",
             "fetaost"
         ]
     },
@@ -34491,6 +34777,7 @@
             "krasse",
             "japansk soja",
             "majonnäs",
+            "kyckling",
             "olja"
         ]
     },
@@ -34627,6 +34914,7 @@
             "grädde",
             "mjölk",
             "kronärtskockscrème",
+            "bresaola",
             "tomat"
         ]
     },
@@ -34684,6 +34972,7 @@
         "ingredient_tags": [
             "morot",
             "sockerärta",
+            "glasnudlar",
             "lax",
             "olja",
             "teriyakisås",
@@ -34941,6 +35230,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "lax",
             "gullök",
             "ägg",
             "persilja",
@@ -35068,11 +35358,16 @@
             "honung",
             "citron",
             "spenat",
+            "potatis",
+            "ägg",
+            "äggula",
             "vitvinsvinäger",
             "dijonsenap",
             "olja",
+            "koriander",
             "lax",
             "chiliflakes",
+            "jordgubbar",
             "vattenmelon"
         ]
     },
@@ -35178,9 +35473,11 @@
             "turkisk yoghurt",
             "tahini",
             "spiskummin",
+            "lax",
             "spiskummin",
             "koriander",
-            "paprikapulver"
+            "paprikapulver",
+            "tortilla"
         ]
     },
     {
@@ -35268,6 +35565,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "potatis",
             "olivolja",
             "crème fraiche",
             "turkisk yoghurt",
@@ -35371,12 +35669,15 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "lax",
             "olja",
             "citronskal",
             "citron",
             "spaghetti",
             "pasta",
             "salladsärtor",
+            "ägg",
+            "äggula",
             "parmesan",
             "grädde",
             "crème fraiche",
@@ -35461,6 +35762,7 @@
             "rödbeta",
             "spenat",
             "lax",
+            "getost",
             "ägg",
             "mjölk",
             "sallad",
@@ -35759,6 +36061,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
+            "quinoa",
             "rödbeta",
             "vita bönor",
             "bönor",
@@ -35946,6 +36249,7 @@
             "champinjon",
             "olja",
             "vitlök",
+            "stekfläsk",
             "svampbuljong",
             "svampbuljongtärning",
             "kycklingbuljong",
@@ -36028,6 +36332,7 @@
             "vitlök",
             "olja",
             "majs",
+            "tonfisk",
             "smetana",
             "chilisås",
             "rucola"
@@ -36272,7 +36577,8 @@
             "pastasås",
             "tomatsås",
             "pasta",
-            "mozzarella"
+            "mozzarella",
+            "rucola"
         ]
     },
     {

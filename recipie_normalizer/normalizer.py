@@ -3,9 +3,9 @@ import os
 
 def main():
     # get_ingredients()
-    normalize_ingredients()
-    # save_ingredient_keys()
-    # get_normalized_list()
+    # normalize_ingredients()
+    save_ingredient_keys()
+    get_normalized_list()
 
 
 def normalize_ingredients():

@@ -748,7 +748,7 @@
         "passerade tomater"
     ],
     "baguetter (à 150 g)": [
-        "baguett"
+        "baguette"
     ],
     "pasta risoni": [
         "pasta",
@@ -3900,7 +3900,7 @@
         "jalapeño"
     ],
     "rostade hackade hasselnötter": [
-        "hasselnötter"
+        "hasselnöt"
     ],
     "bacon": [
         "bacon"
@@ -4004,7 +4004,7 @@
         "crème fraiche"
     ],
     "finkrossade tomater med vitlök": [
-        "krossad tomat"
+        "krossade tomater"
     ],
     "fläskfilé eller fläskytterfilé": [
         "fläskfilé",
@@ -4111,7 +4111,7 @@
         "pasta"
     ],
     "kalvfärs": [
-        "köttfärs"
+        "nötfärs"
     ],
     "riven ost (gärna smakrik)": [
         "ost"
@@ -4157,7 +4157,7 @@
         "citron"
     ],
     "chilimajonnäs till servering": [
-        "chilimayo"
+        "chilimajonnäs"
     ],
     "olivolja (+ extra att ringla över soppan)": [
         "olivolja"
@@ -4172,7 +4172,7 @@
         "hummus"
     ],
     "bake off minibaguetter (gärna flerkorn)": [
-        "baguetter"
+        "baguette"
     ],
     "mango": [
         "mango"
@@ -4216,7 +4216,7 @@
         "bulgur"
     ],
     "kokta rödbetor": [
-        "rödbetor"
+        "rödbeta"
     ],
     "krispsallad": [
         "sallad"
@@ -4263,9 +4263,6 @@
     ],
     "kassler": [
         "kassler"
-    ],
-    "mortlad kryddpeppar": [
-        "'block'"
     ],
     "stora hackade vitlöksklyftor": [
         "vitlök"
@@ -4374,7 +4371,7 @@
         "quinoa"
     ],
     "paket färska lasagneplattor": [
-        "lasangeplattor"
+        "lasagneplattor"
     ],
     "urkärnade svarta oliver": [
         "oliver"
@@ -4417,7 +4414,7 @@
         "ris"
     ],
     "burk soltorkade tomater (à 200 g)": [
-        "soltorkade tomater"
+        "soltorkad tomat"
     ],
     "strimlad vitkål": [
         "vitkål"
@@ -4441,7 +4438,7 @@
         "äpple"
     ],
     "ajvar relish": [
-        "ajvar relish"
+        "ajvar"
     ],
     "påse färsk spenat (à 200 g)": [
         "spenat"
@@ -4518,7 +4515,7 @@
         "sallad"
     ],
     "isbergssallad": [
-        "isbergsallad",
+        "isbergssallad",
         "sallad"
     ]
 }
