@@ -96,7 +96,7 @@ function sort_recipes(data){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('recipie_normalizer/raw_data.json')
+    fetch('web_scraper/data.json')
     .then(response => response.json())
     .then(data => {
         // Sorting indexes
