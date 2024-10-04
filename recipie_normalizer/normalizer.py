@@ -2,9 +2,10 @@ import json
 import os
 
 def main():
-    # normalize_ingredients()
     # get_ingredients()
+    # normalize_ingredients()
     save_ingredient_keys()
+    get_normalized_list()
 
 
 def normalize_ingredients():
@@ -23,8 +24,6 @@ def normalize_ingredients():
     ingredients_file_path = os.path.join(os.path.dirname(__file__), 'ingredients.json')
     with open(ingredients_file_path, 'r', encoding='utf-8') as file:
         ingredients = json.load(file)
-        # Limit the number of ingredients for testing
-        # ingredients = ingredients[:5]
 
     # Initialize the normalized list and block list
     normalized = []
@@ -73,6 +72,9 @@ def normalize_ingredients():
             normalized.append([ingredient, [ingredient]])
             print(f"Normalized ingredient(s): {ingredient}")
 
+        percentage = ingredients.index(ingredient) / len(ingredients) * 100
+        print(f"Progress: {percentage:.2f}%")
+
     # Convert the normalized list to a dictionary
     normalized_dict = {item[0]: item[1] for item in normalized}
 
@@ -109,6 +111,8 @@ def get_ingredients():
         for ingredient in recipe['ingredients']:
             ingredients_list.append(ingredient['name'])
 
+    ingredients_list = list(set(ingredients_list))
+
     # Save the ingredients to a new JSON file
     ingredients_file_path = os.path.join(os.path.dirname(__file__), 'ingredients.json')
     with open(ingredients_file_path, 'w', encoding='utf-8') as file:
@@ -117,10 +121,8 @@ def get_ingredients():
 def save_ingredient_keys():
     # Load the JSON file
     # data_file_path = os.path.join(os.path.dirname(__file__), '..', 'web_scraper', 'data.json')
-    data_file_path = os.path.join(os.path.dirname(__file__), 'raw_data.json')
+    data_file_path = os.path.join(os.path.dirname(__file__),  '..', 'web_scraper',  'data.json')
     ing_file_path = os.path.join(os.path.dirname(__file__), 'normalized_ingredients.json')
-
-    ingredient_keys = []
 
     with open(data_file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
@@ -141,9 +143,30 @@ def save_ingredient_keys():
                 recipe['ingredient_tags'].extend(n_ingredients[ingredient['name']])
         # print(recipe['ingredient_tags'])
     
-    print(data)
+    # print(data)
     # Save the updated JSON back to the file
     with open(data_file_path, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
+
+def get_normalized_list():
+    normalized_list = []
+    normalized_file_path = os.path.join(os.path.dirname(__file__), 'normalized_ingredients.json')
+    with open(normalized_file_path, 'r', encoding='utf-8') as file:
+        normalized_dict = json.load(file)
+    
+    # Get all normalized ingredients
+    for ingredient in normalized_dict.values():
+        normalized_list.extend(ingredient)
+
+    # Remove all duplicates
+    ingredient_tags = list(set(normalized_list))
+
+    # Sort ingredient tags list
+    ingredient_tags.sort()
+
+    # Save ingredient_tags to a JSON file
+    ingredient_tags_file_path = os.path.join(os.path.dirname(__file__), 'ingredient_tags.json')
+    with open(ingredient_tags_file_path, 'w', encoding='utf-8') as file:
+        json.dump(ingredient_tags, file, ensure_ascii=False, indent=4)
 
 main()
