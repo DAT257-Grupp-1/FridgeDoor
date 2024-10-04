@@ -2,10 +2,10 @@ import json
 import os
 
 def main():
-    # normalize_ingredients()
     # get_ingredients()
-    save_ingredient_keys()
-    get_normalized_list()
+    normalize_ingredients()
+    # save_ingredient_keys()
+    # get_normalized_list()
 
 
 def normalize_ingredients():
@@ -71,6 +71,9 @@ def normalize_ingredients():
         else:
             normalized.append([ingredient, [ingredient]])
             print(f"Normalized ingredient(s): {ingredient}")
+
+        percentage = ingredients.index(ingredient) / len(ingredients) * 100
+        print(f"Progress: {percentage:.2f}%")
 
     # Convert the normalized list to a dictionary
     normalized_dict = {item[0]: item[1] for item in normalized}
