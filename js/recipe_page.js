@@ -1,5 +1,5 @@
 window.onload = function () {    
-    fetch('../web_scraper/data.json')
+    fetch('web_scraper/data.json')
         .then(response => response.json())
         .then(data => {
             var result = -1
