@@ -2,13 +2,13 @@
 let user_ingredients = JSON.parse(sessionStorage.getItem('saved_items')) || [];
 
 // List of ingredients required for the recipe
-const recipe_ingredients = [
-];
+const recipe_ingredients = [];
 
 // Function to get matching ingredients between user's ingredients and recipe's ingredients
 function get_matching_ingredients(user_ingredients, recipe_ingredients) {
     let matching_ingredients = [];
-    
+    let unmatched_ingredients = [];
+
     // Loop through each ingredient in the recipe
     recipe_ingredients.forEach(ingredient => {
         // Normalize the ingredient to lower case
@@ -17,18 +17,20 @@ function get_matching_ingredients(user_ingredients, recipe_ingredients) {
         // Loop through each ingredient the user has
         user_ingredients.forEach(user_ingredients => {
             // If the recipe ingredient includes the user ingredient, add it to the matching ingredients
-            if (normalized_ingredient.includes(user_ingredients)) {
+            if (normalized_ingredient == user_ingredients){
                 matching_ingredients.push(ingredient); 
+            }else if(!unmatched_ingredients.includes(ingredient)){
+                unmatched_ingredients.push(ingredient);
             }
         });
     });
     
     // Return the list of matching ingredients
-    return matching_ingredients;
+    return [matching_ingredients, unmatched_ingredients]
 }
 
 // Get the matching ingredients
-const matching_ingredients = get_matching_ingredients(user_ingredients, recipe_ingredients);
+const matching_ingredients = get_matching_ingredients(user_ingredients, recipe_ingredients)[0];
 
 // Get the HTML element with id 'matching_ingredients'
 const matching_ingredients_list = document.getElementById('matching_ingredients');
@@ -43,17 +45,73 @@ matching_ingredients.forEach(ingredient => {
     matching_ingredients_list.appendChild(li);
 });
 
-document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
+function parseStringToDecimal(input) {
+    // Split the string by the dash to get the first number
+    let firstPart = input.split(' - ')[0];
+    
+    // Replace the comma with a dot
+    firstPart = firstPart.replace(',', '.');
+    
+    // Convert the string to a float
+    let decimalNumber = parseFloat(firstPart);
+    
+    return decimalNumber;
+}
 
-    fetch('https://raw.githubusercontent.com/DAT257-Grupp-1/FridgeDoor/refs/heads/main/web_scraper/data.json')
+// Function to sort recepies
+function sort_recipes(data){
+    // The sorting algoritm
+    let sorted_recipe_list = []
+
+    // For each recipe
+    for(let m = 0; m < data.length; m++){
+        // Find matching ingredients
+        let matched_and_unmatched = get_matching_ingredients(user_ingredients, data[m]["ingredient_tags"]);
+        let climateimpact = parseStringToDecimal(data[m]["climateimpact"]["value"])
+        let limit = Math.round(user_ingredients.length / 2)
+        if(matched_and_unmatched[0].length >= limit){
+            sorted_recipe_list.push([m, matched_and_unmatched, climateimpact])  // [index, [number_of_matched, number_of_unmatched], climateimpact]
+        }
+    }
+    sorted_recipe_list.sort((a, b) => {
+        // First, compare the number of matched ingredients (in descending order)
+        const matchedDiff = b[1][0].length - a[1][0].length;
+        
+        if (matchedDiff !== 0) {
+            return matchedDiff; // If the number of matched ingredients is different, return this difference
+        }
+        
+        // If the number of matched ingredients is the same, compare the number of unmatched ingredients (in ascending order)
+        const unmatchedDiff = a[1][1].length - b[1][1].length;
+        
+        if (unmatchedDiff !== 0) {
+            return unmatchedDiff; // If the number of unmatched ingredients is different, return this difference
+        }
+        
+        // If both matched and unmatched ingredients are the same, compare climate impact (in ascending order)
+        return a[2] - b[2];
+    });
+
+    console.log("Sorted: ")
+    console.log(sorted_recipe_list)
+    
+    return sorted_recipe_list
+}
+
+document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
+    fetch('recipie_normalizer/raw_data.json')
     .then(response => response.json())
     .then(data => {
 
-        const recipe = data[0]; // Get the first recipe for demonstration
+        // Sorting indexes
+        let sorted_recipe_list = sort_recipes(data)
+        
+        // Should create recipe cards after sort but only shows the first (best) one for now
+        const recipe = data[sorted_recipe_list[0][0]]; // Get the first recipe for demonstration
 
         // Extract recipe title and ingredients
         const recipe_title = recipe.title;
-        const recipe_ingredients = recipe.ingredients;
+        const recipe_ingredients = recipe.ingredient_tags;
         const recipe_image = recipe.image;
         const recipe_link = recipe.link;
         const recipe_CO2 = recipe.climateimpact;
@@ -104,20 +162,20 @@ document.addEventListener("DOMContentLoaded", () => { // listen for the DOMConte
         ingredientList.classList.add('ingredient_list');
         const full_ingredients_name = [];
         recipe_ingredients.forEach(ingredient => {
-            full_ingredients_name.push(ingredient.name);
+            full_ingredients_name.push(ingredient);
         });
         
-        const matching = get_matching_ingredients(user_ingredients, full_ingredients_name);
+        const matching = get_matching_ingredients(user_ingredients, full_ingredients_name)[0];
         const matching_count = document.createElement('h3');
         matching_count.textContent = `Matchande ingredienser: ${matching.length}`;
         ingredientList.appendChild(matching_count);
         
         // Filter and display only matching ingredients
-        const matchingIngredients = recipe_ingredients.filter(ingredient => matching.includes(ingredient.name));
+        const matchingIngredients = recipe_ingredients.filter(ingredient => matching.includes(ingredient));
         
         matchingIngredients.forEach(ingredient => {
             const ingredientElement = document.createElement('li');
-            ingredientElement.textContent = ingredient.name;
+            ingredientElement.textContent = ingredient;
             ingredientElement.style.color = 'green';
             ingredientList.appendChild(ingredientElement);
         });
@@ -171,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => { // listen for the DOMConte
         document.getElementById('recipeList').appendChild(recipeDiv);
     });
 });
+
 
 function updateThumbColor(value, sliderId) {
     const slider = document.getElementById(sliderId); // gets the slider element
@@ -368,3 +427,4 @@ show_cocktail_btn.addEventListener('click', async function() {
 document.getElementById('close_cocktail').addEventListener('click', function() {
     document.getElementById('hidden_div').style.visibility = 'hidden';
 });*/
+
