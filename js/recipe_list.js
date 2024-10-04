@@ -98,48 +98,6 @@ function sort_recipes(data){
     return sorted_recipe_list
 }
 
-/*
-function sort_unmatched_ingredients(sorted_matched_ingredients){
-    arr_length = sorted_recipe_list.length; 
-    for (int i = 0; i < arr_length - 1 ; i++){
-        lowest_unmatched_index = i
-
-        for(int j =  i + 1; j < arr_length; j++ ){
-            if (sorted_recipe_list[i][2] != sorted_recipe_list[j][2]){
-                return;
-            }
-            
-            if (sorted_recipe_list[j][2] < sorted_recipe_list[lowest_unmatched][2]){
-                lowest_unmatched = j; 
-            }
-        }
-        
-        if (lowest_unmatched_index != i){
-            let temp = sorted_recipe_list[i];
-            sorted_recipe_list[i] = sorted_recipe_list[lowest_unmatched_index]; 
-            sorted_recipe_list[lowest_unmatched_index] = temp; 
-        }
-    }
-}
-*/
-
-function slice_on_matched_number(sorted_recipe_list){
-    let array = []
-    let result = []
-    let max_number_of_matched = sorted_recipe_list[0][1][0].length
-    console.log("Max matched: " + max_number_of_matched)
-    for(let i = 0; i < sorted_recipe_list.length; i++){
-        if(sorted_recipe_list[i][1][0].length != max_number_of_matched){
-            result.push(array)
-            array = []
-            max_number_of_matched--;
-        }else{
-            array.push(sorted_recipe_list[i])
-        }
-    }
-    return result
-}
-
 document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
     fetch('recipie_normalizer/raw_data.json')
     .then(response => response.json())
