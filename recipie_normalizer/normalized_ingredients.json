@@ -4208,5 +4208,317 @@
     "bröd à 150 g (gärna flatbread)": [
         "bröd",
         "flatbread"
+    ],
+    "råkostsallad": [
+        "sallad"
+    ],
+    "port bulgur (gärna fullkorn)": [
+        "bulgur"
+    ],
+    "kokta rödbetor": [
+        "rödbetor"
+    ],
+    "krispsallad": [
+        "sallad"
+    ],
+    "rött vin": [
+        "rödvin",
+        "rött matlagningsvin"
+    ],
+    "pasta": [
+        "pasta"
+    ],
+    "lax": [
+        "lax"
+    ],
+    "port pasta (gärna fusili bucati)": [
+        "pasta"
+    ],
+    "tunna skivor salami med fänkål": [
+        "fänkålssalami",
+        "salami"
+    ],
+    "mango chutney": [
+        "mango chutney"
+    ],
+    "förp finkrossade tomater (à ca 390 g)": [
+        "krossade tomater"
+    ],
+    "purjolök eller pak choi": [
+        "purjolök",
+        "pak choi"
+    ],
+    "färskost soltorkad tomat": [
+        "färskost"
+    ],
+    "smör (till formen)": [
+        "smör"
+    ],
+    "äggula": [
+        "ägg",
+        "äggula"
+    ],
+    "snabbfiléer av kyckling": [
+        "kyckling"
+    ],
+    "kassler": [
+        "kassler"
+    ],
+    "mortlad kryddpeppar": [
+        "'block'"
+    ],
+    "stora hackade vitlöksklyftor": [
+        "vitlök"
+    ],
+    "fiskbuljong (fond och vatten)": [
+        "fiskbuljong"
+    ],
+    "hjärtkålshuvud eller 150 g flower sprouts (för 4 port)": [
+        "hjärtkål",
+        "kål"
+    ],
+    "port pasta (gärna linguini eller bavette)": [
+        "pasta"
+    ],
+    "sojasås": [
+        "sojasås"
+    ],
+    "påsar färdigkokt ris à 250 g (gärna Express långkorning ris)": [
+        "ris"
+    ],
+    "fint rågmjöl eller vetemjöl": [
+        "rågmjöl",
+        "vetemjöl"
+    ],
+    "myntablad": [
+        "mynta"
+    ],
+    "panko (asiatiskt ströbröd)": [
+        "panko"
+    ],
+    "förp blomkålsbuketter (à 160 g) gärna fiorina": [
+        "blomkål"
+    ],
+    "färsk gnocchi (potatis)": [
+        "gnocchi"
+    ],
+    "burk vattenkastanjer (à 227 g)": [
+        "vattenkastanjer"
+    ],
+    "färsk timjan": [
+        "timjan"
+    ],
+    "kardemumma (malen eller mortlad)": [
+        "kardemumma"
+    ],
+    "bröd (gärna levainbröd)": [
+        "bröd"
+    ],
+    "sats färdigt stomp av rotfrukter (se länk i text)": [
+        "rotfrukter"
+    ],
+    "getost": [
+        "getost"
+    ],
+    "färskost (gärna vitlök)": [
+        "färskost"
+    ],
+    "port pasta (gärna spirali)": [
+        "pasta"
+    ],
+    "mellangrädde": [
+        "grädde"
+    ],
+    "nötfärs": [
+        "nötfärs"
+    ],
+    "kastanjechampinjoner": [
+        "champinjon"
+    ],
+    "jordgubbar": [
+        "jordgubbar"
+    ],
+    "purjolök à ca 100 g eller salladslök (1/2 purjolök motsvarar 1/2 påse salladslök à 125 g)": [
+        "purjolök",
+        "salladslök"
+    ],
+    "äggulor": [
+        "ägg",
+        "äggula"
+    ],
+    "fryst vegofärs (gärna pease, ärtprotein)": [
+        "vegofärs"
+    ],
+    "påse salladslök (à 125 g)": [
+        "salladslök"
+    ],
+    "port pasta (gärna linguine eller spaghetti)": [
+        "pasta"
+    ],
+    "förp pastasås pesto (gärna alla genovese, à 190 g)": [
+        "pesto"
+    ],
+    "mjölig potatis": [
+        "potatis"
+    ],
+    "taco kryddmix": [
+        "tacokrydda"
+    ],
+    "citron (1 citron motsvarar 2 msk juice)": [
+        "citron"
+    ],
+    "färskost (gärna ört- och vitlöksost)": [
+        "färskost"
+    ],
+    "port röd quinoa": [
+        "quinoa"
+    ],
+    "paket färska lasagneplattor": [
+        "lasangeplattor"
+    ],
+    "urkärnade svarta oliver": [
+        "oliver"
+    ],
+    "port nudlar eller ris": [
+        "nudlar",
+        "ris"
+    ],
+    "fint tärnade morötter": [
+        "morot"
+    ],
+    "olivolja (eller oljan från de soltorkade tomaterna)": [
+        "olivolja"
+    ],
+    "skivad fläskkarré": [
+        "fläskkarré"
+    ],
+    "delikatesspotatis eller amandine": [
+        "potatis"
+    ],
+    "finriven ingefära": [
+        "ingefära"
+    ],
+    "fast potatis (gärna delikatesspotatis)": [
+        "potatis"
+    ],
+    "gröna oliver med pimiento": [
+        "oliver"
+    ],
+    "smör (att steka i)": [
+        "smör"
+    ],
+    "grytbas thai satay curry": [
+        "satay curry"
+    ],
+    "burk finkrossade tomater (à ca 390 g)": [
+        "krossade tomater"
+    ],
+    "ris (gärna avorioris)": [
+        "ris"
+    ],
+    "burk soltorkade tomater (à 200 g)": [
+        "soltorkade tomater"
+    ],
+    "strimlad vitkål": [
+        "vitkål"
+    ],
+    "ark färsk filodeg (à ca 125 g)": [
+        "filodeg"
+    ],
+    "påse frysta haricots verts (bönor) (à 600 g)": [
+        "haricots verts"
+    ],
+    "delikatesspotatis": [
+        "potatis"
+    ],
+    "paket skivat bacon (à 140 g)": [
+        "bacon"
+    ],
+    "grovt riven rotselleri": [
+        "rotselleri"
+    ],
+    "rött äpple": [
+        "äpple"
+    ],
+    "ajvar relish": [
+        "ajvar relish"
+    ],
+    "påse färsk spenat (à 200 g)": [
+        "spenat"
+    ],
+    "röd curry": [
+        "currypasta"
+    ],
+    "förp tortellini soltorkad tomat (à 250 g)": [
+        "pasta",
+        "fylld pasta"
+    ],
+    "färsk pasta (gärna tonnarelli)": [
+        "pasta"
+    ],
+    "kokta linser": [
+        "linser"
+    ],
+    "mald kanel": [
+        "kanel"
+    ],
+    "färsk laxfilé": [
+        "lax"
+    ],
+    "lax i bit": [
+        "lax"
+    ],
+    "burk skalade räkor i lake (à 580 g)": [
+        "räkor"
+    ],
+    "port jasminris eller fullkornsris": [
+        "ris"
+    ],
+    "grovhackade hasselnötter": [
+        "hasselnöt"
+    ],
+    "hackad dragon": [
+        "dragon"
+    ],
+    "konc grönsaksfond": [
+        "grönsaksfond"
+    ],
+    "basilika": [
+        "basilika"
+    ],
+    "förp cannellinibönor (à 380 g)": [
+        "cannellinibönor",
+        "bönor"
+    ],
+    "stora morötter": [
+        "morot"
+    ],
+    "påse rucola (à 65 g)": [
+        "rucola"
+    ],
+    "frysta sojabönor": [
+        "sojabönor"
+    ],
+    "sötmandel": [
+        "sötmandel",
+        "mandel"
+    ],
+    "port laxfilé utan skinn (à ca 140 g)": [
+        "lax"
+    ],
+    "förp pastasås med chili eller vegetarisk arrabbiata (à ca 400 g)": [
+        "pastasås",
+        "tomatsås"
+    ],
+    "broccoli eller bellaverde": [
+        "broccoli",
+        "bellaverde"
+    ],
+    "förp huvudsallad": [
+        "sallad"
+    ],
+    "isbergssallad": [
+        "isbergsallad",
+        "sallad"
     ]
 }
