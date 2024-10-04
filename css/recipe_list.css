@@ -198,4 +198,6 @@ img {
 #goToRecipe{
     background-color: var(--contrast-low-prio);
     color: var(--general-text);
+    width: 100%;
+    height: 100%;
 }
