@@ -35,7 +35,6 @@ window.onload = function () {
         .then(data => {
             var result = -1
             const link = sessionStorage.getItem('link');
-            console.log("IN GET ", link);
 
             for (i in data) {
                 const l = `"${data[i].link}"`;
@@ -85,7 +84,6 @@ async function make_energy(result) {
 }
 
 async function make_ingredients(ingredients) {
-    console.log("Ingreds ", ingredients);
     for (index in ingredients) {
         let i = ingredients[index];
 
@@ -115,7 +113,6 @@ async function make_ingredients(ingredients) {
 }
 
 async function make_instructions(instructions) {
-    console.log("instructions ", instructions);
     for (index in instructions) {
         let i = instructions[index];
 
@@ -322,16 +319,6 @@ show_cocktail_btn.addEventListener('click', async function() {
         console.error('Ett fel uppstod vid åldersverifiering:', error);
     }
 });
-
-
-// async function checked_item(event) {
-//     if (event.target.checked) {
-//         console.log("Checkbox is checked..");
-//     } else {
-//         console.log("Checkbox is not checked..");
-//     }
-    
-// }
 
 async function checked_item(event) {
     // Get the checkbox that triggered the event
