@@ -43,13 +43,11 @@ window.onload = function () {
                     result = data[i];
                 }
             }
-            
-            console.log(result.title);
 
-            make_elem("p", result["title"], "title");
+            make_title(result);
             make_description(result["description"], "description");
-            make_elem("p", result["climateimpact"]["value"] + result["climateimpact"]["unit"], "climateimpact");
-            make_elem("p", result["energy"], "energy");
+            make_climate_impact(result);
+            make_energy(result);
             make_image(result);
             make_ingredients(result.ingredients);
             make_instructions(result.instructions);
@@ -63,11 +61,27 @@ async function make_image(data) {
     document.getElementById("image_container").appendChild(img);
 }
 
-async function make_elem(type, field, id) {
-    let textfield = document.createElement(type);
-    textfield.appendChild(document.createTextNode(field))
+async function make_title(result) {
+    let textfield = document.createElement("p");
+    textfield.appendChild(document.createTextNode(result["title"]))
+    textfield.setAttribute("id", "title")
+    document.getElementById("title_container").appendChild(textfield);
+}
 
-    document.getElementById(id).appendChild(textfield);
+async function make_climate_impact(result) {
+    let textfield = document.createElement("p");
+    let data = result["climateimpact"]["value"] + result["climateimpact"]["unit"]
+    textfield.appendChild(document.createTextNode(data))
+    textfield.setAttribute("id", "climate_impact")
+    document.getElementById("title_container").appendChild(textfield);
+}
+
+async function make_energy(result) {
+    let textfield = document.createElement("p");
+    textfield.appendChild(document.createTextNode(result["energy"]))
+    textfield.setAttribute("id", "energy")
+
+    document.getElementById("energy_container").appendChild(textfield);
 }
 
 async function make_ingredients(ingredients) {
@@ -77,7 +91,7 @@ async function make_ingredients(ingredients) {
 
         // create item (ingredient) container
         let item = document.createElement("div");
-        item.setAttribute("class", "item")
+        item.setAttribute("class", "ingredient_item")
         
         // ingredient name
         let textfield = document.createElement("p");
@@ -107,15 +121,21 @@ async function make_instructions(instructions) {
 
         // create item (instruction) container
         let item = document.createElement("div");
-        item.setAttribute("class", "item")
+        item.setAttribute("class", "instruction_item");
+
+        let checkbox = document.createElement("input");
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("class", "checkbox");
+        checkbox.addEventListener('change', (event) => {
+            checked_item(event);
+        });
 
         // instruction text
         let textfield = document.createElement("p");
         textfield.appendChild(document.createTextNode(i));
         textfield.setAttribute("class", "instruction_text");
 
-        console.log(i);
-
+        item.appendChild(checkbox);
         item.appendChild(textfield);
         document.getElementById("instructions_container").appendChild(item);
     }
@@ -304,3 +324,27 @@ show_cocktail_btn.addEventListener('click', async function() {
 });
 
 
+// async function checked_item(event) {
+//     if (event.target.checked) {
+//         console.log("Checkbox is checked..");
+//     } else {
+//         console.log("Checkbox is not checked..");
+//     }
+    
+// }
+
+async function checked_item(event) {
+    // Get the checkbox that triggered the event
+    let checkbox = event.target;
+    
+    // Get the sibling instruction text (assuming it's the next sibling)
+    let textfield = checkbox.nextElementSibling;
+
+    if (checkbox.checked) {
+        // Add strikethrough class when checked
+        textfield.classList.add("strikethrough");
+    } else {
+        // Remove strikethrough class when unchecked
+        textfield.classList.remove("strikethrough");
+    }
+}

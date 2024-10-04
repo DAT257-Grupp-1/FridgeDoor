@@ -138,6 +138,11 @@ show_cocktail_btn.addEventListener('click', function() {
     get_random_cocktail();
 });
 
+document.getElementById('recipe_btn').addEventListener('click', function() {
+    link = "https://www.ica.se/recept/salsiccia-med-bonpasta-och-zuccini-724876/"
+    console.log("link ", link)
+    save_to_session_storage('link', link);
+})
 
 document.getElementById('close_cocktail').addEventListener('click', function() {
     document.getElementById('hidden_div').style.visibility = 'hidden';
