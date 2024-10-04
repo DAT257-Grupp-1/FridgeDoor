@@ -3707,7 +3707,7 @@
             "passerade tomater",
             "grönsaksbuljong",
             "grönsaksbuljongtärning",
-            "baguett",
+            "baguette",
             "pasta",
             "pasta risoni",
             "ärtor"
@@ -7688,7 +7688,7 @@
             "zucchini",
             "kyckling",
             "olja",
-            "krossad tomat",
+            "krossade tomater",
             "smetana",
             "oregano"
         ]
@@ -7795,7 +7795,7 @@
             "färskost",
             "färskost",
             "skinka",
-            "hasselnötter",
+            "hasselnöt",
             "persilja"
         ]
     },
@@ -8147,7 +8147,7 @@
             "färskost",
             "färskost",
             "pepparrot",
-            "rödbetor",
+            "rödbeta",
             "mangold",
             "röd mangold"
         ]
@@ -12802,7 +12802,7 @@
             "alaska pollock",
             "sej",
             "torsk",
-            "isbergsallad",
+            "isbergssallad",
             "sallad"
         ]
     },
@@ -19632,7 +19632,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
-            "rödbetor",
+            "rödbeta",
             "sesam",
             "sesamfrön",
             "vitlök",
@@ -20131,7 +20131,7 @@
             "mjölk",
             "majsstärkelse",
             "matlagningsgrädde",
-            "soltorkade tomater"
+            "soltorkad tomat"
         ]
     },
     {
@@ -20540,7 +20540,7 @@
             "lax",
             "rotfrukter",
             "crème fraiche",
-            "ajvar relish",
+            "ajvar",
             "parmesan",
             "persilja"
         ]
@@ -21047,7 +21047,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
-            "köttfärs",
+            "nötfärs",
             "blandfärs",
             "olivolja",
             "tomatpuré",
@@ -21346,7 +21346,6 @@
             "gullök",
             "smör",
             "kantareller",
-            "'block'",
             "hasselnöt",
             "smör",
             "lingon",
@@ -26716,7 +26715,7 @@
             "pasta",
             "risonipasta",
             "persilja",
-            "baguetter"
+            "baguette"
         ]
     },
     {
@@ -31611,7 +31610,7 @@
             "fläskkarré",
             "fisksås",
             "sesamolja",
-            "chilimayo",
+            "chilimajonnäs",
             "kålrabbi",
             "äpple",
             "salladslök",
@@ -32010,7 +32009,7 @@
             "basilika",
             "crème fraiche",
             "bönor",
-            "lasangeplattor",
+            "lasagneplattor",
             "ost"
         ]
     },
@@ -33341,7 +33340,7 @@
             "potatis",
             "sallad",
             "majs",
-            "ajvar relish",
+            "ajvar",
             "paprikapulver",
             "olja"
         ]
