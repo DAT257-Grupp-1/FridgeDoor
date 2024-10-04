@@ -101,7 +101,7 @@ def normalize_ingredients():
 # Get all the ingredients from the recipes in data.json and svaes them to ingredients.json
 def get_ingredients():
     # Load the data from the JSON file
-    data_file_path = os.path.join(os.path.dirname(__file__), 'data.json')
+    data_file_path = os.path.join(os.path.dirname(__file__), '..', 'web_scraper', 'data.json')
     with open(data_file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
 
@@ -121,7 +121,7 @@ def get_ingredients():
 def save_ingredient_keys():
     # Load the JSON file
     # data_file_path = os.path.join(os.path.dirname(__file__), '..', 'web_scraper', 'data.json')
-    data_file_path = os.path.join(os.path.dirname(__file__), 'data.json')
+    data_file_path = os.path.join(os.path.dirname(__file__),  '..', 'web_scraper',  'data.json')
     ing_file_path = os.path.join(os.path.dirname(__file__), 'normalized_ingredients.json')
 
     with open(data_file_path, 'r', encoding='utf-8') as file:
