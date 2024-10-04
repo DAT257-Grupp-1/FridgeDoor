@@ -1,7 +1,4 @@
 
-#continue{
-    font-size: 20px;
-}
 
 
 #back{
@@ -9,4 +6,14 @@
     position:fixed;
     bottom: 20px;
     left: 20px;
+}
+
+.colors{
+    --primary-background: #B8D7A5;
+    --secondary-background: #D3EECD;
+    --general-text: #203039;
+    --accent-high-prio: #5D903E;
+    --accent-low-prio: #8DC972;
+    --contrast-high-prio: #BF8B2E;
+    --contrast-low-prio: #D7C04C;
 }
