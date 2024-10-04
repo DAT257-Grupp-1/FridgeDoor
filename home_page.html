@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="colors">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="data:,">
+    <link rel="icon" type="image/x-icon" href="/Logo/favicon.ico">
     <title>First Page</title>
     <link rel="stylesheet" href="css/home_page.css">
     <link rel="stylesheet" href="css/shared.css">
@@ -11,22 +11,25 @@
     <script src="js/home_page.js" defer></script>
 </head>
 
-<body>
+<body class="colors">
 
     <div id="icon">
-        <img id="product_icon" src="korvstroganoff_med_ris.jpg">
-        <h1 id="productName">Fridgedoora</h1>
+        <img id="product_icon" src="Logo/ewa_logo.png">
+        
     </div>
-    <div id="contentDiv">
+
+    <div id="contentDiv" class="colors">
+
         <div id="search_bar">
             <input type="text" id="input_field" placeholder="Vad har du i ditt kylskåp?">
             <button onclick="(add_ingredient())" id="add">Lägg till</button>
         </div>
-        <div id="clear_button">
-            <button id="clear_button_button" onclick="(clear_ingredients())" id="clear">Rensa</button>
-            <div id="ingredients_buttons">
-            </div>
+
+        <div id="ingredients_buttons">
         </div>
+
+        <button id="clear_button" onclick="(clear_ingredients())" id="clear">Rensa</button>
+
         <a href="recipe_list.html">
             <button id="continue">Hitta recept</button>
         </a>

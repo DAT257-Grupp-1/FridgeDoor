@@ -133,8 +133,23 @@ document.addEventListener("DOMContentLoaded", () => { // listen for the DOMConte
         imageElement.alt = recipe_title;
         recipeDiv.appendChild(imageElement);
 
+        // // Create and append the recipe link
+        // const linkElement = document.createElement('a');
+        // // linkElement.id = "goToRecipe";
+
+        // linkElement.href = recipe_link;
+        // // linkElement.textContent = "Gå till recept";
+        // recipeDiv.appendChild(linkElement);
+
+        // //Create and append the recipe button
+        // const buttonElement = document.createElement('button');
+        // buttonElement.id = "goToRecipe";
+        // buttonElement.textContent = "Gå till recept";
+        // linkElement.appendChild(buttonElement);
+
         // Create and append the recipe link
         const linkElement = document.createElement('button');
+        linkElement.id = "goToRecipe";
         linkElement.textContent = "Gå till recept";
         linkElement.addEventListener('click', function() {
             save_to_session_storage('link', recipe_link);

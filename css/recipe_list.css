@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: var(--primary-background);
     padding: 20px;
     color: #333;
     line-height: 1.6;
@@ -26,7 +26,7 @@ h1 {
     gap: 20px;
     margin: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--secondary-background);
     border-radius: 10px;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     overflow: hidden;
@@ -34,8 +34,8 @@ h1 {
 
 .recipe_name {
     grid-column: 1 / 3;
-    background-color: #3b5998;
-    color: #fff;
+    background-color: var(--accent-high-prio);
+    color: var(--general-text);
     padding: 20px;
     font-size: 1.5em;
     text-align: center;
@@ -44,8 +44,8 @@ h1 {
 
 .ingredient_list {
     height: 100%;
-    background-color: #8b9dc3;
-    color: #fff;
+    background-color: var(--accent-low-prio);
+    color: var(--general-text);
     padding: 20px;
     /* border-right: 5px solid #6d84b4; */
 }
@@ -64,15 +64,15 @@ img {
 
 #footprint {
     height: 20%;
-    background-color: #f7f7f7;
-    color: #333;
+    background-color: var(--secondary-background);
+    color: var(--general-text);
     margin-top: 3%;
     text-align: center;
     /* border-bottom: 5px solid #e1e1e1; */
 }
 
 #recept_knapp {
-    background-color: #3b5998;
+    background-color: var(--contrast-low-prio);
     color: #fff;
     padding: 20px;
     margin-top:3% ;
@@ -134,7 +134,7 @@ img {
 .footprint {
     width: 100%;
     margin: 20px 0;
-    background-color: aliceblue;
+    background-color: var(--secondary-background);
 }
 
 /* The slider itself */
@@ -194,3 +194,10 @@ img {
     margin: 10px;
     padding: 5px 10px;
   }
+
+#goToRecipe{
+    background-color: var(--contrast-low-prio);
+    color: var(--general-text);
+    width: 100%;
+    height: 100%;
+}
