@@ -64,6 +64,7 @@ function splice_ingredient(ingredient){
     ingredients_list.splice(index, 1);
 }
 
+/* Updates the contents of saved_items to equal ingredients_list */
 function amount_of_ingredients(){
     ingredients_list.c
 }
