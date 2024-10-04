@@ -95,138 +95,127 @@ function sort_recipes(data){
     return sorted_recipe_list
 }
 
-document.addEventListener("DOMContentLoaded", () => { // listen for the DOMContentLoaded event aka when the page is loaded
+document.addEventListener("DOMContentLoaded", () => {
     fetch('recipie_normalizer/raw_data.json')
     .then(response => response.json())
     .then(data => {
-
         // Sorting indexes
         let sorted_recipe_list = sort_recipes(data)
         
-        // Should create recipe cards after sort but only shows the first (best) one for now
-        const recipe = data[sorted_recipe_list[0][0]]; // Get the first recipe for demonstration
-
-        // Extract recipe title and ingredients
-        const recipe_title = recipe.title;
-        const recipe_ingredients = recipe.ingredient_tags;
-        const recipe_image = recipe.image;
-        const recipe_link = recipe.link;
-        const recipe_CO2 = recipe.climateimpact;
-
-
-        // Create a div element for the recipe
-        const recipeDiv = document.createElement('div');
-        recipeDiv.classList.add('recipe');
-
-        // Create and append the recipe title
-        const titleElement = document.createElement('h2');
-        titleElement.classList.add('recipe_name');
-        titleElement.textContent = recipe_title;
-        recipeDiv.appendChild(titleElement);
-        
-        // Create and append the recipe image
-        const imageElement = document.createElement('img');
-        imageElement.src = recipe_image;
-        imageElement.alt = recipe_title;
-        recipeDiv.appendChild(imageElement);
-
-        // // Create and append the recipe link
-        // const linkElement = document.createElement('a');
-        // // linkElement.id = "goToRecipe";
-
-        // linkElement.href = recipe_link;
-        // // linkElement.textContent = "Gå till recept";
-        // recipeDiv.appendChild(linkElement);
-
-        // //Create and append the recipe button
-        // const buttonElement = document.createElement('button');
-        // buttonElement.id = "goToRecipe";
-        // buttonElement.textContent = "Gå till recept";
-        // linkElement.appendChild(buttonElement);
-
-        // Create and append the recipe link
-        const linkElement = document.createElement('button');
-        linkElement.id = "goToRecipe";
-        linkElement.textContent = "Gå till recept";
-        linkElement.addEventListener('click', function() {
-            save_to_session_storage('link', recipe_link);
-            window.location.href = 'recipe_page.html';
+        // Create recipe cards for all sorted recipes
+        sorted_recipe_list.forEach(([recipeIndex, _]) => {
+            const recipe = data[recipeIndex];
+            create_recipe_card(recipe);
         });
-        recipeDiv.appendChild(linkElement);
-
-        // Create and append the ingredient list
-        const ingredientList = document.createElement('div');
-        ingredientList.classList.add('ingredient_list');
-        const full_ingredients_name = [];
-        recipe_ingredients.forEach(ingredient => {
-            full_ingredients_name.push(ingredient);
-        });
-        
-        const matching = get_matching_ingredients(user_ingredients, full_ingredients_name)[0];
-        const matching_count = document.createElement('h3');
-        matching_count.textContent = `Matchande ingredienser: ${matching.length}`;
-        ingredientList.appendChild(matching_count);
-        
-        // Filter and display only matching ingredients
-        const matchingIngredients = recipe_ingredients.filter(ingredient => matching.includes(ingredient));
-        
-        matchingIngredients.forEach(ingredient => {
-            const ingredientElement = document.createElement('li');
-            ingredientElement.textContent = ingredient;
-            ingredientElement.style.color = 'green';
-            ingredientList.appendChild(ingredientElement);
-        });
-
-        recipeDiv.appendChild(ingredientList);
-        
-        // Create and append the slider element
-        const footprintSlider = document.createElement('div');
-        footprintSlider.classList.add('footprint');
-        recipeDiv.appendChild(footprintSlider);
-        
-        // Create and append the slider element
-        const slider = document.createElement('input');
-        slider.type = 'range';
-        slider.min = 0;
-        slider.max = 3;
-        slider.value = parseFloat(recipe_CO2.value[0] + "." + recipe_CO2.value[2]); // OBS ugly but works :)
-        slider.id = recipe.title + "colorSlider";
-        slider.classList.add('slider');
-        slider.disabled = true;
-        footprintSlider.appendChild(slider);
-        //updateThumbColor(slider.value, slider.id);
-
-        // Create and append the warning element
-        const warning = document.createElement('p');
-        warning.id = recipe.title + 'warning';
-        warning.classList.add('warning');
-        warning.textContent = "";
-        footprintSlider.appendChild(warning);
-
-        // Create and append the footprint text element
-        const footprintText = document.createElement('p');
-        footprintText.id = recipe.title + "footprintText";
-        footprintText.classList.add('footprint_text');
-        footprintText.textContent = "";
-        footprintSlider.appendChild(footprintText);
-
-        
-        // Append the recipe div to the existing div with id 'recipeList'
-        document.getElementById('recipeList').appendChild(recipeDiv);
-        displayWarning(slider.value, warning.id);
-        updateThumbColor(slider.value, slider.id);
-        updateFootprintText(recipe_CO2.value, footprintText.id);
     })
-    .catch(error => {console.error('Error fetching data:', error)
+    .catch(error => {
+        console.error('Error fetching data:', error);
         const recipeDiv = document.createElement('div');
         recipeDiv.classList.add('recipe');
         const testh2 = document.createElement('h2');
-        testh2.textContent = "hello this page cannot be loaded";
+        testh2.textContent = "Sorry, this page cannot be loaded";
         recipeDiv.appendChild(testh2);
         document.getElementById('recipeList').appendChild(recipeDiv);
     });
 });
 
+/* Moved the code to this function to create a card for a recommended recipe */
+function create_recipe_card(recipe) {
+    const recipeDiv = document.createElement('div');
+    recipeDiv.classList.add('recipe');
+
+    // Create and append the recipe title
+    const titleElement = document.createElement('h2');
+    titleElement.classList.add('recipe_name');
+    titleElement.textContent = recipe.title;
+    recipeDiv.appendChild(titleElement);
+    
+    // Create and append the recipe image
+    const imageElement = document.createElement('img');
+    imageElement.src = recipe.image;
+    imageElement.alt = recipe.title;
+    recipeDiv.appendChild(imageElement);
+
+    // // Create and append the recipe link
+    // const linkElement = document.createElement('a');
+    // // linkElement.id = "goToRecipe";
+    // linkElement.href = recipe_link;
+    // // linkElement.textContent = "Gå till recept";
+    // recipeDiv.appendChild(linkElement);
+    // //Create and append the recipe button
+    // const buttonElement = document.createElement('button');
+    // buttonElement.id = "goToRecipe";
+    // buttonElement.textContent = "Gå till recept";
+    // linkElement.appendChild(buttonElement);
+
+    // Create and append the recipe link
+    const linkElement = document.createElement('button');
+    linkElement.id = "goToRecipe";
+    linkElement.textContent = "Gå till recept";
+    linkElement.addEventListener('click', function() {
+        save_to_session_storage('link', recipe.link);
+        window.location.href = 'recipe_page.html';
+    });
+    recipeDiv.appendChild(linkElement);
+
+    // Create and append the ingredient list
+    const ingredientList = document.createElement('div');
+    ingredientList.classList.add('ingredient_list');
+    const full_ingredients_name = recipe.ingredient_tags;
+    
+    const matching = get_matching_ingredients(user_ingredients, full_ingredients_name)[0];
+    const matching_count = document.createElement('h3');
+    matching_count.textContent = `Matchande ingredienser: ${matching.length}`;
+    ingredientList.appendChild(matching_count);
+    
+    // Filter and display only matching ingredients
+    const matchingIngredients = recipe.ingredient_tags.filter(ingredient => matching.includes(ingredient));
+    
+    matchingIngredients.forEach(ingredient => {
+        const ingredientElement = document.createElement('li');
+        ingredientElement.textContent = ingredient;
+        ingredientElement.style.color = 'green';
+        ingredientList.appendChild(ingredientElement);
+    });
+
+    recipeDiv.appendChild(ingredientList);
+    
+    // Create and append the slider element
+    const footprintSlider = document.createElement('div');
+    footprintSlider.classList.add('footprint');
+    recipeDiv.appendChild(footprintSlider);
+    
+    // Create and append the slider element
+    const slider = document.createElement('input');
+    slider.type = 'range';
+    slider.min = 0;
+    slider.max = 3;
+    slider.value = parseFloat(recipe.climateimpact.value[0] + "." + recipe.climateimpact.value[2]);
+    slider.id = recipe.title + "colorSlider";
+    slider.classList.add('slider');
+    slider.disabled = true;
+    footprintSlider.appendChild(slider);
+
+    // Create and append the warning element
+    const warning = document.createElement('p');
+    warning.id = recipe.title + 'warning';
+    warning.classList.add('warning');
+    warning.textContent = "";
+    footprintSlider.appendChild(warning);
+
+    // Create and append the footprint text element
+    const footprintText = document.createElement('p');
+    footprintText.id = recipe.title + "footprintText";
+    footprintText.classList.add('footprint_text');
+    footprintText.textContent = "";
+    footprintSlider.appendChild(footprintText);
+
+    // Append the recipe div to the existing div with id 'recipeList'
+    document.getElementById('recipeList').appendChild(recipeDiv);
+    displayWarning(slider.value, warning.id);
+    updateThumbColor(slider.value, slider.id);
+    updateFootprintText(recipe.climateimpact.value, footprintText.id);
+}
 
 function updateThumbColor(value, sliderId) {
     const slider = document.getElementById(sliderId); // gets the slider element
