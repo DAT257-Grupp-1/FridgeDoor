@@ -1,30 +1,303 @@
-{
-    "title": "Spaghetti Carbonara",
-    "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper for a simple yet rich flavor.",
-    "image": "https://example.com/images/spaghetti-carbonara.jpg",
-    "link": "https://example.com/recipes/spaghetti-carbonara",
-    "ingredients": [
-        {
-            "name": "Spaghetti",
-            "quantity": "200g"
+[
+    {
+        "title": "Spaghetti Carbonara",
+        "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper for a simple yet rich flavor.",
+        "image": "https://example.com/images/spaghetti-carbonara.jpg",
+        "link": "https://example.com/recipes/spaghetti-carbonara",
+        "ingredients": [
+            {
+                "name": "Spaghetti",
+                "quantity": "200g"
+            }
+        ],
+        "ingredient_tags": [
+            "spaghetti",
+            "korv"
+        ],
+        "portions": 4,
+        "numingredients": 0,
+        "cooktime": "Under 30 min",
+        "rating": "Betyg 4.1 av 5.",
+        "difficulty": "Medel",
+        "instructions": [
+            "Cook the spaghetti in a large pot of salted boiling water until al dente.",
+            "While the pasta is cooking, fry the pancetta in a pan until crispy.",
+            "In a bowl, whisk the eggs and grate in the Parmesan cheese. Season with black pepper.",
+            "Drain the spaghetti, reserving a little pasta water.",
+            "Quickly toss the hot pasta with the egg mixture, pancetta, and a splash of reserved pasta water to create a creamy sauce.",
+            "Serve immediately with extra Parmesan and black pepper."
+        ],
+        "energy": "",
+        "climateimpact": {
+            "value": "0 - 0,5",
+            "unit": "kg CO2e/portion"
         }
-    ],
-    "portions": 4,
-    "numingredients": 0,
-    "cooktime": "Under 30 min",
-    "rating": "Betyg 4.1 av 5.",
-    "difficulty": "Medel",
-    "instructions": [
-        "Cook the spaghetti in a large pot of salted boiling water until al dente.",
-        "While the pasta is cooking, fry the pancetta in a pan until crispy.",
-        "In a bowl, whisk the eggs and grate in the Parmesan cheese. Season with black pepper.",
-        "Drain the spaghetti, reserving a little pasta water.",
-        "Quickly toss the hot pasta with the egg mixture, pancetta, and a splash of reserved pasta water to create a creamy sauce.",
-        "Serve immediately with extra Parmesan and black pepper."
-    ],
-    "energy": "",
-    "climateimpact": {
-        "value": "0 - 0,5",
-        "unit": "kg CO2e/portion"
+    },
+    {
+        "title": "Salsiccia med bönpasta och zuccini",
+        "description": "Salsiccia al limone en riktigt god korv kryddad med rosmarin och citron är basen i denna snabblagade grönsakstäta pasta. I pannan får salsiccian sällskap av rödlök och tomatpesto. Bönpastan blandas med tunt hyvlad zucchini och fräsch mangold. Riven parmesan på toppen och rätten är klar att servera.",
+        "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_192651/cf_259/salsiccia_med_bonpasta_och_zuccini.jpg",
+        "link": "https://www.ica.se/recept/salsiccia-med-bonpasta-och-zuccini-724876/",
+        "ingredients": [
+            {
+                "name": "zucchini (à ca 300 g)",
+                "quantity": "1  "
+            },
+            {
+                "name": "rödlökar",
+                "quantity": "2  "
+            },
+            {
+                "name": "förp salsiccia al limone (à 240 g)",
+                "quantity": "1  "
+            },
+            {
+                "name": "olivolja",
+                "quantity": "1 msk "
+            },
+            {
+                "name": "tomatpesto",
+                "quantity": "3 msk "
+            },
+            {
+                "name": "matlagningsgrädde (15%)",
+                "quantity": "2 1/2 dl "
+            },
+            {
+                "name": "port bönpasta (gärna fusilli)",
+                "quantity": "4  "
+            },
+            {
+                "name": "kokvatten",
+                "quantity": "2 dl "
+            },
+            {
+                "name": "salt",
+                "quantity": ""
+            },
+            {
+                "name": "svartpeppar",
+                "quantity": ""
+            },
+            {
+                "name": "röda mangoldskott",
+                "quantity": "65 g "
+            },
+            {
+                "name": "finriven parmesan",
+                "quantity": ""
+            }
+        ],
+        "ingredient_tags": [
+            "tomatpesto",
+            "zuccini", 
+            "rödlök"
+        ],
+        "portions": 4,
+        "numingredients": 12,
+        "cooktime": "Under 30 min",
+        "rating": "Betyg 4.5 av 5.",
+        "difficulty": "Medel",
+        "instructions": [
+            "Sätt på en kastrull med vatten till pastan.",
+            "Ansa och hyvla zuccinin på längden, gärna med en mandolin.",
+            "Skala och skiva lökarna.",
+            "Skär korven i slantar.",
+            "Stek lök och korv i olivoljan i en stor stekpanna, tillsätt tomatpesto och grädde. Koka upp och sjud någon minut.",
+            "Koka pastan enligt anvisningen på förpackningen. Spara 1 dl kokvatten (för 4 port) och häll av pastan.",
+            "Rör i pastan och kokvattnet i korv- och tomatgrädden och blanda ordentligt. Smaksätt med salt och peppar. Vänd ner mangold och zuccini.",
+            "Till servering: Servera pastan gärna med finriven parmesanost."
+        ],
+        "energy": "2493 KJ / 597 kCal",
+        "climateimpact": {
+            "value": "0,5 - 1,40 ",
+            "unit": "kg CO2e/portion"
+        }
+    },
+    {
+        "title": "Medelhavssallad med tomat, oliver och basilikadressing",
+        "description": "Denna vego-sallad är en mättande sallad som för tankarna till medelhavsmat. Grunden är en klassisk och god basilikadressing som du kryddar med dijonsenap. Bönor, oliver och ris gjort på kikärtor ger dig bra energi och är mättande. Salladen toppas med krämig mozzarella och krispiga granatäppelkärnor.",
+        "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_192633/cf_259/medelhavssallad_med_tomat__oliver_och_basilikadressing.jpg",
+        "link": "https://www.ica.se/recept/medelhavssallad-med-tomat-oliver-och-basilikadressing-724874/",
+        "ingredients": [
+            {
+                "name": "frysta granatäppelkärnor",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "apelsin (1 apelsin motsvarar 1 dl saft)",
+                "quantity": "finrivet skal och saft av 1  "
+            },
+            {
+                "name": "kruka basilika",
+                "quantity": "1  "
+            },
+            {
+                "name": "dijonsenap",
+                "quantity": "2 tsk "
+            },
+            {
+                "name": "vitvinsvinäger",
+                "quantity": "1 tsk "
+            },
+            {
+                "name": "olivolja",
+                "quantity": "1 dl "
+            },
+            {
+                "name": "salt",
+                "quantity": ""
+            },
+            {
+                "name": "svartpeppar",
+                "quantity": ""
+            },
+            {
+                "name": "port havreris eller annat gryn",
+                "quantity": "4  "
+            },
+            {
+                "name": "haricots verts (bönor)",
+                "quantity": "150 g "
+            },
+            {
+                "name": "silverlök",
+                "quantity": "1  "
+            },
+            {
+                "name": "gurka",
+                "quantity": "1/2  "
+            },
+            {
+                "name": "gula körsbärstomater",
+                "quantity": "250 g "
+            },
+            {
+                "name": "mozzarella (à 125 g)",
+                "quantity": "2  "
+            },
+            {
+                "name": "kalamataoliver utan kärnor",
+                "quantity": "2 dl "
+            }
+        ],
+        "ingredient_tags": [
+            "mozzarella",
+            "gurka"
+        ],
+        "portions": 4,
+        "numingredients": 15,
+        "cooktime": "Under 30 min",
+        "rating": "Betyg 4.2 av 5.",
+        "difficulty": "Medel",
+        "instructions": [
+            "Tina granatäppelkärnorna.",
+            "Tvätta och riv det yttersta av skalet på apelsinen. Pressa 1 dl juice (för 4 port) ur apelsinen.",
+            "Mixa basilikabladen med apelsinskal, apelsinjuice, senap, vinäger och olivolja. Smaksätt dressingen med salt och peppar.",
+            "Koka riset enligt anvisningen på förpackningen.",
+            "Ansa och koka bönorna i saltat vatten 4-5 minuter. Häll av vattnet.",
+            "Skala och skiva löken tunt, gärna med en mandolin.",
+            "Hyvla gurkan på längden med en mandolin eller osthyvel.",
+            "Blanda riset med dressing, bönor, lök, gurka och tomater.",
+            "Riv mozzarellaosten i bitar.",
+            "Lägg upp riset på ett fat. Strö över mozzarella, oliver och granatäppelkärnor."
+        ],
+        "energy": "2571 KJ / 614 kCal",
+        "climateimpact": {
+            "value": "0,5 - 1,40 ",
+            "unit": "kg CO2e/portion"
+        }
+    },
+    {
+        "title": "Pad thai med färdig sås och böngroddar",
+        "description": "Asiatiska dofter i köket ger god aptit. Här gör du enkelt en Pad thai med den rätta thailändska smaken med hjälp av färdig woksås. Många grönsaker, ägg och böngroddar samt salladsärtor i rätten ger god mättnad. Njut din Pad thai med koriander och lime.",
+        "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_192526/cf_259/pad_thai_med_fardig_sas_och_bongroddar.jpg",
+        "link": "https://www.ica.se/recept/pad-thai-med-fardig-sas-och-bongroddar-724873/",
+        "ingredients": [
+            {
+                "name": "morötter",
+                "quantity": "3  "
+            },
+            {
+                "name": "salladslökar",
+                "quantity": "4  "
+            },
+            {
+                "name": "röd paprika",
+                "quantity": "1  "
+            },
+            {
+                "name": "port risnudlar",
+                "quantity": "4  "
+            },
+            {
+                "name": "salladsärtor",
+                "quantity": "150 g "
+            },
+            {
+                "name": "olja",
+                "quantity": "2 msk "
+            },
+            {
+                "name": "vitlöksklyftor",
+                "quantity": "2  "
+            },
+            {
+                "name": "böngroddar",
+                "quantity": "180 g "
+            },
+            {
+                "name": "ägg",
+                "quantity": "4  "
+            },
+            {
+                "name": "salt",
+                "quantity": ""
+            },
+            {
+                "name": "förp woksås à 250 ml (gärna asian pad thai)",
+                "quantity": "1  "
+            },
+            {
+                "name": "peppar",
+                "quantity": ""
+            },
+            {
+                "name": "rostade solroskärnor",
+                "quantity": "100 g "
+            },
+            {
+                "name": "färsk koriander",
+                "quantity": ""
+            },
+            {
+                "name": "limeklyftor",
+                "quantity": ""
+            }
+        ],
+        "ingredient_tags": [
+            "spaghetti",
+            "gurka"
+        ],
+        "portions": 4,
+        "numingredients": 15,
+        "cooktime": "Under 30 min",
+        "rating": "Betyg 4 av 5.",
+        "difficulty": "Medel",
+        "instructions": [
+            "Sätt på en kastrull med vatten till nudlarna.",
+            "Skala och dela morötterna på längden och skiva dem tunt. Ansa och skiva salladslökarna.",
+            "Dela, kärna ur och strimla paprikan.",
+            "Koka nudlarna enligt anvisning på förpackningen. Koka med salladsärtorna sista minuten. Spola nudlar och salladsärtor i ljummet vatten och låt rinna av.",
+            "Stek morötterna och paprikan i oljan i en wok eller stor stekpanna ca 3 minuter. Pressa i vitlöken och rör ner salladslök och böngroddar.",
+            "Sänk värmen och knäck ett ägg i taget i pannan. Rör runt medan äggen stelnar. Krydda med salt.",
+            "Vänd ner nudlar och salladsärtorna i pannan. Tillsätt woksåsen och blanda väl. Låt allt bli varmt. Smaka av med peppar",
+            "Till servering: Strö över solroskärnor, servera gärna med koriander och limeklyftor."
+        ],
+        "energy": "2669 KJ / 637 kCal",
+        "climateimpact": {
+            "value": "0 - 0,5 ",
+            "unit": "kg CO2e/portion"
+        }
     }
-}
+]

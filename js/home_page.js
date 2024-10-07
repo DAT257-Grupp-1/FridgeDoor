@@ -1,4 +1,5 @@
-let ingredients_list = [];
+let json_data = null;
+let ingredients_list = []
 
 /* loads saved_items when the home_page window is loaded. */
 window.onload = function(){
@@ -24,9 +25,9 @@ function display_ingredients() {
     ingredients_list.forEach(ingredient => {                    
             const button = document.createElement("button");
             button.textContent = ingredient;
-            button.innerHTML = `${ingredient} <span class="remove-icon">✕</span>`;
-            button.classList.add("custom_button");
-            button.id = ingredient;
+            /*button.innerHTML = `${ingredient} <span class="remove-icon">✕</span>`;
+            button.classList.add("custom_button");*/
+            button.id = "ingredient";
             button.addEventListener('click', clicked_button => {
                 const clickedIngredient = clicked_button.target.innerText;
                 splice_ingredient(clickedIngredient);
@@ -63,6 +64,7 @@ function splice_ingredient(ingredient){
     ingredients_list.splice(index, 1);
 }
 
+/* Updates the contents of saved_items to equal ingredients_list */
 function amount_of_ingredients(){
     ingredients_list.c
 }
@@ -72,6 +74,22 @@ document.getElementById("input_field").addEventListener("keydown", function(even
         add_ingredient(); 
     }
 });
+
+// // Fetch the JSON data and store it
+// fetch('./structure.json')
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//         json_data = data; // Store fetched data in a higher-scope variable
+//         console.log('Data fetched and stored.');
+//     })
+//     .catch(error => {
+//         console.error('Error fetching the JSON file:', error);
+//     });
 function fetch_inggredient_keys(){
     fetch('ingredient_tags.json')
         .then(response => response.json())

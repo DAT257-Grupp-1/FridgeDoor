@@ -1,66 +1,88 @@
-#input_field {
-    width: 70%;
-    height: 100px;
+body{
+    background-color: var(--primary-background);
+    font-family: Arial, sans-serif;
+    height: 100vh;
+}
+
+#contentDiv{
+    position: relative;
+    width: 80%;
+    height: auto;
+    background-color: var(--primary-background);
+    border-radius: 10px;
+    margin: 5%;
+    padding: 5%;
+    font-size: 40px;
+}
+
+#search_bar {
+    border-radius: 10px;
+    width: 98%;
+    display: flex;
+    background-color: var(--secondary-background);
+    padding: 1%;    
+}
+
+#input_field {    
+    width: 80%;
     font-size: 55px;
     border-radius: 10px;
     font-family: Arial, sans-serif;
     font-size: 1.3em;
     opacity: 0.7;
-    background-color: darkviolet;
-    color: yellow;
-}
-
-#search_bar {
-    border-radius: 10px;
-    display: flex;
-    background-color: lightcoral;
+    background-color: var(--secondary-background);
+    padding:2%;
 }
 
 #add {
-    margin-top: auto;
     border-radius: 10px;
-    height: 105px;
+    width: 20%;
     font-size: 30px;
-    background-color: lightgreen;
-}
-body{
-    background-color: orange;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: var(--accent-low-prio);
 }
 
-#contentDiv{
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 350px;
-    height: 800px;
-    background-color:lightblue;
-    padding: 2%;
+#ingredients_buttons{
+    text-align: center;
     border-radius: 10px;
+    padding: 1%;
+    width: 98%;
+    background-color: var(--secondary-background);
+}
+
+#ingredient{
+    padding: 2%;
+    font-size: 40px;
+    margin: 0.5%;
+    color: var(--general-text);
+    background-color: var(--contrast-low-prio);
+}
+
+.remove-icon{
+    font-size: 20px;
+}
+
+#clear_button{
+    width: 30%;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 50px;
+    border-radius: 10px;
+    margin: 2%;
+    color: var(--general-text);
+    background-color: var(--contrast-high-prio);
 }
 
 #continue {  
-    width: 200px;
-    height: 50px;
+    width: 40%;
     padding: 15px;
-    margin-left: 60px;
+    position: absolute;
+    right:5%;
     font-family: Arial, sans-serif;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 20px;
-  }
-
-#ingredients_buttons{
+    font-size: 50px;
+    background-color: var(--accent-high-prio);
+    color: var(--general-text);
     border-radius: 10px;
-}
-
-#clear_button_button{
-    border-radius: 10px;
-    color: red;
-    background-color: navy;
+    margin: 2%;
 }
 
 .custom_button{
@@ -86,15 +108,13 @@ body{
     height: 24px;
     border-radius: 50%;
     margin-left: 10px;
-    background-color: #ffffff;
-    color: #ff6347;
+    background-color: var(--contrast-high-prio);
+    color: var(--general-text);
     font-weight: bold;
-
 }
 
 #product_icon{
-    height: 40px;
-    width: 40px;
+    width: 80%;
     margin-top: 20px;
     margin-left: 80px;
 }

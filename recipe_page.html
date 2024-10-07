@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+    <title>Recept</title>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/recipe_page.css">
+
+    <script src="js/shared.js" type="module" defer></script>
+    <script src="js/recipe_page.js" defer></script>
+</head>
+
+<div id="container">
+
+    <div id="description_container">
+        <div id="title_container"></div>
+        <p id="description"></p>
+        <div id="energy_container"></div>
+    </div>
+
+    <div id="image_container"></div>
+
+    
+    <div id="divider_line"></div>
+    
+
+    <div id="ingredients_container"></div>
+
+    <div id="instructions_container"></div>
+
+    <div id="cocktail_container">
+        <button id="show_cocktail_btn">Visa Cocktail</button>
+        <div id="hidden_div" style="display: none;">
+            <button id="close_cocktail">Stäng</button>
+            <div id="cocktail"></div>
+        </div>
+    </div>
+
+    <a href="recipe_list.html">
+        <button id="back">Tillbaka</button>
+    </a>
+
+</div>
+
+</html>
