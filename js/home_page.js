@@ -69,11 +69,11 @@ function amount_of_ingredients(){
     ingredients_list.c
 }
 
-document.getElementById("input_field").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        add_ingredient(); 
-    }
-});
+// document.getElementById("input_field").addEventListener("keydown", function(event) {
+//     if (event.key === "Enter") {
+//         add_ingredient(); 
+//     }
+// });
 
 // // Fetch the JSON data and store it
 // fetch('./structure.json')
