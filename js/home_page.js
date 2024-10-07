@@ -91,29 +91,55 @@ document.getElementById("input_field").addEventListener("keydown", function(even
 //         console.error('Error fetching the JSON file:', error);
 //     });
 
-function fetch_inggredient_keys(){
+document.addEventListener('DOMContentLoaded', function() {
+    fetch_ingredient_keys();
+});
+
+function fetch_ingredient_keys() {
     fetch('recipe_normalizer/ingredient_tags.json')
         .then(response => response.json())
         .then(data => {
-            const datalist = document.getElementById('ingredient_tags');
-            data.forEach(ingredient => {
-                const option = document.createElement('option');
-                option.value = ingredient;
-                datalist.appendChild(option);
-            });
+            populateDropdown(data);
         })
         .catch(error => console.error('Error fetching ingredient tags:', error));
-    return option;
 }
 
 function populateDropdown(options) {
     const dropdown = document.getElementById('dropdown');
     dropdown.innerHTML = ''; // Clear existing options
+    dropdown.style.display = 'none'; // Hide dropdown by default
 
     options.forEach(option => {
-        const optionElement = document.createElement('option');
-        optionElement.value = option;
-        optionElement.text = option;
-        dropdown.appendChild(optionElement);
+        const buttonElement = document.createElement('button');
+        buttonElement.id = 'ingredient'; // Set button ID to 'ingredient'
+        buttonElement.textContent = option;
+        buttonElement.addEventListener('click', () => {
+            document.getElementById('input_field').value = option;
+            add_ingredient();
+            dropdown.style.display = 'none'; // Hide dropdown after selection
+        });
+        dropdown.appendChild(buttonElement);
     });
 }
+
+document.getElementById('input_field').addEventListener('input', function() {
+    const filter = this.value.toLowerCase();
+    const dropdown = document.getElementById('dropdown');
+    const options = dropdown.getElementsByTagName('button');
+
+    for (let i = 0; i < options.length; i++) {
+        const option = options[i];
+        const text = option.textContent.toLowerCase();
+        option.style.display = text.includes(filter) ? '' : 'none';
+    }
+});
+document.addEventListener('click', function(event) {
+    const inputField = document.getElementById('input_field');
+    const dropdown = document.getElementById('dropdown');
+    
+    if (!inputField.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = 'none';
+    } else {
+        dropdown.style.display = 'block';
+    }
+});
