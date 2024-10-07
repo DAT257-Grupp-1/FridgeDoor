@@ -68,7 +68,7 @@ function sort_recipes(data){
         // Find matching ingredients
         let matched_and_unmatched = get_matching_ingredients(user_ingredients, data[m]["ingredient_tags"]);
         let climateimpact = parseStringToDecimal(data[m]["climateimpact"]["value"])
-        let limit = Math.round(user_ingredients.length / 2)
+        let limit = 1; //Math.round(user_ingredients.length / 2)
         if(matched_and_unmatched[0].length >= limit){
             sorted_recipe_list.push([m, matched_and_unmatched, climateimpact])  // [index, [number_of_matched, number_of_unmatched], climateimpact]
         }

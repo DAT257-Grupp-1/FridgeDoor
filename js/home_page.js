@@ -9,6 +9,7 @@ window.onload = function(){
         display_ingredients();
     }
 }
+
 function add_ingredient() {
     // store vales searched and clear text field
     let text = document.getElementById("input_field").value;
@@ -75,6 +76,13 @@ document.getElementById("input_field").addEventListener("keydown", function(even
     }
 });
 
+
+function hitta_recept(){
+    if(ingredients_list.length != 0){
+        document.location.href = "recipe_list.html";
+    }
+}
+
 // // Fetch the JSON data and store it
 // fetch('./structure.json')
 //     .then(response => {
@@ -90,3 +98,5 @@ document.getElementById("input_field").addEventListener("keydown", function(even
 //     .catch(error => {
 //         console.error('Error fetching the JSON file:', error);
 //     });
+
+
