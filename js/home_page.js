@@ -117,6 +117,7 @@ function populateDropdown(options) {
             document.getElementById('input_field').value = option;
             add_ingredient();
             dropdown.style.display = 'none'; // Hide dropdown after selection
+            buttonElement.style.display = 'none'; // Hide the selected option
         });
         dropdown.appendChild(buttonElement);
     });
@@ -127,19 +128,23 @@ document.getElementById('input_field').addEventListener('input', function() {
     const dropdown = document.getElementById('dropdown');
     const options = dropdown.getElementsByTagName('button');
 
-    for (let i = 0; i < options.length; i++) {
-        const option = options[i];
-        const text = option.textContent.toLowerCase();
-        option.style.display = text.includes(filter) ? '' : 'none';
+    if (filter === '') {
+        dropdown.style.display = 'none';
+    } else {
+        dropdown.style.display = 'block';
+        for (let i = 0; i < options.length; i++) {
+            const option = options[i];
+            const text = option.textContent.toLowerCase();
+            option.style.display = text.includes(filter) ? '' : 'none';
+        }
     }
 });
+
 document.addEventListener('click', function(event) {
     const inputField = document.getElementById('input_field');
     const dropdown = document.getElementById('dropdown');
     
     if (!inputField.contains(event.target) && !dropdown.contains(event.target)) {
         dropdown.style.display = 'none';
-    } else {
-        dropdown.style.display = 'block';
     }
 });
