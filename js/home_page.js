@@ -90,8 +90,9 @@ document.getElementById("input_field").addEventListener("keydown", function(even
 //     .catch(error => {
 //         console.error('Error fetching the JSON file:', error);
 //     });
+
 function fetch_inggredient_keys(){
-    fetch('ingredient_tags.json')
+    fetch('recipe_normalizer/ingredient_tags.json')
         .then(response => response.json())
         .then(data => {
             const datalist = document.getElementById('ingredient_tags');
