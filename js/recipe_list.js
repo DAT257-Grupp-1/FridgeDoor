@@ -95,13 +95,37 @@ function sort_recipes(data){
     return sorted_recipe_list
 }
 
+let currently_shown_recipes = 0 
+let recipes_per_load = 10 // Can be adjusted
+
 document.addEventListener("DOMContentLoaded", () => {
     fetch('web_scraper/data.json')
     .then(response => response.json())
     .then(data => {
         // Sorting indexes
         let sorted_recipe_list = sort_recipes(data)
+
+        // Load more button div
+        const load_more_div = document.createElement('div');
+        load_more_div.id = 'load_more_div';
+
+        const load_more_button = document.createElement('button');
+        load_more_button.textContent = 'Ladda flera recept';
+        load_more_button.id = 'load_more_button';
+
         
+        const recipe_count_span = document.createElement('span'); // Span showning text   (number of recipes shown) out of (total recipes)
+        recipe_count_span.id = 'recipe_count';
+
+        load_more_div.appendChild(load_more_button);
+        load_more_div.appendChild(recipe_count_span);
+
+        document.getElementById('recipeList').after(load_more_div); 
+
+        // TODO: Function to load more recipes 
+        function load_more_recipes() {
+           return
+        }
         // Create recipe cards for all sorted recipes
         sorted_recipe_list.forEach(([recipeIndex, _]) => {
             const recipe = data[recipeIndex];
