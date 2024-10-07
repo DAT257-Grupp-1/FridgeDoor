@@ -48,6 +48,7 @@ body{
     padding: 1%;
     width: 98%;
     background-color: var(--secondary-background);
+    margin-top: 5px;
 }
 
 #ingredient{

@@ -20,27 +20,33 @@ function add_ingredient() {
 
 /* Creates a div container and buttons for each ingredient within the div. */
 function display_ingredients() {
-    delete_ingredients();                                       
-    const container = document.getElementById("ingredients_buttons");   
-    ingredients_list.forEach(ingredient => {                    
+    delete_ingredients();
+    const container = document.getElementById("ingredients_buttons");
+    
+    if (ingredients_list.length === 0) {
+        container.style.display = 'none';
+    } else {
+        container.style.display = 'block';
+        ingredients_list.forEach(ingredient => {
             const button = document.createElement("button");
             button.textContent = ingredient;
-            /*button.innerHTML = `${ingredient} <span class="remove-icon">✕</span>`;
-            button.classList.add("custom_button");*/
             button.id = "ingredient";
             button.addEventListener('click', clicked_button => {
                 const clickedIngredient = clicked_button.target.innerText;
                 splice_ingredient(clickedIngredient);
                 save_to_session_storage('saved_items', ingredients_list);
                 display_ingredients();
+            });
+            container.appendChild(button);
         });
-        container.appendChild(button);
-    });
+    }
 }
 
 /* Deletes all elements within div container.  */
 function delete_ingredients(){
     document.getElementById("ingredients_buttons").innerHTML = "";
+    const container = document.getElementById("ingredients_buttons");
+    container.style.display = 'none';
 }
 function clear_ingredients(){
     ingredients_list = [];
