@@ -25,10 +25,12 @@ body{
 
 #input_field {    
     width: 80%;
-    font-size: 55px;
     border-radius: 10px;
+    border-style:solid;
+    border-width: 2px;
+    border-color: var(--general-text);
     font-family: Arial, sans-serif;
-    font-size: 1.3em;
+    font-size: 1.2em;
     opacity: 0.7;
     background-color: var(--secondary-background);
     padding:2%;
@@ -36,23 +38,26 @@ body{
 
 #add {
     border-radius: 10px;
+    border-style: none;
     width: 20%;
     font-size: 30px;
+    margin-left: 10px;
     background-color: var(--accent-low-prio);
 }
 
 #ingredients_buttons{
+    margin-top: 15px;
     text-align: center;
     border-radius: 10px;
-    padding: 1%;
-    width: 98%;
     background-color: var(--secondary-background);
 }
 
 #ingredient{
     padding: 2%;
     font-size: 40px;
-    margin: 0.5%;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: none;
     color: var(--general-text);
     background-color: var(--contrast-low-prio);
 }
@@ -67,7 +72,8 @@ body{
     font-family: Arial, sans-serif;
     font-size: 50px;
     border-radius: 10px;
-    margin: 2%;
+    border-style: none;
+    margin-top: 15px;
     color: var(--general-text);
     background-color: var(--contrast-high-prio);
 }
@@ -79,10 +85,11 @@ body{
     right:5%;
     font-family: Arial, sans-serif;
     font-size: 50px;
-    background-color: var(--accent-high-prio);
+    background-color: var(--accent-low-prio);
+    border-style: none;
     color: var(--general-text);
     border-radius: 10px;
-    margin: 2%;
+    margin-top: 15px;
 }
 
 .custom_button{

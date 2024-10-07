@@ -136,18 +136,6 @@ function create_recipe_card(recipe) {
     imageElement.alt = recipe.title;
     recipeDiv.appendChild(imageElement);
 
-    // // Create and append the recipe link
-    // const linkElement = document.createElement('a');
-    // // linkElement.id = "goToRecipe";
-    // linkElement.href = recipe_link;
-    // // linkElement.textContent = "Gå till recept";
-    // recipeDiv.appendChild(linkElement);
-    // //Create and append the recipe button
-    // const buttonElement = document.createElement('button');
-    // buttonElement.id = "goToRecipe";
-    // buttonElement.textContent = "Gå till recept";
-    // linkElement.appendChild(buttonElement);
-
     // Create and append the recipe link
     const linkElement = document.createElement('button');
     linkElement.id = "goToRecipe";
@@ -164,7 +152,8 @@ function create_recipe_card(recipe) {
     const full_ingredients_name = recipe.ingredient_tags;
     
     const matching = get_matching_ingredients(user_ingredients, full_ingredients_name)[0];
-    const matching_count = document.createElement('h3');
+    const matching_count = document.createElement('p');
+    matching_count.setAttribute("id", "matched_ingredients")
     matching_count.textContent = `Matchande ingredienser: ${matching.length}`;
     ingredientList.appendChild(matching_count);
     
@@ -173,8 +162,9 @@ function create_recipe_card(recipe) {
     
     matchingIngredients.forEach(ingredient => {
         const ingredientElement = document.createElement('li');
+        ingredientElement.setAttribute("id", "matching_item")
         ingredientElement.textContent = ingredient;
-        ingredientElement.style.color = 'green';
+        ingredientElement.style.color = 'var(--general-text)';
         ingredientList.appendChild(ingredientElement);
     });
 
@@ -200,6 +190,7 @@ function create_recipe_card(recipe) {
     const warning = document.createElement('p');
     warning.id = recipe.title + 'warning';
     warning.classList.add('warning');
+    warning.setAttribute("style", "font-size: 35px;")
     warning.textContent = "";
     footprintSlider.appendChild(warning);
 
@@ -207,6 +198,7 @@ function create_recipe_card(recipe) {
     const footprintText = document.createElement('p');
     footprintText.id = recipe.title + "footprintText";
     footprintText.classList.add('footprint_text');
+    footprintText.setAttribute("style", "font-size: 28px;")
     footprintText.textContent = "";
     footprintSlider.appendChild(footprintText);
 
