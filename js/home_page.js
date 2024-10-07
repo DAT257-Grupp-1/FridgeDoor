@@ -13,9 +13,12 @@ function add_ingredient() {
     // store vales searched and clear text field
     let text = document.getElementById("input_field").value;
     document.getElementById("input_field").value = "";
-    ingredients_list.push(text);
-    save_to_session_storage('saved_items', ingredients_list);
-    display_ingredients();  
+
+    if (text && !ingredients_list.includes(text)) {  
+        ingredients_list.push(text);
+        save_to_session_storage('saved_items', ingredients_list);
+        display_ingredients();  
+    }
 }
 
 /* Creates a div container and buttons for each ingredient within the div. */
@@ -40,6 +43,7 @@ function display_ingredients() {
             container.appendChild(button);
         });
     }
+    fetch_ingredient_keys(); 
 }
 
 /* Deletes all elements within div container.  */
@@ -52,6 +56,7 @@ function clear_ingredients(){
     ingredients_list = [];
     delete_ingredients();
     save_to_session_storage('saved_items', ingredients_list);
+    fetch_ingredient_keys(); 
 }
 
 /* Helper function to return the index of given ingredient in ingredients_list.*/
@@ -115,13 +120,15 @@ function populateDropdown(options) {
     dropdown.innerHTML = ''; // Clear existing options
     dropdown.style.display = 'none'; // Hide dropdown by default
 
-    options.forEach(option => {
+    const filteredOptions = options.filter(option => !ingredients_list.includes(option));
+
+    filteredOptions.forEach(option =>  {
         const buttonElement = document.createElement('button');
         buttonElement.id = 'ingredient'; // Set button ID to 'ingredient'
         buttonElement.textContent = option;
         buttonElement.addEventListener('click', () => {
             document.getElementById('input_field').value = option;
-            add_ingredient();
+            add_ingredient(option);
             dropdown.style.display = 'none'; // Hide dropdown after selection
             buttonElement.style.display = 'none'; // Hide the selected option
         });
