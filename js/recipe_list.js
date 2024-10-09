@@ -95,28 +95,71 @@ function sort_recipes(data){
     return sorted_recipe_list
 }
 
+let currently_shown_recipes = 0;
+const recipes_per_load = 10; // You can adjust this number as needed
+
 document.addEventListener("DOMContentLoaded", () => {
     fetch('web_scraper/data.json')
-    .then(response => response.json())
-    .then(data => {
-        // Sorting indexes
-        let sorted_recipe_list = sort_recipes(data)
-        
-        // Create recipe cards for all sorted recipes
-        sorted_recipe_list.forEach(([recipeIndex, _]) => {
-            const recipe = data[recipeIndex];
-            create_recipe_card(recipe);
+        .then(response => response.json())
+        .then(data => {
+            let sorted_recipe_list = sort_recipes(data);
+
+            const load_more_button = document.createElement('button');
+            load_more_button.textContent = 'Visa fler...';
+            load_more_button.id = 'load_more_button';
+            document.body.appendChild(load_more_button);
+
+
+            function load_more_recipes() {
+                const start = currently_shown_recipes;
+                const end = Math.min(start + recipes_per_load, sorted_recipe_list.length);
+                
+                for (let i = start; i < end; i++) {
+                    const [recipeIndex, _] = sorted_recipe_list[i];
+                    const recipe = data[recipeIndex];
+                    create_recipe_card(recipe);
+                }
+                
+                currently_shown_recipes = end;
+                check_button_visibility();
+            }
+
+            function is_last_recipe_visible() {
+                const recipes = document.querySelectorAll('.recipe');
+                if (recipes.length === 0) return false;
+
+                const lastRecipe = recipes[recipes.length - 1];
+                const rect = lastRecipe.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                const isVisible = rect.top < windowHeight && rect.bottom >= 0;
+                
+                return isVisible;
+            }
+
+            function check_button_visibility() {
+                const shouldShowButton = is_last_recipe_visible() && currently_shown_recipes < sorted_recipe_list.length;
+                load_more_button.style.display = shouldShowButton ? 'block' : 'none';
+            }
+
+            load_more_recipes();
+
+            load_more_button.addEventListener('click', load_more_recipes);
+
+            window.addEventListener('scroll', () => {
+                check_button_visibility();
+            });
+
+            window.addEventListener('resize', check_button_visibility);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            const recipeDiv = document.createElement('div');
+            recipeDiv.classList.add('recipe');
+            const testh2 = document.createElement('h2');
+            testh2.textContent = "Sorry, this page cannot be loaded";
+            recipeDiv.appendChild(testh2);
+            document.getElementById('recipeList').appendChild(recipeDiv);
         });
-    })
-    .catch(error => {
-        console.error('Error fetching data:', error);
-        const recipeDiv = document.createElement('div');
-        recipeDiv.classList.add('recipe');
-        const testh2 = document.createElement('h2');
-        testh2.textContent = "Sorry, this page cannot be loaded";
-        recipeDiv.appendChild(testh2);
-        document.getElementById('recipeList').appendChild(recipeDiv);
-    });
 });
 
 /* Moved the code to this function to create a card for a recommended recipe */
