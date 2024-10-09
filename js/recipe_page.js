@@ -21,7 +21,7 @@ window.onload = function () {
             make_image(result);
             make_ingredients(result.ingredients);
             make_instructions(result.instructions);
-            translate_text();
+            // translate_text();
         })
 }
 
