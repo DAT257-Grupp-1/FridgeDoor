@@ -1,5 +1,4 @@
 
-
 window.onload = function () {    
     fetch('web_scraper/data.json')
         .then(response => response.json())
@@ -21,7 +20,7 @@ window.onload = function () {
             make_image(result);
             make_ingredients(result.ingredients);
             make_instructions(result.instructions);
-            
+            translate_text();
         })
 }
 
@@ -232,43 +231,47 @@ function get_random_cocktail() {
                 console.error('Error fetching mocktail:', error);
                 display_cocktail(null, 'Kunde inte hämta mocktail just nu. Försök igen senare.');
             });
-    }
 
-const axios = require('axios').default;
-const {v4: uuidv4} = require('uuid');
-
-let key = config.subscriptionKey;
-let endpoint = config.endpoint;
-let location = config.location;
-
-let params = new URLSearchParams();
-params.append("api-version", "3.0");
-params.append("from", "en");
-params.append("to", "sv");
-
-
-axios({
-    baseURL: endpoint,
-    url: '/translate',
-    method: 'post',
-    headers: {
-        'Ocp-Apim-Subscription-Key': key,
-        'Ocp-Apim-Subscription-Region':location,
-        'Content-type': 'Fridgedoor/js',
-        'X-ClientTraceId': uuidv4().toString()
-    },
-    params: params,
-    data: [{
-        'text': 'Hello, friend! What did you do today?'
-    }], 
-    responseType: 'json'
-}).then(function(response){
-    console.log(JSON.stringify(response.data, null, 4));
-})
+        }
 
 
 
 
+function translate_text (){
+    const axios = require('axios').default;
+    const {v4: uuidv4} = require('uuid');
+    
+
+    let key = config.subscriptionKey;
+    let endpoint = config.endpoint;
+    let location = config.location;
+
+    let params = new URLSearchParams();
+    params.append("api-version", "3.0");
+    params.append("from", "en");
+    params.append("to", "sv"); 
+
+    axios({
+        baseURL: endpoint,
+        url: '/translate',
+        method: 'post',
+        headers: {
+            'Ocp-Apim-Subscription-Key': key,
+            'Ocp-Apim-Subscription-Region':location,
+            'Content-type': 'Fridgedoor/js',
+            'X-ClientTraceId': uuidv4().toString()
+        },
+        params: params,
+        data: [{
+            'text': 'Hello, friend! What did you do today?'
+        }], 
+        responseType: 'json'
+    }).then(function(response){
+        console.log(JSON.stringify(response.data, null, 4));
+    })  
+
+      
+}
 
 
 
