@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let sorted_recipe_list = sort_recipes(data);
 
             const load_more_button = document.createElement('button');
-            load_more_button.textContent = 'Visa flera recept...';
+            load_more_button.textContent = 'Visa fler...';
             load_more_button.id = 'load_more_button';
             document.body.appendChild(load_more_button);
 
