@@ -24,7 +24,7 @@ body{
 }
 
 #input_field {    
-    width: 80%;
+    width: 100%;
     font-size: 55px;
     border-radius: 10px;
     font-family: Arial, sans-serif;
@@ -32,6 +32,7 @@ body{
     opacity: 0.7;
     background-color: var(--secondary-background);
     padding:2%;
+    /* text-align: center; */
 }
 
 #add {
@@ -47,6 +48,7 @@ body{
     padding: 1%;
     width: 98%;
     background-color: var(--secondary-background);
+    margin-top: 5px;
 }
 
 #ingredient{
