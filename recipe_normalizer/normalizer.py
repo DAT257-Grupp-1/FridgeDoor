@@ -142,6 +142,8 @@ def save_ingredient_keys():
             if ingredient['name'] in n_ingredients:
                 recipe['ingredient_tags'].extend(n_ingredients[ingredient['name']])
         # print(recipe['ingredient_tags'])
+        # Remove duplicates from ingredient_tags
+        recipe['ingredient_tags'] = list(set(recipe['ingredient_tags']))
     
     # print(data)
     # Save the updated JSON back to the file
