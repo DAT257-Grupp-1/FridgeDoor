@@ -119,6 +119,16 @@ body{
     margin-left: 80px;
 }
 
+#info_button{
+    width: 20%;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    border-radius: 5px;
+    margin: 2%;
+    color: var(--general-text);
+    background-color: var(--contrast-low-prio);
+}
 
 
 
@@ -145,7 +155,7 @@ body{
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888888;
-    width: 30%;
+    width: 50%;
     font-weight: bolder;
 }
 

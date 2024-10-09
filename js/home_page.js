@@ -76,7 +76,6 @@ document.getElementById("input_field").addEventListener("keydown", function(even
 });
 
 
-//TEST
 info_button.addEventListener(
     "click",
     function () {
@@ -101,7 +100,7 @@ window.addEventListener(
         }
     }
 );
-//TEST
+
 
 
 // // Fetch the JSON data and store it
