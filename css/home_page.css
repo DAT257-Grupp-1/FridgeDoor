@@ -119,4 +119,58 @@ body{
     width: 80%;
     margin-top: 20px;
     margin-left: 80px;
+
+
+#info_button{
+    width: 30%;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 50px;
+    border-radius: 10px;
+    margin: 12%;
+    color: var(--general-text);
+    background-color: var(--contrast-low-prio);
+    position: absolute;
+    bottom: 0%;
+    right: 1%;
+}
+
+.popup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,
+            0,
+            0,
+            0.4);
+    display: none;
+}
+
+.popup-content {
+    background-color: var(--secondary-background);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888888;
+    width: 80%;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.popup-content button {
+    width: 30%;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    border-radius: 10px;
+    margin: 2%;
+    color: var(--general-text);
+    background-color: var(--contrast-high-prio);
+}
+
+.show {
+    display: block;
 }
