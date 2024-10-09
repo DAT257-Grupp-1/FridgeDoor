@@ -1,3 +1,6 @@
+body {
+  background-color: var(--primary-background);
+}
 
 #container {
   display: flex;
@@ -8,7 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; 
-  align-items: center; ;
+  align-items: center;
 }
 
 #title {
@@ -24,11 +27,13 @@
 }
 
 #description {
-  font-size: 35px;
+  font-size: 40px;
+  font-style: italic;
+  margin-top: 0px;
 }
 
 #climate_impact {
-  font-size: 30px;
+  font-size: 40px;
   margin-top: 15px;
    
 }
@@ -55,17 +60,16 @@ img {
 }
 
 #energy {
-  font-size: 25px;
+  font-size: 35px;
   margin-top: 10px;
   margin-bottom: 5px;
-  font-size: 25px;
 }
 
 #divider_line {
   flex: none;
-  background-color: lightgray;
+  background-color: var(--general-text);
   box-shadow: none;
-  height: 5px;
+  height: 3px;
   min-width: 100%;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -97,7 +101,7 @@ img {
 .ingredient_item {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: var(--secondary-background);
   margin: 10px;
   width: auto;
   min-height: 100px;
@@ -109,7 +113,7 @@ img {
 
 .item_text {
   margin-right: 10px;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 300;
 }
 
@@ -123,7 +127,7 @@ img {
 
 .instruction_item {
   display: flex;
-  background-color: white;
+  background-color: var(--secondary-background);
   margin: 10px;
   width: auto;
   min-height: 100px;
@@ -135,7 +139,7 @@ img {
 
 .instruction_text {
   padding: 10px;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 #cocktail_container {
@@ -146,9 +150,9 @@ img {
 
 #show_cocktail_btn {
   width: 100%;
-  background-color: lightgray;
+  background-color: var(--accent-low-prio);
   height: 100%;
-  font-size: 30px;
+  font-size: 40px;
   border: none;
   box-shadow:inset;
 }
@@ -157,25 +161,40 @@ img {
   display: none;
   position: relative; 
   width: 100%;
-  background-color: #fff;
+  background-color: var(--secondary-background);
   padding: 20px;
   box-sizing: border-box;
-  border-top: 1px solid #ccc;
-  margin-top: -5px; 
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 150px; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#drink_title {
+  font-size: 40px;
+  text-align: left;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+#drink_name {
+  font-size: 35px;
+  padding: 5px;
+  margin: 0px;
+  font-style: italic;
 }
 
 #close_cocktail {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
+  top: 18px;
+  right: 20px;
+  background-color: var(--accent-low-prio);
   border: none;
-  font-size: 24px;
-}
-
-
-#cocktail {
-  width: 100%;
+  font-size: 35px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 #cocktail img {
@@ -184,7 +203,27 @@ img {
   height: auto;
   margin: 20px 0;
   border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+#cocktail_image {
+  max-width: 500px;
+}
+
+#cocktail_instructions {
+  font-size: 40px;
+  font-style: italic;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-size: 35px;
+}
+
 .age_verify_container {
   position: fixed;
   top: 0;
@@ -198,9 +237,11 @@ img {
   z-index: 1000;
 }
 .age_verify_popup {
-  background-color: white;
+  background-color: var(--secondary-background);
+  width: 800px;
+  height: 550px;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -209,13 +250,34 @@ img {
   padding: 5px 10px;
 }
 
+#min_age_text {
+  font-size: 60px;
+}
+
+#min_age_description {
+  font-size: 40px;
+}
+
+#over18, #under18 {
+  font-size: 35px;
+  width:350px;
+  height: 150px;
+  border-radius: 10px;
+  border-style: none;
+  margin-top: 90px;
+  background-color: var(--contrast-low-prio);
+}
+
 .checkbox {
-  margin-top: 43px;
+  margin-top: 50px;
   margin-left: 10px;
   min-width: 30px;
   min-height: 30px;
-  background-color: aqua;
   align-self: start;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--accent-high-prio);
 }
 
 .strikethrough {
@@ -223,4 +285,14 @@ img {
   overflow: hidden;
   max-height: 35px;
 
+}
+
+#toggleBtn {
+  background-color: var(--accent-low-prio);
+  width: auto;
+  height: auto;
+  font-size: 30px;
+  padding: 5;
+  border-radius: 5px;
+  border:none;
 }

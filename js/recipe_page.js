@@ -86,7 +86,7 @@ async function make_instructions(instructions) {
         let i = instructions[index];
 
         // create item (instruction) container
-        let item = document.createElement("div");
+        let item = document.createElement("label");
         item.setAttribute("class", "instruction_item");
 
         let checkbox = document.createElement("input");
@@ -149,8 +149,8 @@ function create_popup_age_verification() {
         popup.className = 'age_verify_popup';
 
         popup.innerHTML = `
-            <h2>Bekräfta din ålder</h2>
-            <p>För att se drinkförslag måste du ha fyllt 18 år.</p>
+            <p id="min_age_text">Bekräfta din ålder</p>
+            <p id="min_age_description">För att se drinkförslag måste du ha fyllt 18 år.</p>
             <button id="over18">Jag har fyllt 18 år</button>
             <button id="under18">Jag är under 18 år</button>
         `;
@@ -209,23 +209,27 @@ function display_cocktail(cocktail,title_text) {
     cocktail_section.innerHTML = ''; // Clear previous content
 
     // Create and append a title to the cocktail section
-    const title = document.createElement('h3');
+    const title = document.createElement('p');
+    title.setAttribute("id", "drink_title")
     title.textContent = title_text;
     cocktail_section.appendChild(title);
 
     if (cocktail) {
         // Display the cocktail name
-        const name = document.createElement('h4');
+        const name = document.createElement('p');
+        name.setAttribute("id", "drink_name")
         name.textContent = cocktail.strDrink;
         cocktail_section.appendChild(name);
 
         // Display the cocktail image
         const image = document.createElement('img');
+        image.setAttribute("id", "cocktail_image")
         image.src = cocktail.strDrinkThumb;
         cocktail_section.appendChild(image);
 
         // Display the cocktail instructions
         const instructions = document.createElement('p');
+        instructions.setAttribute("id", "cocktail_instructions")
         instructions.textContent = cocktail.strInstructions;
         cocktail_section.appendChild(instructions);
 

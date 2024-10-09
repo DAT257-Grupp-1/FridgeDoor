@@ -131,11 +131,13 @@ img {
     cursor: pointer;
 }
 
-/* #goToRecipe {
-    font-size: 50px;
-    color: var(--general-text);
+#next_btn {
+    height: 120px;
+    width: 120px; 
+    transform: rotate(180deg);
     align-self: center;
-    background-color: var(--contrast-low-prio);
-    margin-left: 20px;
-    padding: 10px;
-    } */
+    margin-left: auto;
+
+
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(50%) contrast(119%);
+}

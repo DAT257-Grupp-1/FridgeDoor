@@ -126,7 +126,7 @@ function create_recipe_card(recipe) {
     recipeDiv.classList.add('recipe');
     recipeDiv.addEventListener('click', function() {
         save_to_session_storage('link', recipe.link);
-        // window.location.href = 'recipe_page.html';
+        window.location.href = 'recipe_page.html';
     });
 
     
@@ -203,10 +203,11 @@ function create_recipe_card(recipe) {
     footprintText.textContent = "";
     footprintSlider.appendChild(footprintText);
 
-    // const toRecipeText = document.createElement('p')
-    // toRecipeText.setAttribute("id", "goToRecipe")
-    // toRecipeText.appendChild(document.createTextNode("Till Recept"));
-    // recipeDiv.appendChild(toRecipeText)
+    const nextBtn = document.createElement('img')
+    nextBtn.setAttribute("id", "next_btn")
+    nextBtn.setAttribute("src", "Logo/left-arrow.svg")
+    nextBtn.setAttribute("alt", "Some text")
+    recipeDiv.appendChild(nextBtn)
 
     // Append the recipe div to the existing div with id 'recipeList'
     document.getElementById('recipeList').appendChild(recipeDiv);
