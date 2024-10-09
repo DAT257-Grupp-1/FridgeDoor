@@ -75,6 +75,35 @@ document.getElementById("input_field").addEventListener("keydown", function(even
     }
 });
 
+
+//TEST
+info_button.addEventListener(
+    "click",
+    function () {
+        myPopup.classList.add("show");
+    }
+);
+closePopup.addEventListener(
+    "click",
+    function () {
+        myPopup.classList.remove(
+            "show"
+        );
+    }
+);
+window.addEventListener(
+    "click",
+    function (event) {
+        if (event.target == myPopup) {
+            myPopup.classList.remove(
+                "show"
+            );
+        }
+    }
+);
+//TEST
+
+
 // // Fetch the JSON data and store it
 // fetch('./structure.json')
 //     .then(response => {
