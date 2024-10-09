@@ -23,10 +23,16 @@ window.onload = function () {
 }
 
 async function make_image(data) {
+    let button = document.createElement("button")
+    button.setAttribute("id", "enlarge_image")
+    button.addEventListener('click', async function() {
+        await create_popup_recipe_image(data);
+    })
+
     let img = document.createElement("img");
     img.setAttribute("src", data.image);
-
-    document.getElementById("image_container").appendChild(img);
+    button.appendChild(img);
+    document.getElementById("image_container").appendChild(button);
 }
 
 async function make_title(result) {
@@ -168,6 +174,29 @@ function create_popup_age_verification() {
             resolve('under18');
         });
     });
+}
+
+function create_popup_recipe_image(data) {
+        const container = document.createElement('div');
+        container.className = 'recipe_image_container';
+
+        const popup = document.createElement('div');
+        popup.setAttribute("id", "recipe_image_popup");
+
+        let image = document.createElement("img")
+        image.setAttribute("src", data.image)
+        popup.appendChild(image)
+
+        let closeImage = document.createElement("button")
+        closeImage.setAttribute("id", "image_close_btn")
+        closeImage.appendChild(document.createTextNode("Stäng"));
+        closeImage.addEventListener('click', () => {
+            container.remove();
+        })
+
+        container.appendChild(popup);
+        container.appendChild(closeImage);
+        document.body.appendChild(container);
 }
 
 
