@@ -2,10 +2,16 @@
 
 
 #back{
-    font-size: 20px;
+    font-size: 35px;
     position:fixed;
     bottom: 20px;
     left: 20px;
+    width: 250px;
+    height: 100px;
+    background-color: var(--contrast-low-prio);
+    border-style:none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .colors{
