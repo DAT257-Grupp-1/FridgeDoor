@@ -95,73 +95,71 @@ function sort_recipes(data){
     return sorted_recipe_list
 }
 
-let currently_shown_recipes = 0 
-let recipes_per_load = 10 // Can be adjusted
+let currently_shown_recipes = 0;
+const recipes_per_load = 10; // You can adjust this number as needed
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch('web_scraper/data.json')
-    .then(response => response.json())
-    .then(data => {
-        // Sorting indexes
-        let sorted_recipe_list = sort_recipes(data)
+        .then(response => response.json())
+        .then(data => {
+            let sorted_recipe_list = sort_recipes(data);
 
-        // Load more button div
-        const load_more_div = document.createElement('div');
-        load_more_div.id = 'load_more_div';
+            const load_more_button = document.createElement('button');
+            load_more_button.textContent = 'Visa flera recept...';
+            load_more_button.id = 'load_more_button';
+            document.body.appendChild(load_more_button);
 
-        const load_more_button = document.createElement('button');
-        load_more_button.textContent = 'Ladda flera recept';
-        load_more_button.id = 'load_more_button';
 
-        
-        const recipe_count_span = document.createElement('span'); // Span showning text   (number of recipes shown) out of (total recipes)
-        recipe_count_span.id = 'recipe_count';
+            function load_more_recipes() {
+                const start = currently_shown_recipes;
+                const end = Math.min(start + recipes_per_load, sorted_recipe_list.length);
+                
+                for (let i = start; i < end; i++) {
+                    const [recipeIndex, _] = sorted_recipe_list[i];
+                    const recipe = data[recipeIndex];
+                    create_recipe_card(recipe);
+                }
+                
+                currently_shown_recipes = end;
+                check_button_visibility();
+            }
 
-        load_more_div.appendChild(load_more_button);
-        load_more_div.appendChild(recipe_count_span);
+            function is_last_recipe_visible() {
+                const recipes = document.querySelectorAll('.recipe');
+                if (recipes.length === 0) return false;
 
-        document.getElementById('recipeList').after(load_more_div); 
+                const lastRecipe = recipes[recipes.length - 1];
+                const rect = lastRecipe.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                const isVisible = rect.top < windowHeight && rect.bottom >= 0;
+                
+                return isVisible;
+            }
 
-        // Function to load more recipes 
-        function load_more_recipes() {
-           const start = currently_shown_recipes; 
-           const end = Math.min(start+recipes_per_load,sorted_recipe_list.length);
+            function check_button_visibility() {
+                const shouldShowButton = is_last_recipe_visible() && currently_shown_recipes < sorted_recipe_list.length;
+                load_more_button.style.display = shouldShowButton ? 'block' : 'none';
+            }
 
-           for (let i = start; i < end; i++){
-            const [recipeIndex, _] = sorted_recipe_list[i]; 
-            const recipe = data[recipeIndex]; 
-            create_recipe_card(recipe); 
-           }
+            load_more_recipes();
 
-           currently_shown_recipes = end; 
-           update_recipe_count();
+            load_more_button.addEventListener('click', load_more_recipes);
 
-           // Remove the button once at the end of list 
-           if (currently_shown_recipes >= sorted_recipe_list.length){
-            load_more_button.style.display = 'none'
-           }
-        }
+            window.addEventListener('scroll', () => {
+                check_button_visibility();
+            });
 
-        // We would like to update the recipe count display in span 
-        function update_recipe_count(){
-            recipe_count_span.textContent = `Visar ${currently_shown_recipes} av total ${sorted_recipe_list.length} recept`;  // Template literals do not work with Internet Explorer browser
-
-        }
-
-        // Let's load some recipes initially
-        load_more_recipes(); 
-
-        load_more_button.addEventListener('click',load_more_recipes);
-    })
-    .catch(error => {
-        console.error('Error fetching data:', error);
-        const recipeDiv = document.createElement('div');
-        recipeDiv.classList.add('recipe');
-        const testh2 = document.createElement('h2');
-        testh2.textContent = "Sorry, this page cannot be loaded";
-        recipeDiv.appendChild(testh2);
-        document.getElementById('recipeList').appendChild(recipeDiv);
-    });
+            window.addEventListener('resize', check_button_visibility);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            const recipeDiv = document.createElement('div');
+            recipeDiv.classList.add('recipe');
+            const testh2 = document.createElement('h2');
+            testh2.textContent = "Sorry, this page cannot be loaded";
+            recipeDiv.appendChild(testh2);
+            document.getElementById('recipeList').appendChild(recipeDiv);
+        });
 });
 
 /* Moved the code to this function to create a card for a recommended recipe */
