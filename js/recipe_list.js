@@ -121,8 +121,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Moved the code to this function to create a card for a recommended recipe */
 function create_recipe_card(recipe) {
-    const recipeDiv = document.createElement('div');
+
+    const recipeDiv = document.createElement('button');
     recipeDiv.classList.add('recipe');
+    recipeDiv.addEventListener('click', function() {
+        save_to_session_storage('link', recipe.link);
+        // window.location.href = 'recipe_page.html';
+    });
+
+    
+    
 
     // Create and append the recipe title
     const titleElement = document.createElement('h2');
@@ -134,38 +142,31 @@ function create_recipe_card(recipe) {
     const imageElement = document.createElement('img');
     imageElement.src = recipe.image;
     imageElement.alt = recipe.title;
-    recipeDiv.appendChild(imageElement);
-
-    // Create and append the recipe link
-    const linkElement = document.createElement('button');
-    linkElement.id = "goToRecipe";
-    linkElement.textContent = "Gå till recept";
-    linkElement.addEventListener('click', function() {
-        save_to_session_storage('link', recipe.link);
-        window.location.href = 'recipe_page.html';
-    });
-    recipeDiv.appendChild(linkElement);
+    recipeDiv.appendChild(imageElement);    
 
     // Create and append the ingredient list
     const ingredientList = document.createElement('div');
     ingredientList.classList.add('ingredient_list');
     const full_ingredients_name = recipe.ingredient_tags;
     
-    const matching = get_matching_ingredients(user_ingredients, full_ingredients_name)[0];
+    const [matching, unmatched] = get_matching_ingredients(user_ingredients, full_ingredients_name);
+    const total = matching.length + unmatched.length;
     const matching_count = document.createElement('p');
     matching_count.setAttribute("id", "matched_ingredients")
-    matching_count.textContent = `Matchande ingredienser: ${matching.length}`;
+    matching_count.textContent = `Matchning: ${matching.length}/${unmatched.length}`;
     ingredientList.appendChild(matching_count);
     
     // Filter and display only matching ingredients
     const matchingIngredients = recipe.ingredient_tags.filter(ingredient => matching.includes(ingredient));
-    
+    console.log(matchingIngredients.length)
     matchingIngredients.forEach(ingredient => {
         const ingredientElement = document.createElement('li');
+        ingredientElement.setAttribute("style", "font-size: 35px; list-style-type: none;")
         ingredientElement.setAttribute("id", "matching_item")
         ingredientElement.textContent = ingredient;
         ingredientElement.style.color = 'var(--general-text)';
         ingredientList.appendChild(ingredientElement);
+        console.log("hi")
     });
 
     recipeDiv.appendChild(ingredientList);
@@ -201,6 +202,11 @@ function create_recipe_card(recipe) {
     footprintText.setAttribute("style", "font-size: 28px;")
     footprintText.textContent = "";
     footprintSlider.appendChild(footprintText);
+
+    // const toRecipeText = document.createElement('p')
+    // toRecipeText.setAttribute("id", "goToRecipe")
+    // toRecipeText.appendChild(document.createTextNode("Till Recept"));
+    // recipeDiv.appendChild(toRecipeText)
 
     // Append the recipe div to the existing div with id 'recipeList'
     document.getElementById('recipeList').appendChild(recipeDiv);
