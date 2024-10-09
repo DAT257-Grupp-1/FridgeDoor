@@ -120,14 +120,15 @@ body{
 }
 
 #info_button{
-    width: 20%;
+    width: 30%;
     padding: 15px;
     font-family: Arial, sans-serif;
-    font-size: 30px;
-    border-radius: 5px;
-    margin: 2%;
+    font-size: 50px;
+    border-radius: 10px;
+    margin: 12%;
     color: var(--general-text);
     background-color: var(--contrast-low-prio);
+    float: right;
 }
 
 
@@ -164,8 +165,8 @@ body{
     width: 30%;
     padding: 15px;
     font-family: Arial, sans-serif;
-    font-size: 30px;
-    border-radius: 5px;
+    font-size: 40px;
+    border-radius: 10px;
     margin: 2%;
     color: var(--general-text);
     background-color: var(--contrast-high-prio);
