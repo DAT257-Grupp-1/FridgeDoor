@@ -1,3 +1,5 @@
+import { translate_text } from './translate.js';
+
 window.onload = function () {    
     fetch('web_scraper/data.json')
         .then(response => response.json())
@@ -5,7 +7,7 @@ window.onload = function () {
             var result = -1
             const link = sessionStorage.getItem('link');
 
-            for (i in data) {
+            for (let i in data) {
                 const l = `"${data[i].link}"`;
                 if (l === link) {
                     result = data[i];
@@ -19,6 +21,7 @@ window.onload = function () {
             make_image(result);
             make_ingredients(result.ingredients);
             make_instructions(result.instructions);
+            // translate_text("testing if this works");
         })
 }
 
@@ -59,7 +62,7 @@ async function make_energy(result) {
 }
 
 async function make_ingredients(ingredients) {
-    for (index in ingredients) {
+    for (let index in ingredients) {
         let i = ingredients[index];
 
         // create item (ingredient) container
@@ -88,7 +91,7 @@ async function make_ingredients(ingredients) {
 }
 
 async function make_instructions(instructions) {
-    for (index in instructions) {
+    for (let index in instructions) {
         let i = instructions[index];
 
         // create item (instruction) container
@@ -214,25 +217,29 @@ function get_random_cocktail() {
         });
 }
 
- function get_mocktail() {
-        fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
-            .then(response => response.json())
-            .then(data => {
-                const mocktail = data.drinks[Math.floor(Math.random() * data.drinks.length)];
-                return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${mocktail.idDrink}`);
-            })
-            .then(response => response.json())
-            .then(data => {
-                display_cocktail(data.drinks[0], 'Här är en god mocktail att avnjuta med maten!');
-            })
-            .catch(error => {
-                console.error('Error fetching mocktail:', error);
-                display_cocktail(null, 'Kunde inte hämta mocktail just nu. Försök igen senare.');
-            });
-    }
+function get_mocktail() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
+        .then(response => response.json())
+        .then(data => {
+            const mocktail = data.drinks[Math.floor(Math.random() * data.drinks.length)];
+            return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${mocktail.idDrink}`);
+        })
+        .then(response => response.json())
+        .then(data => {
+            display_cocktail(data.drinks[0], 'Här är en god mocktail att avnjuta med maten!');
+        })
+        .catch(error => {
+            console.error('Error fetching mocktail:', error);
+            display_cocktail(null, 'Kunde inte hämta mocktail just nu. Försök igen senare.');
+        });
+
+}
 
 
-function display_cocktail(cocktail,title_text) {
+async function display_cocktail(cocktail,title_text) {
+    
+    console.log(cocktail);
+
     // Get the cocktail section element and clear any existing content
     const cocktail_section = document.getElementById('cocktail');
     cocktail_section.innerHTML = ''; // Clear previous content
@@ -259,20 +266,27 @@ function display_cocktail(cocktail,title_text) {
         // Display the cocktail instructions
         const instructions = document.createElement('p');
         instructions.setAttribute("id", "cocktail_instructions")
+        cocktail.strInstructions = await translate_text(cocktail.strInstructions);
         instructions.textContent = cocktail.strInstructions;
         cocktail_section.appendChild(instructions);
 
         // Create an unordered list element to display the ingredients
         const ingredients_list_cocktail = document.createElement('ul');
+        
 
         // Loop through the 15 potential ingredients and measurements
         for (let i = 1; i <= 15; i++) {
             const ingredient = cocktail[`strIngredient${i}`]; // Get the ingredient name
             const measure = cocktail[`strMeasure${i}`]; // Get the measurement for the ingredient
+            // console.log(ingredient);
+            // const t_ingredient = await translate_text(ingredient);
+            
 
             if (ingredient) { // Check if the ingredient is present (not null or undefined)
+                const t_ingredient = await translate_text(ingredient);
+                // console.log(t_ingredient);
                 const list_item = document.createElement('li'); // Create a list item element
-                list_item.textContent = `${measure ? measure : ''} ${ingredient}`; // Format and set the text for the list item
+                list_item.textContent = `${measure ? measure : ''} ${t_ingredient}`; // Format and set the text for the list item
                 ingredients_list_cocktail.appendChild(list_item); // Add the list item to the ingredients list
             }
         }
