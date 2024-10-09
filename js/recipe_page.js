@@ -1,3 +1,5 @@
+import { config } from './config.js';
+
 window.onload = function () {    
     fetch('web_scraper/data.json')
         .then(response => response.json())
@@ -185,23 +187,37 @@ function get_random_cocktail() {
         });
 }
 
- function get_mocktail() {
-        fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
-            .then(response => response.json())
-            .then(data => {
-                const mocktail = data.drinks[Math.floor(Math.random() * data.drinks.length)];
-                return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${mocktail.idDrink}`);
-            })
-            .then(response => response.json())
-            .then(data => {
-                display_cocktail(data.drinks[0], 'Här är en god mocktail att avnjuta med maten!');
-            })
-            .catch(error => {
-                console.error('Error fetching mocktail:', error);
-                display_cocktail(null, 'Kunde inte hämta mocktail just nu. Försök igen senare.');
-            });
-    }
+function get_mocktail() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
+        .then(response => response.json())
+        .then(data => {
+            const mocktail = data.drinks[Math.floor(Math.random() * data.drinks.length)];
+            return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${mocktail.idDrink}`);
+        })
+        .then(response => response.json())
+        .then(data => {
+            display_cocktail(data.drinks[0], 'Här är en god mocktail att avnjuta med maten!');
+        })
+        .catch(error => {
+            console.error('Error fetching mocktail:', error);
+            display_cocktail(null, 'Kunde inte hämta mocktail just nu. Försök igen senare.');
+        });
+}
 
+async function translate(text) {
+    const response = await fetch(`${config.endpoint}translate?api-version=3.0&to=sv`, {
+        method: 'POST',
+        headers: {
+            'Ocp-Apim-Subscription-Key': config.subscriptionKey,
+            'Ocp-Apim-Subscription-Region': config.region,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify([{ Text: text }])
+    });
+
+    const data = await response.json();
+    return data[0].translations[0].text;
+}
 
 function display_cocktail(cocktail,title_text) {
     // Get the cocktail section element and clear any existing content
@@ -227,6 +243,7 @@ function display_cocktail(cocktail,title_text) {
         // Display the cocktail instructions
         const instructions = document.createElement('p');
         instructions.textContent = cocktail.strInstructions;
+        instructions = translate(instructions);
         cocktail_section.appendChild(instructions);
 
         // Create an unordered list element to display the ingredients
