@@ -90,6 +90,13 @@ function amount_of_ingredients(){
 //     }
 // });
 
+
+function hitta_recept(){
+    if(ingredients_list.length != 0){
+        document.location.href = "recipe_list.html";
+    }
+}
+
 // // Fetch the JSON data and store it
 // fetch('./structure.json')
 //     .then(response => {
