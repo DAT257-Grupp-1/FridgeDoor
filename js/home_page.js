@@ -3,12 +3,16 @@ let ingredients_list = []
 
 /* loads saved_items when the home_page window is loaded. */
 window.onload = function(){
+    const container = document.getElementById("ingredients_buttons");
+    container.style.display = 'none'; // Initially hide the container
+
     const saved_items = sessionStorage.getItem('saved_items');
     if(saved_items) {
         ingredients_list = JSON.parse(saved_items);
         display_ingredients();
     }
 }
+
 function add_ingredient() {
     // store vales searched and clear text field
     let text = document.getElementById("input_field").value;
