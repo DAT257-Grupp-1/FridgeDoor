@@ -22,21 +22,23 @@
 
         <div id="search_bar">
             <input type="text" id="input_field" placeholder="Vad har du i ditt kylskåp?">
-            <button onclick="(add_ingredient())" id="add">Lägg till</button>
+            <!-- <button onclick="(add_ingredient())" id="add">Lägg till</button> -->
         </div>
+
+        <div id="dropdown">
+        </div>
+
+        
 
         <div id="ingredients_buttons">
         </div>
 
         <button id="clear_button" onclick="(clear_ingredients())" id="clear">Rensa</button>
 
-        <a href="recipe_list.html">
-            <button id="continue">Hitta recept</button>
-        </a>
-
-        
+        <button onclick="(hitta_recept())" id="continue">Hitta recept</button>
         
     </div>
+    
 
     <button id="info_button">Hjälp</button>
     
