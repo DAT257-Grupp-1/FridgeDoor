@@ -11,7 +11,7 @@ const targetLanguage = 'sv'; // Target language, e.g., 'es' for Spanish
 // Build the URL with the target language
 const url = `${endpoint}&to=${targetLanguage}`;
 
-const translateText = async (textToTranslate) => {
+const translate_text = async (textToTranslate) => {
   const requestBody = [{
     'Text': textToTranslate
   }];
@@ -29,9 +29,12 @@ const translateText = async (textToTranslate) => {
   if (response.ok) {
     const data = await response.json();
     console.log('Translated text:', data[0].translations[0].text);
+    return data[0].translations[0].text;
   } else {
     console.error('Error:', response.statusText);
   }
 };
 
-translateText('Hello, how are you my dear?');
+export { translate_text };
+
+// translateText('Hello, how are you my dear?');

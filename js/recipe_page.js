@@ -1,4 +1,4 @@
-
+import { translate_text } from './translate.js';
 
 window.onload = function () {    
     fetch('web_scraper/data.json')
@@ -7,7 +7,7 @@ window.onload = function () {
             var result = -1
             const link = sessionStorage.getItem('link');
 
-            for (i in data) {
+            for (let i in data) {
                 const l = `"${data[i].link}"`;
                 if (l === link) {
                     result = data[i];
@@ -21,7 +21,7 @@ window.onload = function () {
             make_image(result);
             make_ingredients(result.ingredients);
             make_instructions(result.instructions);
-            // translate_text();
+            // translate_text("testing if this works");
         })
 }
 
@@ -62,7 +62,7 @@ async function make_energy(result) {
 }
 
 async function make_ingredients(ingredients) {
-    for (index in ingredients) {
+    for (let index in ingredients) {
         let i = ingredients[index];
 
         // create item (ingredient) container
@@ -91,7 +91,7 @@ async function make_ingredients(ingredients) {
 }
 
 async function make_instructions(instructions) {
-    for (index in instructions) {
+    for (let index in instructions) {
         let i = instructions[index];
 
         // create item (instruction) container
@@ -255,7 +255,6 @@ function display_cocktail(cocktail,title_text) {
         const name = document.createElement('p');
         name.setAttribute("id", "drink_name")
         name.textContent = cocktail.strDrink;
-
         cocktail_section.appendChild(name);
 
         // Display the cocktail image
@@ -267,7 +266,9 @@ function display_cocktail(cocktail,title_text) {
         // Display the cocktail instructions
         const instructions = document.createElement('p');
         instructions.setAttribute("id", "cocktail_instructions")
+        cocktail.strInstructions = translate_text(cocktail.strInstructions);
         instructions.textContent = cocktail.strInstructions;
+
         cocktail_section.appendChild(instructions);
 
         // Create an unordered list element to display the ingredients
