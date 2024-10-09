@@ -22,6 +22,7 @@ h1 {
 }
 
 #recipe_container {
+    margin-bottom: 100px;
     display: grid;
     grid-template-rows: auto auto auto auto auto;
 }
@@ -140,4 +141,21 @@ img {
 
 
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(50%) contrast(119%);
+}
+/* Load more recipes buttton */
+#load_more_button {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    width: 250px;
+    height: 100px;
+    transform: translateX(-50%);
+    background-color: var(--contrast-low-prio);
+    padding: 10px 20px;
+    font-size: 35px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 }
