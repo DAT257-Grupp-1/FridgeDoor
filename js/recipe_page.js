@@ -268,7 +268,6 @@ async function display_cocktail(cocktail,title_text) {
         instructions.setAttribute("id", "cocktail_instructions")
         cocktail.strInstructions = await translate_text(cocktail.strInstructions);
         instructions.textContent = cocktail.strInstructions;
-
         cocktail_section.appendChild(instructions);
 
         // Create an unordered list element to display the ingredients
@@ -279,10 +278,15 @@ async function display_cocktail(cocktail,title_text) {
         for (let i = 1; i <= 15; i++) {
             const ingredient = cocktail[`strIngredient${i}`]; // Get the ingredient name
             const measure = cocktail[`strMeasure${i}`]; // Get the measurement for the ingredient
+            // console.log(ingredient);
+            // const t_ingredient = await translate_text(ingredient);
+            
 
             if (ingredient) { // Check if the ingredient is present (not null or undefined)
+                const t_ingredient = await translate_text(ingredient);
+                // console.log(t_ingredient);
                 const list_item = document.createElement('li'); // Create a list item element
-                list_item.textContent = `${measure ? measure : ''} ${ingredient}`; // Format and set the text for the list item
+                list_item.textContent = `${measure ? measure : ''} ${t_ingredient}`; // Format and set the text for the list item
                 ingredients_list_cocktail.appendChild(list_item); // Add the list item to the ingredients list
             }
         }
