@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
            const start = currently_shown_recipes; 
            const end = Math.min(start+recipes_per_load,sorted_recipe_list.length);
 
-           for (let i = start, i < end; i++){
+           for (let i = start; i < end; i++){
             const [recipeIndex, _] = sorted_recipe_list[i]; 
             const recipe = data[recipeIndex]; 
             create_recipe_card(recipe); 
