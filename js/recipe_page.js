@@ -236,10 +236,10 @@ function get_mocktail() {
 }
 
 
+async function display_cocktail(cocktail,title_text) {
+    
+    console.log(cocktail);
 
-
-
-function display_cocktail(cocktail,title_text) {
     // Get the cocktail section element and clear any existing content
     const cocktail_section = document.getElementById('cocktail');
     cocktail_section.innerHTML = ''; // Clear previous content
@@ -266,13 +266,14 @@ function display_cocktail(cocktail,title_text) {
         // Display the cocktail instructions
         const instructions = document.createElement('p');
         instructions.setAttribute("id", "cocktail_instructions")
-        cocktail.strInstructions = translate_text(cocktail.strInstructions);
+        cocktail.strInstructions = await translate_text(cocktail.strInstructions);
         instructions.textContent = cocktail.strInstructions;
 
         cocktail_section.appendChild(instructions);
 
         // Create an unordered list element to display the ingredients
         const ingredients_list_cocktail = document.createElement('ul');
+        
 
         // Loop through the 15 potential ingredients and measurements
         for (let i = 1; i <= 15; i++) {
