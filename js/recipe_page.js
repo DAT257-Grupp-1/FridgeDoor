@@ -1,4 +1,5 @@
 
+
 window.onload = function () {    
     fetch('web_scraper/data.json')
         .then(response => response.json())
@@ -216,62 +217,24 @@ function get_random_cocktail() {
         });
 }
 
- function get_mocktail() {
-        fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
-            .then(response => response.json())
-            .then(data => {
-                const mocktail = data.drinks[Math.floor(Math.random() * data.drinks.length)];
-                return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${mocktail.idDrink}`);
-            })
-            .then(response => response.json())
-            .then(data => {
-                display_cocktail(data.drinks[0], 'Här är en god mocktail att avnjuta med maten!');
-            })
-            .catch(error => {
-                console.error('Error fetching mocktail:', error);
-                display_cocktail(null, 'Kunde inte hämta mocktail just nu. Försök igen senare.');
-            });
+function get_mocktail() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
+        .then(response => response.json())
+        .then(data => {
+            const mocktail = data.drinks[Math.floor(Math.random() * data.drinks.length)];
+            return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${mocktail.idDrink}`);
+        })
+        .then(response => response.json())
+        .then(data => {
+            display_cocktail(data.drinks[0], 'Här är en god mocktail att avnjuta med maten!');
+        })
+        .catch(error => {
+            console.error('Error fetching mocktail:', error);
+            display_cocktail(null, 'Kunde inte hämta mocktail just nu. Försök igen senare.');
+        });
 
-        }
-
-
-
-
-function translate_text (){
-    const axios = require('axios').default;
-    const {v4: uuidv4} = require('uuid');
-    
-
-    let key = config.subscriptionKey;
-    let endpoint = config.endpoint;
-    let location = config.location;
-
-    let params = new URLSearchParams();
-    params.append("api-version", "3.0");
-    params.append("from", "en");
-    params.append("to", "sv"); 
-
-    axios({
-        baseURL: endpoint,
-        url: '/translate',
-        method: 'post',
-        headers: {
-            'Ocp-Apim-Subscription-Key': key,
-            'Ocp-Apim-Subscription-Region':location,
-            'Content-type': 'Fridgedoor/js',
-            'X-ClientTraceId': uuidv4().toString()
-        },
-        params: params,
-        data: [{
-            'text': 'Hello, friend! What did you do today?'
-        }], 
-        responseType: 'json'
-    }).then(function(response){
-        console.log(JSON.stringify(response.data, null, 4));
-    })  
-
-      
 }
+
 
 
 
