@@ -151,7 +151,7 @@ body{
 }
 
 .popup-content {
-    background-color: white;
+    background-color: var(--secondary-background);
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888888;
