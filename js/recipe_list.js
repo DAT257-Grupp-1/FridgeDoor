@@ -68,7 +68,7 @@ function sort_recipes(data){
         // Find matching ingredients
         let matched_and_unmatched = get_matching_ingredients(user_ingredients, data[m]["ingredient_tags"]);
         let climateimpact = parseStringToDecimal(data[m]["climateimpact"]["value"])
-        let limit = Math.round(user_ingredients.length / 2)
+        let limit = 1; //Math.round(user_ingredients.length / 2)
         if(matched_and_unmatched[0].length >= limit){
             sorted_recipe_list.push([m, matched_and_unmatched, climateimpact])  // [index, [number_of_matched, number_of_unmatched], climateimpact]
         }
@@ -95,34 +95,85 @@ function sort_recipes(data){
     return sorted_recipe_list
 }
 
+let currently_shown_recipes = 0;
+const recipes_per_load = 10; // You can adjust this number as needed
+
 document.addEventListener("DOMContentLoaded", () => {
     fetch('web_scraper/data.json')
-    .then(response => response.json())
-    .then(data => {
-        // Sorting indexes
-        let sorted_recipe_list = sort_recipes(data)
-        
-        // Create recipe cards for all sorted recipes
-        sorted_recipe_list.forEach(([recipeIndex, _]) => {
-            const recipe = data[recipeIndex];
-            create_recipe_card(recipe);
+        .then(response => response.json())
+        .then(data => {
+            let sorted_recipe_list = sort_recipes(data);
+
+            const load_more_button = document.createElement('button');
+            load_more_button.textContent = 'Visa fler...';
+            load_more_button.id = 'load_more_button';
+            document.body.appendChild(load_more_button);
+
+
+            function load_more_recipes() {
+                const start = currently_shown_recipes;
+                const end = Math.min(start + recipes_per_load, sorted_recipe_list.length);
+                
+                for (let i = start; i < end; i++) {
+                    const [recipeIndex, _] = sorted_recipe_list[i];
+                    const recipe = data[recipeIndex];
+                    create_recipe_card(recipe);
+                }
+                
+                currently_shown_recipes = end;
+                check_button_visibility();
+            }
+
+            function is_last_recipe_visible() {
+                const recipes = document.querySelectorAll('.recipe');
+                if (recipes.length === 0) return false;
+
+                const lastRecipe = recipes[recipes.length - 1];
+                const rect = lastRecipe.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                const isVisible = rect.top < windowHeight && rect.bottom >= 0;
+                
+                return isVisible;
+            }
+
+            function check_button_visibility() {
+                const shouldShowButton = is_last_recipe_visible() && currently_shown_recipes < sorted_recipe_list.length;
+                load_more_button.style.display = shouldShowButton ? 'block' : 'none';
+            }
+
+            load_more_recipes();
+
+            load_more_button.addEventListener('click', load_more_recipes);
+
+            window.addEventListener('scroll', () => {
+                check_button_visibility();
+            });
+
+            window.addEventListener('resize', check_button_visibility);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            const recipeDiv = document.createElement('div');
+            recipeDiv.classList.add('recipe');
+            const testh2 = document.createElement('h2');
+            testh2.textContent = "Sorry, this page cannot be loaded";
+            recipeDiv.appendChild(testh2);
+            document.getElementById('recipeList').appendChild(recipeDiv);
         });
-    })
-    .catch(error => {
-        console.error('Error fetching data:', error);
-        const recipeDiv = document.createElement('div');
-        recipeDiv.classList.add('recipe');
-        const testh2 = document.createElement('h2');
-        testh2.textContent = "Sorry, this page cannot be loaded";
-        recipeDiv.appendChild(testh2);
-        document.getElementById('recipeList').appendChild(recipeDiv);
-    });
 });
 
 /* Moved the code to this function to create a card for a recommended recipe */
 function create_recipe_card(recipe) {
-    const recipeDiv = document.createElement('div');
+
+    const recipeDiv = document.createElement('button');
     recipeDiv.classList.add('recipe');
+    recipeDiv.addEventListener('click', function() {
+        save_to_session_storage('link', recipe.link);
+        window.location.href = 'recipe_page.html';
+    });
+
+    
+    
 
     // Create and append the recipe title
     const titleElement = document.createElement('h2');
@@ -134,48 +185,31 @@ function create_recipe_card(recipe) {
     const imageElement = document.createElement('img');
     imageElement.src = recipe.image;
     imageElement.alt = recipe.title;
-    recipeDiv.appendChild(imageElement);
-
-    // // Create and append the recipe link
-    // const linkElement = document.createElement('a');
-    // // linkElement.id = "goToRecipe";
-    // linkElement.href = recipe_link;
-    // // linkElement.textContent = "Gå till recept";
-    // recipeDiv.appendChild(linkElement);
-    // //Create and append the recipe button
-    // const buttonElement = document.createElement('button');
-    // buttonElement.id = "goToRecipe";
-    // buttonElement.textContent = "Gå till recept";
-    // linkElement.appendChild(buttonElement);
-
-    // Create and append the recipe link
-    const linkElement = document.createElement('button');
-    linkElement.id = "goToRecipe";
-    linkElement.textContent = "Gå till recept";
-    linkElement.addEventListener('click', function() {
-        save_to_session_storage('link', recipe.link);
-        window.location.href = 'recipe_page.html';
-    });
-    recipeDiv.appendChild(linkElement);
+    recipeDiv.appendChild(imageElement);    
 
     // Create and append the ingredient list
     const ingredientList = document.createElement('div');
     ingredientList.classList.add('ingredient_list');
     const full_ingredients_name = recipe.ingredient_tags;
     
-    const matching = get_matching_ingredients(user_ingredients, full_ingredients_name)[0];
-    const matching_count = document.createElement('h3');
-    matching_count.textContent = `Matchande ingredienser: ${matching.length}`;
+    const [matching, unmatched] = get_matching_ingredients(user_ingredients, full_ingredients_name);
+    const total = matching.length + unmatched.length;
+    const matching_count = document.createElement('p');
+    matching_count.setAttribute("id", "matched_ingredients")
+    matching_count.textContent = `Matchning: ${matching.length}/${unmatched.length}`;
     ingredientList.appendChild(matching_count);
     
     // Filter and display only matching ingredients
     const matchingIngredients = recipe.ingredient_tags.filter(ingredient => matching.includes(ingredient));
-    
+    console.log(matchingIngredients.length)
     matchingIngredients.forEach(ingredient => {
         const ingredientElement = document.createElement('li');
+        ingredientElement.setAttribute("style", "font-size: 35px; list-style-type: none;")
+        ingredientElement.setAttribute("id", "matching_item")
         ingredientElement.textContent = ingredient;
-        ingredientElement.style.color = 'green';
+        ingredientElement.style.color = 'var(--general-text)';
         ingredientList.appendChild(ingredientElement);
+        console.log("hi")
     });
 
     recipeDiv.appendChild(ingredientList);
@@ -200,6 +234,7 @@ function create_recipe_card(recipe) {
     const warning = document.createElement('p');
     warning.id = recipe.title + 'warning';
     warning.classList.add('warning');
+    warning.setAttribute("style", "font-size: 35px;")
     warning.textContent = "";
     footprintSlider.appendChild(warning);
 
@@ -207,8 +242,15 @@ function create_recipe_card(recipe) {
     const footprintText = document.createElement('p');
     footprintText.id = recipe.title + "footprintText";
     footprintText.classList.add('footprint_text');
+    footprintText.setAttribute("style", "font-size: 28px;")
     footprintText.textContent = "";
     footprintSlider.appendChild(footprintText);
+
+    const nextBtn = document.createElement('img')
+    nextBtn.setAttribute("id", "next_btn")
+    nextBtn.setAttribute("src", "Logo/left-arrow.svg")
+    nextBtn.setAttribute("alt", "Some text")
+    recipeDiv.appendChild(nextBtn)
 
     // Append the recipe div to the existing div with id 'recipeList'
     document.getElementById('recipeList').appendChild(recipeDiv);
