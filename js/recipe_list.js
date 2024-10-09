@@ -122,15 +122,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById('recipeList').after(load_more_div); 
 
-        // TODO: Function to load more recipes 
+        // Function to load more recipes 
         function load_more_recipes() {
-           return
+           const start = currently_shown_recipes; 
+           const end = Math.min(start+recipes_per_load,sorted_recipe_list.length);
+
+           for (let i = start, i < end; i++){
+            const [recipeIndex, _] = sorted_recipe_list[i]; 
+            const recipe = data[recipeIndex]; 
+            create_recipe_card(recipe); 
+           }
+
+           currently_shown_recipes = end; 
+           update_recipe_count();
+
+           // Remove the button once at the end of list 
+           if (currently_shown_recipes >= sorted_recipe_list.length){
+            load_more_button.style.display = 'none'
+           }
         }
-        // Create recipe cards for all sorted recipes
-        sorted_recipe_list.forEach(([recipeIndex, _]) => {
-            const recipe = data[recipeIndex];
-            create_recipe_card(recipe);
-        });
+
+        // We would like to update the recipe count display in span 
+        function update_recipe_count(){
+            recipe_count_span.textContent = `Visar ${currently_shown_recipes} av total ${sorted_recipe_list.length} recept`;  // Template literals do not work with Internet Explorer browser
+
+        }
+
+        // Let's load some recipes initially
+        load_more_recipes(); 
+
+        load_more_button.addEventListener('click',load_more_recipes);
     })
     .catch(error => {
         console.error('Error fetching data:', error);
