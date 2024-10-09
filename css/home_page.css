@@ -160,8 +160,14 @@ body{
 }
 
 .popup-content button {
-    display: block;
-    margin: 0 auto;
+    width: 20%;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    border-radius: 5px;
+    margin: 2%;
+    color: var(--general-text);
+    background-color: var(--contrast-high-prio);
 }
 
 .show {
