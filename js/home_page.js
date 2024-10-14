@@ -36,10 +36,20 @@ function display_ingredients() {
         container.style.display = 'block';
         ingredients_list.forEach(ingredient => {
             const button = document.createElement("button");
-            button.textContent = ingredient;
+            // Create a span for the cross (X)
+            const closeSpan = document.createElement("span");
+            closeSpan.textContent = "×"; // This is the HTML entity for a multiplication sign (cross)
+            closeSpan.classList.add("close-button");
+
+            // Append the ingredient text and close button to the button
+            button.appendChild(document.createTextNode(ingredient));
+            button.appendChild(closeSpan);
+            
             button.id = "ingredient";
+            
+            // Event listener for button click
             button.addEventListener('click', clicked_button => {
-                const clickedIngredient = clicked_button.target.innerText;
+                const clickedIngredient = clicked_button.target.innerText.replace("×", "").trim();
                 splice_ingredient(clickedIngredient);
                 save_to_session_storage('saved_items', ingredients_list);
                 display_ingredients();
