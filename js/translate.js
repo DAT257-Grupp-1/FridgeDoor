@@ -1,6 +1,6 @@
 // import config from './config.js';
 
-const subscriptionKey = process.env.API_KEY; // Replace with your subscription key
+const subscriptionKey = 'translation_key'; // Replace with your subscription key
 const endpoint = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0'; // Microsoft Translator endpoint
 const region = 'swedencentral'; // Replace with your region, e.g., 'westus'
 
