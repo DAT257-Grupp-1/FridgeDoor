@@ -202,7 +202,7 @@ function create_recipe_card(recipe) {
     
     // Filter and display only matching ingredients
     const matchingIngredients = recipe.ingredient_tags.filter(ingredient => matching.includes(ingredient));
-    console.log(matchingIngredients.length)
+    // console.log(matchingIngredients.length)
     matchingIngredients.forEach(ingredient => {
         const ingredientElement = document.createElement('li');
         ingredientElement.setAttribute("style", "font-size: 30px; list-style-type: none;")
@@ -221,7 +221,7 @@ function create_recipe_card(recipe) {
     missing_count.textContent = `Saknas: ${unmatched.length}/${total}`;
     ingredientList.appendChild(missing_count);
     const unmatchingIngredients = recipe.ingredient_tags.filter(ingredient => unmatched.includes(ingredient));
-    console.log(unmatchingIngredients.length)
+    // console.log(unmatchingIngredients.length)
     unmatchingIngredients.forEach(ingredient => {
         const ingredientElement = document.createElement('li');
         ingredientElement.setAttribute("style", "font-size: 30px; list-style-type: none;")
