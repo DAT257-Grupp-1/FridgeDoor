@@ -209,7 +209,6 @@ function create_recipe_card(recipe) {
         ingredientElement.textContent = ingredient;
         ingredientElement.style.color = 'var(--general-text)';
         ingredientList.appendChild(ingredientElement);
-        console.log("hi")
     });
 
     recipeDiv.appendChild(ingredientList);
@@ -276,10 +275,7 @@ function updateFootprintText(value, footprintId) { // simple function to change 
 
 function displayWarning(value, warningId, sliderMax) { // creates a warning for impact on climate
     const warning = document.getElementById(warningId);
-    console.log("current" + value);
     const percentage = value /  sliderMax; // same idea as before to create a percentage value
-    console.log("current" + percentage);
-
 
     if (percentage <= 0.33) { // 33% for each value to change color and text: 0-33% = Low, 33-66% = Medium, 66-100% = High
         // Green zone
