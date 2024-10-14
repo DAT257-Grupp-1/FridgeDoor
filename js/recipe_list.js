@@ -196,7 +196,7 @@ function create_recipe_card(recipe) {
     const total = matching.length + unmatched.length;
     const matching_count = document.createElement('p');
     matching_count.setAttribute("id", "matched_ingredients")
-    matching_count.textContent = `Matchning: ${matching.length}/${unmatched.length}`;
+    matching_count.textContent = `Matchar: ${matching.length}/${total}`;
     ingredientList.appendChild(matching_count);
     
     // Filter and display only matching ingredients
@@ -204,16 +204,35 @@ function create_recipe_card(recipe) {
     console.log(matchingIngredients.length)
     matchingIngredients.forEach(ingredient => {
         const ingredientElement = document.createElement('li');
-        ingredientElement.setAttribute("style", "font-size: 35px; list-style-type: none;")
+        ingredientElement.setAttribute("style", "font-size: 30px; list-style-type: none;")
         ingredientElement.setAttribute("id", "matching_item")
         ingredientElement.textContent = ingredient;
         ingredientElement.style.color = 'var(--general-text)';
         ingredientList.appendChild(ingredientElement);
-        console.log("hi")
     });
 
     recipeDiv.appendChild(ingredientList);
     
+
+    // Display missing ingredients
+    const missing_count = document.createElement('p');
+    missing_count.setAttribute("id", "matched_ingredients");
+    missing_count.textContent = `Saknas: ${unmatched.length}/${total}`;
+    ingredientList.appendChild(missing_count);
+    const unmatchingIngredients = recipe.ingredient_tags.filter(ingredient => unmatched.includes(ingredient));
+    console.log(unmatchingIngredients.length)
+    unmatchingIngredients.forEach(ingredient => {
+        const ingredientElement = document.createElement('li');
+        ingredientElement.setAttribute("style", "font-size: 30px; list-style-type: none;")
+        ingredientElement.setAttribute("id", "matching_item")
+        ingredientElement.textContent = ingredient;
+        ingredientElement.style.color = 'var(--general-text)';
+        ingredientList.appendChild(ingredientElement);
+    });
+
+
+
+
     // Create and append the slider element
     const footprintSlider = document.createElement('div');
     footprintSlider.classList.add('footprint');
