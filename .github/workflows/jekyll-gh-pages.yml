@@ -42,7 +42,7 @@ jobs:
       - name: Inject API Key into translate.js
         run: 
           echo "Injecting API Key"
-          sed -i "s/translation_key/${{ secrets.API_KEY }}/" ./js/translate.js
+          sed -i "s/translation_key/${{ secrets.API_KEY }}/" js/translate.js
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
