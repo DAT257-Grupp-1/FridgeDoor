@@ -36,8 +36,9 @@ jobs:
           source: ./
           destination: ./_site
       - name: Inject API Key into translate.js
-        run: |
-          sed -i 's/config.subscriptionKey/${{ secrets.API_KEY }}/g' js/translate.js
+        run: echo "Injecting API Key"
+        env:
+          API_KEY: ${{ secrets.API_KEY }} 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
