@@ -17,7 +17,8 @@ function get_matching_ingredients(user_ingredients, recipe_ingredients) {
         // Loop through each ingredient the user has
         user_ingredients.forEach(user_ingredients => {
             // If the recipe ingredient includes the user ingredient, add it to the matching ingredients
-            if (normalized_ingredient == user_ingredients){
+            const normalized_user_ingredient = user_ingredients.toLowerCase(); 
+            if (normalized_ingredient == normalized_user_ingredient){
                 matching_ingredients.push(ingredient); 
             }else if(!unmatched_ingredients.includes(ingredient)){
                 unmatched_ingredients.push(ingredient);
