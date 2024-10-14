@@ -223,7 +223,7 @@ function create_recipe_card(recipe) {
     const slider = document.createElement('input');
     slider.type = 'range';
     slider.min = 0;
-    slider.max = 3;
+    slider.max = 2;
     slider.value = parseFloat(recipe.climateimpact.value[0] + "." + recipe.climateimpact.value[2]);
     slider.id = recipe.title + "colorSlider";
     slider.classList.add('slider');
@@ -254,7 +254,7 @@ function create_recipe_card(recipe) {
 
     // Append the recipe div to the existing div with id 'recipeList'
     document.getElementById('recipeList').appendChild(recipeDiv);
-    displayWarning(slider.value, warning.id);
+    displayWarning(slider.value, warning.id, slider.max);
     updateThumbColor(slider.value, slider.id);
     updateFootprintText(recipe.climateimpact.value, footprintText.id);
 }
@@ -263,16 +263,8 @@ function updateThumbColor(value, sliderId) {
     const slider = document.getElementById(sliderId); // gets the slider element
     const percentage = value / slider.max; // create a precentage value of the input value to change color of thumb accordingly
 
-    var color;
-    if (percentage <= 0.5) {
+    var color = `rgb(0, 0, 0)`; // creates a color value based on the percentage value
     
-        const greenToYellow = percentage * 2;
-        color = `rgb(${255 * greenToYellow}, 255, 0)`; // sets the color of the thumb to go from green to yellow
-    } else {
-        
-        const yellowToRed = (percentage - 0.5) * 2;
-        color = `rgb(255, ${255 * (1 - yellowToRed)}, 0)`; // sets the color of the thumb to go from yellow to red
-    }
 
     slider.style.setProperty('--thumb-color', color); // sets the color of the thumb
 }
@@ -281,21 +273,23 @@ function updateFootprintText(value, footprintId) { // simple function to change 
     footprintText.textContent = `Klimatavtryck: ${value} kg CO2e / portion`;
 }
 
-function displayWarning(value, warningId) { // creates a warning for impact on climate
+function displayWarning(value, warningId, maxValue) { // creates a warning for impact on climate
     const warning = document.getElementById(warningId);
+    const maxpercentage = maxValue / 100;
     const percentage = value / 100; // same idea as before to create a percentage value
 
-    if (percentage <= 0.33) { // 33% for each value to change color and text: 0-33% = Low, 33-66% = Medium, 66-100% = High
+    if (0.33*maxpercentage > percentage) { // 33% for each value to change color and text: 0-33% = Low, 33-66% = Medium, 66-100% = High
         // Green zone
-        warning.textContent = "Low";
+        warning.textContent = "Lågt";
         warning.style.color = "green";
-    } else if (percentage <= 0.66) {
+
+    } else if (percentage > 0.33*maxpercentage && percentage < 0.66*maxpercentage) {
         // Yellow zone
         warning.textContent = "Medium";
         warning.style.color = "yellow";
     } else {
         // Red zone
-        warning.textContent = "High";
+        warning.textContent = "Högt";
         warning.style.color = "red";
     }
 }

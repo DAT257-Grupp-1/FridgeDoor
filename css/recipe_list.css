@@ -117,8 +117,8 @@ img {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 5px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: var(--thumb-color, #4CAF50);
     cursor: pointer; 
@@ -158,4 +158,8 @@ img {
     z-index: 1000;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
+}
+.warning {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
