@@ -17,7 +17,8 @@ function get_matching_ingredients(user_ingredients, recipe_ingredients) {
         // Loop through each ingredient the user has
         user_ingredients.forEach(user_ingredients => {
             // If the recipe ingredient includes the user ingredient, add it to the matching ingredients
-            if (normalized_ingredient == user_ingredients){
+            const normalized_user_ingredient = user_ingredients.toLowerCase(); 
+            if (normalized_ingredient == normalized_user_ingredient){
                 matching_ingredients.push(ingredient); 
             }else if(!unmatched_ingredients.includes(ingredient)){
                 unmatched_ingredients.push(ingredient);
@@ -195,14 +196,14 @@ function create_recipe_card(recipe) {
     const total = matching.length + unmatched.length;
     const matching_count = document.createElement('p');
     matching_count.setAttribute("id", "matched_ingredients")
-    matching_count.textContent = `Matchning: ${matching.length}/${unmatched.length}`;
+    matching_count.textContent = `Matchar: ${matching.length}/${total}`;
     ingredientList.appendChild(matching_count);
     
     // Filter and display only matching ingredients
     const matchingIngredients = recipe.ingredient_tags.filter(ingredient => matching.includes(ingredient));
     matchingIngredients.forEach(ingredient => {
         const ingredientElement = document.createElement('li');
-        ingredientElement.setAttribute("style", "font-size: 35px; list-style-type: none;")
+        ingredientElement.setAttribute("style", "font-size: 30px; list-style-type: none;")
         ingredientElement.setAttribute("id", "matching_item")
         ingredientElement.textContent = ingredient;
         ingredientElement.style.color = 'var(--general-text)';
@@ -211,6 +212,26 @@ function create_recipe_card(recipe) {
 
     recipeDiv.appendChild(ingredientList);
     
+
+    // Display missing ingredients
+    const missing_count = document.createElement('p');
+    missing_count.setAttribute("id", "matched_ingredients");
+    missing_count.textContent = `Saknas: ${unmatched.length}/${total}`;
+    ingredientList.appendChild(missing_count);
+    const unmatchingIngredients = recipe.ingredient_tags.filter(ingredient => unmatched.includes(ingredient));
+    // console.log(unmatchingIngredients.length)
+    unmatchingIngredients.forEach(ingredient => {
+        const ingredientElement = document.createElement('li');
+        ingredientElement.setAttribute("style", "font-size: 30px; list-style-type: none;")
+        ingredientElement.setAttribute("id", "matching_item")
+        ingredientElement.textContent = ingredient;
+        ingredientElement.style.color = 'var(--general-text)';
+        ingredientList.appendChild(ingredientElement);
+    });
+
+
+
+
     // Create and append the slider element
     const footprintSlider = document.createElement('div');
     footprintSlider.classList.add('footprint');
