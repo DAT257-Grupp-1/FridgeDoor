@@ -152,7 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
             window.addEventListener('resize', check_button_visibility);
         })
         .catch(error => {
-            console.error('Error fetching data:', error);
             const recipeDiv = document.createElement('div');
             recipeDiv.classList.add('recipe');
             const testh2 = document.createElement('h2');
@@ -201,7 +200,6 @@ function create_recipe_card(recipe) {
     
     // Filter and display only matching ingredients
     const matchingIngredients = recipe.ingredient_tags.filter(ingredient => matching.includes(ingredient));
-    console.log(matchingIngredients.length)
     matchingIngredients.forEach(ingredient => {
         const ingredientElement = document.createElement('li');
         ingredientElement.setAttribute("style", "font-size: 35px; list-style-type: none;")
@@ -232,9 +230,7 @@ function create_recipe_card(recipe) {
     slider.type = 'range';
     slider.min = 0.0;
     slider.max = 2.0;
-    console.log("test for slider" + parseFloat(recipe.climateimpact.value[0] + "." + recipe.climateimpact.value[2]))
     slider.value = mappedValue;
-    console.log("slider value" + slider.value)
     slider.id = recipe.title + "colorSlider";
     slider.classList.add('slider');
     slider.disabled = true;
