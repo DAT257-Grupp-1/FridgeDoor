@@ -117,10 +117,10 @@ img {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 5px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: var(--thumb-color, #4CAF50);
+    background: var(--thumb-color, black);
     cursor: pointer; 
 }
 
