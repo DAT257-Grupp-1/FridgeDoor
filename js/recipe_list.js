@@ -17,7 +17,8 @@ function get_matching_ingredients(user_ingredients, recipe_ingredients) {
         // Loop through each ingredient the user has
         user_ingredients.forEach(user_ingredients => {
             // If the recipe ingredient includes the user ingredient, add it to the matching ingredients
-            if (normalized_ingredient == user_ingredients){
+            const normalized_user_ingredient = user_ingredients.toLowerCase(); 
+            if (normalized_ingredient == normalized_user_ingredient){
                 matching_ingredients.push(ingredient); 
             }else if(!unmatched_ingredients.includes(ingredient)){
                 unmatched_ingredients.push(ingredient);
@@ -152,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
             window.addEventListener('resize', check_button_visibility);
         })
         .catch(error => {
-            console.error('Error fetching data:', error);
             const recipeDiv = document.createElement('div');
             recipeDiv.classList.add('recipe');
             const testh2 = document.createElement('h2');
@@ -196,35 +196,62 @@ function create_recipe_card(recipe) {
     const total = matching.length + unmatched.length;
     const matching_count = document.createElement('p');
     matching_count.setAttribute("id", "matched_ingredients")
-    matching_count.textContent = `Matchning: ${matching.length}/${unmatched.length}`;
+    matching_count.textContent = `Matchar: ${matching.length}/${total}`;
     ingredientList.appendChild(matching_count);
     
     // Filter and display only matching ingredients
     const matchingIngredients = recipe.ingredient_tags.filter(ingredient => matching.includes(ingredient));
-    console.log(matchingIngredients.length)
     matchingIngredients.forEach(ingredient => {
         const ingredientElement = document.createElement('li');
-        ingredientElement.setAttribute("style", "font-size: 35px; list-style-type: none;")
+        ingredientElement.setAttribute("style", "font-size: 30px; list-style-type: none;")
         ingredientElement.setAttribute("id", "matching_item")
         ingredientElement.textContent = ingredient;
         ingredientElement.style.color = 'var(--general-text)';
         ingredientList.appendChild(ingredientElement);
-        console.log("hi")
     });
 
     recipeDiv.appendChild(ingredientList);
     
+
+    // Display missing ingredients
+    const missing_count = document.createElement('p');
+    missing_count.setAttribute("id", "matched_ingredients");
+    missing_count.textContent = `Saknas: ${unmatched.length}/${total}`;
+    ingredientList.appendChild(missing_count);
+    const unmatchingIngredients = recipe.ingredient_tags.filter(ingredient => unmatched.includes(ingredient));
+    // console.log(unmatchingIngredients.length)
+    unmatchingIngredients.forEach(ingredient => {
+        const ingredientElement = document.createElement('li');
+        ingredientElement.setAttribute("style", "font-size: 30px; list-style-type: none;")
+        ingredientElement.setAttribute("id", "matching_item")
+        ingredientElement.textContent = ingredient;
+        ingredientElement.style.color = 'var(--general-text)';
+        ingredientList.appendChild(ingredientElement);
+    });
+
+
+
+
     // Create and append the slider element
     const footprintSlider = document.createElement('div');
     footprintSlider.classList.add('footprint');
     recipeDiv.appendChild(footprintSlider);
+
+    const valueMapping = {
+        "0": 0,
+        "0.5": 1,
+        "1.4": 2
+    };
+
+    const mappedValue = valueMapping[recipe.climateimpact.value[0] + "." + recipe.climateimpact.value[2]] !== undefined ? valueMapping[recipe.climateimpact.value[0] + "." + recipe.climateimpact.value[2]] : parseFloat(recipe.climateimpact.value[0] + "." + recipe.climateimpact.value[2]);
+
     
     // Create and append the slider element
     const slider = document.createElement('input');
     slider.type = 'range';
-    slider.min = 0;
-    slider.max = 3;
-    slider.value = parseFloat(recipe.climateimpact.value[0] + "." + recipe.climateimpact.value[2]);
+    slider.min = 0.0;
+    slider.max = 2.0;
+    slider.value = mappedValue;
     slider.id = recipe.title + "colorSlider";
     slider.classList.add('slider');
     slider.disabled = true;
@@ -254,48 +281,30 @@ function create_recipe_card(recipe) {
 
     // Append the recipe div to the existing div with id 'recipeList'
     document.getElementById('recipeList').appendChild(recipeDiv);
-    displayWarning(slider.value, warning.id);
-    updateThumbColor(slider.value, slider.id);
+    displayWarning(slider.value, warning.id,slider.max);
     updateFootprintText(recipe.climateimpact.value, footprintText.id);
 }
 
-function updateThumbColor(value, sliderId) {
-    const slider = document.getElementById(sliderId); // gets the slider element
-    const percentage = value / slider.max; // create a precentage value of the input value to change color of thumb accordingly
-
-    var color;
-    if (percentage <= 0.5) {
-    
-        const greenToYellow = percentage * 2;
-        color = `rgb(${255 * greenToYellow}, 255, 0)`; // sets the color of the thumb to go from green to yellow
-    } else {
-        
-        const yellowToRed = (percentage - 0.5) * 2;
-        color = `rgb(255, ${255 * (1 - yellowToRed)}, 0)`; // sets the color of the thumb to go from yellow to red
-    }
-
-    slider.style.setProperty('--thumb-color', color); // sets the color of the thumb
-}
 function updateFootprintText(value, footprintId) { // simple function to change the text of the paragraph at a certain place
     const footprintText = document.getElementById(footprintId);
     footprintText.textContent = `Klimatavtryck: ${value} kg CO2e / portion`;
 }
 
-function displayWarning(value, warningId) { // creates a warning for impact on climate
+function displayWarning(value, warningId, sliderMax) { // creates a warning for impact on climate
     const warning = document.getElementById(warningId);
-    const percentage = value / 100; // same idea as before to create a percentage value
+    const percentage = value /  sliderMax; // same idea as before to create a percentage value
 
     if (percentage <= 0.33) { // 33% for each value to change color and text: 0-33% = Low, 33-66% = Medium, 66-100% = High
         // Green zone
-        warning.textContent = "Low";
+        warning.textContent = "Lågt";
         warning.style.color = "green";
-    } else if (percentage <= 0.66) {
+    } else if (percentage < 0.66) {
         // Yellow zone
         warning.textContent = "Medium";
         warning.style.color = "yellow";
     } else {
         // Red zone
-        warning.textContent = "High";
+        warning.textContent = "Högt";
         warning.style.color = "red";
     }
 }

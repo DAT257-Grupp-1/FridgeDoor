@@ -238,7 +238,7 @@ function get_mocktail() {
 
 async function display_cocktail(cocktail,title_text) {
     
-    console.log(cocktail);
+    // console.log(cocktail);
 
     // Get the cocktail section element and clear any existing content
     const cocktail_section = document.getElementById('cocktail');

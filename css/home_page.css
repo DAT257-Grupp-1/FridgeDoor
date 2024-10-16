@@ -1,7 +1,11 @@
+* {
+    border-style: none;
+}
+
 body{
     background-color: var(--primary-background);
     font-family: Arial, sans-serif;
-    height: 100vh;
+    height: 844px;
 }
 
 #contentDiv{
@@ -35,7 +39,6 @@ body{
     opacity: 0.7;
     background-color: var(--secondary-background);
     padding:2%;
-    /* text-align: center; */
 }
 
 #add {
@@ -56,6 +59,7 @@ body{
 }
 
 #ingredient{
+    position: relative; 
     padding: 2%;
     font-size: 40px;
     margin: 10px;
@@ -63,6 +67,26 @@ body{
     border-style: none;
     color: var(--general-text);
     background-color: var(--contrast-low-prio);
+    display: inline-flex;  
+    align-items: center;  
+    justify-content: space-between; 
+    padding-right: 30px; 
+    cursor: pointer;
+}
+
+#ingredient .close-button {
+    position: absolute;
+    top: 3px;
+    right: 10px; 
+    font-size: 30px;
+    color: red;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#ingredient .close-button:hover {
+    color: darkred; 
+    opacity: 1;
 }
 
 .remove-icon{
@@ -132,15 +156,17 @@ body{
 #info_button{
     width: 30%;
     padding: 15px;
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    float: right;
+
     font-family: Arial, sans-serif;
     font-size: 50px;
     border-radius: 10px;
-    margin: 12%;
+    border-style: none;
     color: var(--general-text);
     background-color: var(--contrast-low-prio);
-    position: absolute;
-    bottom: 0%;
-    right: 1%;
 }
 
 .popup {
@@ -162,7 +188,7 @@ body{
     background-color: var(--secondary-background);
     margin: 10% auto;
     padding: 20px;
-    border: 1px solid #888888;
+    border-radius: 10px;
     width: 80%;
     font-weight: bolder;
     font-size: 30px;

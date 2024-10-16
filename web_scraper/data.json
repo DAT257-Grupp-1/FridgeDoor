@@ -916,8 +916,8 @@
         ]
     },
     {
-        "title": "Chicken drumsticks med bbq-sås och avokado",
-        "description": "Smakrika drumsticks smaksätts här med bbq-sås och tillagas i ugn. Medan kycklingen tillagas svänger du enkelt ihop salladen med avokado och rödlök. Servera sedan med ris och luta dig tillbaka!",
+        "title": "Chicken drumsticks med BBQ-sås och avokado",
+        "description": "Smakrika drumsticks smaksätts här med BBQ-sås och tillagas i ugn. Medan kycklingen tillagas svänger du enkelt ihop salladen med avokado och rödlök. Servera sedan med ris och luta dig tillbaka!",
         "image": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_194656/cf_259/chicken_drumsticks_med_bbq-sas_och_avokado.jpg",
         "link": "https://www.ica.se/recept/chicken-drumsticks-med-bbq-sas-och-avokado-724858/",
         "ingredients": [
@@ -938,7 +938,7 @@
                 "quantity": ""
             },
             {
-                "name": "bbq-sås eller allround glaze",
+                "name": "BBQ-sås eller allround glaze",
                 "quantity": "2 dl "
             },
             {
@@ -963,11 +963,11 @@
             "Tina kycklingbenen (om frysta används).",
             "Sätt ugnen på 225°C.",
             "Blanda kycklingbenen med oljan på en långpanna. Krydda kycklingen med salt och peppar och stek mitt i ugnen först 15 minuter.",
-            "Pensla kycklingen med hälften av bbq-såsen. Stek i ugnen ytterligare 15 minuter, eller tills innertemperaturen på kycklingen är 82°C inne vid benet.",
+            "Pensla kycklingen med hälften av BBQ-såsen. Stek i ugnen ytterligare 15 minuter, eller tills innertemperaturen på kycklingen är 82°C inne vid benet.",
             "Koka riset enligt anvisningen på förpackningen.",
             "Dela, kärna ur och gröp ur avokadorna. Skär dem i skivor.",
             "Skala och skiva löken tunt.",
-            "Pensla resten av bbq-såsen på kycklingen vid servering och servera med ris, avokado och lök."
+            "Pensla resten av BBQ-såsen på kycklingen vid servering och servera med ris, avokado och lök."
         ],
         "energy": "2926 KJ / 699 kCal",
         "climateimpact": {
@@ -975,7 +975,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
-            "bbq-sås",
+            "BBQ-sås",
             "kyckling",
             "glaze",
             "olja",
@@ -8262,7 +8262,7 @@
                 "quantity": "240 g "
             },
             {
-                "name": "bbq- hickorysås eller bbq-sås",
+                "name": "BBQ- hickorysås eller BBQ-sås",
                 "quantity": "1 1/2 dl "
             },
             {
@@ -8321,14 +8321,14 @@
             "ärtskott",
             "oumph",
             "spenat",
-            "bbq-sås",
+            "BBQ-sås",
             "tomat",
             "sötpotatis",
             "majonnäs",
             "olja",
             "bönor",
             "vegostrimlor",
-            "bbq-hickorysås",
+            "BBQ-hickorysås",
             "soja",
             "quorn",
             "avokado",
@@ -14669,7 +14669,7 @@
                 "quantity": ""
             },
             {
-                "name": "bbq-sås",
+                "name": "BBQ-sås",
                 "quantity": "1 dl "
             },
             {
@@ -14708,7 +14708,7 @@
         "difficulty": "Medel",
         "instructions": [
             "Sätt ugnen på 175°C",
-            "Kyckling: Bryn kycklingen på båda sidor i oljan i en stekpanna, krydda med salt och peppar. Lägg kycklingen i en ugnssäker form och pensla på bbq-såsen. Stek kycklingen mitt i ugnen tills innertemperaturen är 72°C, ca 15 minuter.",
+            "Kyckling: Bryn kycklingen på båda sidor i oljan i en stekpanna, krydda med salt och peppar. Lägg kycklingen i en ugnssäker form och pensla på BBQ-såsen. Stek kycklingen mitt i ugnen tills innertemperaturen är 72°C, ca 15 minuter.",
             "Ris: Koka riset enligt anvisningen på förpackningen.",
             "Majssalsa: Låt majsen rinna av. Skala och hacka löken. Grovhacka koriandern. Stek majs och lök några minuter i oljan i en stekpanna. Rör ner sambal oelek. Smaka av med salt och peppar. Vänd ner koriandern.",
             "Till servering: Skär limen i klyftor.",
@@ -14720,7 +14720,7 @@
             "unit": "kg CO2e/portion"
         },
         "ingredient_tags": [
-            "bbq-sås",
+            "BBQ-sås",
             "majs",
             "kyckling",
             "olja",
