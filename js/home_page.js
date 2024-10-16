@@ -193,7 +193,7 @@ function populateDropdown(options) {
     });
 }
 
-document.getElementById('input_field').addEventListener('input', function() {
+document.getElementById('input_field').addEventListener('input', function() { //Constantly listen to input field
     const filter = this.value.toLowerCase();
     const dropdown = document.getElementById('dropdown');
     const options = dropdown.getElementsByTagName('button');
@@ -202,10 +202,10 @@ document.getElementById('input_field').addEventListener('input', function() {
         dropdown.style.display = 'none';
     } else {
         dropdown.style.display = 'block';
-        for (let i = 0; i < options.length; i++) {
+        for (let i = 0; i < options.length; i++) { //Only shows button with filter condition true
             const option = options[i];
             const text = option.textContent.toLowerCase();
-            option.style.display = text.startsWith(filter) ? '' : 'none';
+            option.style.display = text.startsWith(filter) ? '' : 'none'; // Filters the ingredients by the start of the words
         }
     }
 });
