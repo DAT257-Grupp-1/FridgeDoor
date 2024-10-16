@@ -187,7 +187,7 @@ document.getElementById('input_field').addEventListener('input', function() {
         for (let i = 0; i < options.length; i++) {
             const option = options[i];
             const text = option.textContent.toLowerCase();
-            option.style.display = text.includes(filter) ? '' : 'none';
+            option.style.display = text.startsWith(filter) ? '' : 'none';
         }
     }
 });
