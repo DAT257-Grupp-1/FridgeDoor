@@ -47,6 +47,14 @@ function display_ingredients() {
             
             button.id = "ingredient";
             
+            // Event listener for the cross ("×") click
+            closeSpan.addEventListener('click', (event) => {
+                event.stopPropagation();
+                splice_ingredient(ingredient); 
+                save_to_session_storage('saved_items', ingredients_list);
+                display_ingredients();
+            });
+
             // Event listener for button click
             button.addEventListener('click', clicked_button => {
                 const clickedIngredient = clicked_button.target.innerText.replace("×", "").trim();
