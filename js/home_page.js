@@ -36,10 +36,28 @@ function display_ingredients() {
         container.style.display = 'block';
         ingredients_list.forEach(ingredient => {
             const button = document.createElement("button");
-            button.textContent = ingredient;
+            // Create a span for the cross (X)
+            const closeSpan = document.createElement("span");
+            closeSpan.textContent = "×"; // This is the HTML entity for a multiplication sign (cross)
+            closeSpan.classList.add("close-button");
+
+            // Append the ingredient text and close button to the button
+            button.appendChild(document.createTextNode(ingredient));
+            button.appendChild(closeSpan);
+            
             button.id = "ingredient";
+            
+            // Event listener for the cross ("×") click
+            closeSpan.addEventListener('click', (event) => {
+                event.stopPropagation();
+                splice_ingredient(ingredient); 
+                save_to_session_storage('saved_items', ingredients_list);
+                display_ingredients();
+            });
+
+            // Event listener for button click
             button.addEventListener('click', clicked_button => {
-                const clickedIngredient = clicked_button.target.innerText;
+                const clickedIngredient = clicked_button.target.innerText.replace("×", "").trim();
                 splice_ingredient(clickedIngredient);
                 save_to_session_storage('saved_items', ingredients_list);
                 display_ingredients();
@@ -175,7 +193,7 @@ function populateDropdown(options) {
     });
 }
 
-document.getElementById('input_field').addEventListener('input', function() {
+document.getElementById('input_field').addEventListener('input', function() { //Constantly listen to input field
     const filter = this.value.toLowerCase();
     const dropdown = document.getElementById('dropdown');
     const options = dropdown.getElementsByTagName('button');
@@ -184,10 +202,10 @@ document.getElementById('input_field').addEventListener('input', function() {
         dropdown.style.display = 'none';
     } else {
         dropdown.style.display = 'block';
-        for (let i = 0; i < options.length; i++) {
+        for (let i = 0; i < options.length; i++) { //Only shows button with filter condition true
             const option = options[i];
             const text = option.textContent.toLowerCase();
-            option.style.display = text.includes(filter) ? '' : 'none';
+            option.style.display = text.startsWith(filter) ? '' : 'none'; // Filters the ingredients by the start of the words
         }
     }
 });

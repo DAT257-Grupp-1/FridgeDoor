@@ -1,6 +1,6 @@
-import config from './config.js';
+// import config from './config.js';
 
-const subscriptionKey = config.subscriptionKey; // Replace with your subscription key
+const subscriptionKey = '7e01db2a63bc4effa9ccdd239b93e634'; // Replace with your subscription key
 const endpoint = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0'; // Microsoft Translator endpoint
 const region = 'swedencentral'; // Replace with your region, e.g., 'westus'
 
@@ -28,7 +28,7 @@ const translate_text = async (textToTranslate) => {
 
   if (response.ok) {
     const data = await response.json();
-    console.log(data[0].translations[0].text);
+    // console.log(data[0].translations[0].text);
     return data[0].translations[0].text;
   } else {
     console.error('Error:', response.statusText);
