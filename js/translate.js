@@ -32,6 +32,7 @@ const translate_text = async (textToTranslate) => {
     return data[0].translations[0].text;
   } else {
     console.error('Error:', response.statusText);
+    return textToTranslate;
   }
 };
 
