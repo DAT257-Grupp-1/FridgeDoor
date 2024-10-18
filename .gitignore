@@ -1,5 +1,5 @@
 js/config.js
 config.py
-
+js/node_modules/
 __pycache__/
-
+node_modules
