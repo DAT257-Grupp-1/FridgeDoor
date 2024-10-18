@@ -26,15 +26,14 @@ const translate_text = async (textToTranslate) => {
     body: JSON.stringify(requestBody)
   });
 
-  if (response.ok) {
+  
+  if (response.ok) {  // If the response is successful, return the translations
     const data = await response.json();
-    // console.log(data[0].translations[0].text);
     return data[0].translations[0].text;
-  } else {
+  } else {            // If the response is not successful, log the error and return the original text
     console.error('Error:', response.statusText);
+    return textToTranslate;
   }
 };
 
 export { translate_text };
-
-// translateText('Hello, how are you my dear?');

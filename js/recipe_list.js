@@ -13,17 +13,20 @@ function get_matching_ingredients(user_ingredients, recipe_ingredients) {
     recipe_ingredients.forEach(ingredient => {
         // Normalize the ingredient to lower case
         const normalized_ingredient = ingredient.toLowerCase();
+        let is_matching = false;
 
         // Loop through each ingredient the user has
         user_ingredients.forEach(user_ingredients => {
             // If the recipe ingredient includes the user ingredient, add it to the matching ingredients
             const normalized_user_ingredient = user_ingredients.toLowerCase(); 
             if (normalized_ingredient == normalized_user_ingredient){
-                matching_ingredients.push(ingredient); 
-            }else if(!unmatched_ingredients.includes(ingredient)){
-                unmatched_ingredients.push(ingredient);
+                matching_ingredients.push(normalized_ingredient); 
+                is_matching = true;
             }
         });
+        if(!is_matching && !unmatched_ingredients.includes(normalized_ingredient)){
+            unmatched_ingredients.push(normalized_ingredient);
+        }
     });
     
     // Return the list of matching ingredients
