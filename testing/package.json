@@ -2,4 +2,4 @@
     "scripts": {
       "test": "jest"
     }
-  }
+}
